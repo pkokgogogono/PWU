@@ -19,6 +19,9 @@
 	<mappers>
 		<mapper resource="mybatis/memberMapper.xml" />
 		<mapper resource="mybatis/testTableMapper.xml" />
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/pkokgogogono/PWU.git
 	</mappers>
 </configuration>

@@ -9,7 +9,7 @@
 		<put-attribute name="title" value="¸ÞÀÎ" />
 		<put-attribute name="header" value="/tiles/template/header.jsp" />
 		<put-attribute name="menu" value="/tiles/template/menu.jsp" />
-		<put-attribute name="body" value="/tiles//body.jsp" />
+		<put-attribute name="body" value="/customer_center/notice_form.jsp" />
 		<put-attribute name="footer" value="/tiles/template/footer.jsp" />
 	</definition>
 	

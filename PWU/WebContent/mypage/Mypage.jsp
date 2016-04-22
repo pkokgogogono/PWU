@@ -10,14 +10,32 @@
 <body>
 <table width="800px" height="600px" border="1px" bordercolor="black">
 <tr>
-	<td> 1</td>
-	<td> 2</td>
-	<td> 3</td>
+	<td>
+	<a href="Mylist.jsp">
+	<img border="0" src="images/man.jpg" title="t" alt="티"width="200"height="200"></a>
+	</td>
+	<td>
+	<a href="Mylist.jsp">
+	<img border="0" src="images/black.png" title="b" alt="검은티"width="200"height="200"></a>
+	</td>
+	<td>
+	<a href="Mylist.jsp">
+	<img border="0" src="images/one.jpg" title="o" alt="원"width="200"height="200"></a>
+	</td>
 </tr>
 <tr>
-	<td> 4</td>
-	<td> 5</td>
-	<td> 6</td>
+	<td>
+	<a href="MyorderList.jsp">
+	<img border="0" src="images/pants.jpg" title="p" alt="바"width="200"height="200"></a>
+	</td>
+	<td>
+	<a href="MyorderList.jsp">
+	<img border="0" src="images/white.jpg" title="w" alt="흰"width="200"height="200"></a>
+	</td>
+	<td>
+	<a href="MyorderList.jsp">
+	<img border="0" src="images/jamba.jpg" title="j" alt="잠"width="200"height="200"></a>
+	</td>
 </tr>
 </table>
 <center>

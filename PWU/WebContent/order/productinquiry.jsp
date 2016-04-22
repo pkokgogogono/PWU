@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
+
 <script language = "javascript">  // 자바 스크립트 시작
 
 function writeCheck()
@@ -42,6 +43,7 @@ function writeCheck()
  <title>상품문의</title>
  </head>
  <body>
+ <center>
 <table>
 <form name=writeform method=post action="write_ok.jsp">
   <tr>
@@ -84,9 +86,9 @@ function writeCheck()
      </tr>
      <tr>
       <td>&nbsp;</td>
-      <td align="center">비밀번호</td>
+      <td align="center"><img alt="123" src="images/lock.png" width="30" height = "30"></td>
       <td><input type="password" name="password" size="30" maxlength="50"></td>
-      <td>&nbsp;</td>
+       <td>&nbsp;</td>
      </tr>
      <tr height="1" bgcolor="#dddddd"><td colspan="4"></td></tr>
      <tr height="1" bgcolor="#dddddd"><td colspan="4"></td></tr>
@@ -102,5 +104,6 @@ function writeCheck()
   </tr>
   </form>
  </table>
+ </center>
 </body>
  </html>

@@ -151,6 +151,27 @@ $(function(){
 </script>
 </head>
 <body>
+<%
+	request.setCharacterEncoding("utf-8");
+	String cnt= request.getParameter("cnt");
+	int icnt=0;
+	if(cnt != null){
+		icnt = Integer.parseInt(cnt);
+	}
+	
+	String writer=request.getParameter("writer");
+	String title=request.getParameter("title");
+	String content=request.getParameter("content");
+	
+	if(writer == null) 
+		writer = "";
+	if(title == null)
+		title = "";
+	if(content == null)
+		content="";
+%>
+
+
 <center>
 <table border="1">
 <tr>
@@ -197,7 +218,9 @@ $(function(){
 			<h3></h3>
 			<table border="1">
 			<tr>
-			<td border="1" width="400" height="400">사진1</td><br>
+			<td border="1" width="400" height="400">
+			
+			</td><br>
 			<td border="1" width="400" height="400">사진2</td><br>
 			<td border="1" width="400" height="400">사진3</td><br>
 			</tr>
@@ -209,33 +232,59 @@ $(function(){
 			</table>
 		</div>
 		<div id='tab3'>
-		<table border="1" background-color="gray" width="1200" height="800">
-		<form>
+		<form method ="post" action ="fashion1_user.jsp">
+<table border="1" widdth="500">
+	<tr>
+				<td width="15%" bgcolor="pink" align="center">작성자</td>
+				<td>
+					<input type="text" name="user" value="<%=writer%>">
+				</td>
+			</tr>
+			<tr>
+				<td width="15%" bgcolor="pink" align="center">제목</td>
+				<td>
+					<input type="text" name="title" value="<%=title%>">
+				</td>
+			</tr>
+			<tr>
+				<td width="15%" bgcolor="pink" align="center">내용</td>
+				<td width="50%" colspan="3"><textarea name="abstract" cols="40"><%=content%></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4" bgcolor="pink" align="center">업로드할 파일 수
+					입력 <input type="Text" name="cnt" value="<%=cnt%>" />
+					<input type="submit" value=" 확인 "/>
+				</td>
+			</tr>
+</table>
+</form>
+<form method ="post" action="fileuploadOk.jsp" enctype="multipart/form-data">
+	<input type ="hidden" name ="writer" value="<%=writer %>"/>
+	<input type ="hidden" name ="title" value="<%=title%>"/>
+	<input type ="hidden" name ="content" value="<%=content %>"/>
+	
+	<table border="1" width="500">
+	<%
+		for(int i = 0; i< icnt; i++){
+			%>
+			
 		<tr>
-		<td width="100" height="10">제 목 </td>
-		<td width="900" height="10"><input text="text"/></td>
+			<td>첨부파일<%=i+1 %></td>
+			<td><input type="file" name="file<%=i %>"></td>
 		</tr>
-		<tr>
-		<td width="1200" height="200"  colspan="2">사진 
-		파일첨부: <input type="file" name="file" /> 
+	<% 
+		}
+	%>
+	<tr>
+		<td colspan="2" align="center">
+		<input type="submit" value="전송"/>
 		</td>
-		</tr>
-		<tr>
-		<td width="1200" height="10" colspan="2">내용</td>
-		</tr>
-		<tr> 
-		<td width="1200" height="200" colspan="2">
-		<textarea name="contents" width="1200" height="200"></textarea></td>
-		</tr>
-		<tr>
-		<td width="1200" colspan="2" align="center">
-		<input type="submit" name="confirm" value="등   록" >
-        <input type="reset" name="reset" value="수  정">
-        <input type="button" value="취   소" onclick="fahion1_user.jsp">
-        </td>
-        </tr>
-		</form>
-		</table>
+	</tr>
+	</table>
+		
+		
+</form>
 		</div>
 </td>
 </tr>

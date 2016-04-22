@@ -1,74 +1,46 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Insert title here</title>
 </head>
 <body>
-<!-- »ó´Ü µğÀÚÀÎ Ãâ·Â ºÎºĞ -->
- <table width="960" height=80 border="1" align=center>
-   <tr>
-     <td align=center width=200>
-      <a href="/shop_main/main_body.htm">À¥µğ¸ğ ÃÊ°£´Ü È¨ÆäÀÌÁö</a>
-     </td>
-     <td align=center>
-      {GROUP_navi}
-     </td>
-   </tr>
- </table>
-  
- <!-- BODY º»¹® µğÀÚÀÎ Ãâ·Â ºÎºĞ -->
- <table width="960" border="1" align=center>
- <tr>
- <td width=200 valign=top>
-  <table width="200" border="1">
-    <tr>
-   <td>
-    <br>
-    <br>
-     {GROUP_login_box}<br>
-    <br> <br>
+<script type="text/javascript"> 
+var sidebarurl = "http://ë„ë©”ì¸"; // Change as required 
+var sidebartitle = "í™ˆí˜ì´ì§€ì œëª©"; // Change as required 
+var url = this.location; 
+var title = document.title; 
 
-  <b>5.¸¶ÀÌÆäÀÌÁö</b><br>
-   <br>
-   {GROUP_left5}<br>
-   <br>
-   </td>
-    </tr>
-  </table>
- </td>
- <Td  valign=top>
-   {BODY_CONTENT}
- </td>
- </tr>
- </table>
+function bookmarksite() { 
+if (window.sidebar && window.sidebar.addPanel){ // Firefox 
+window.sidebar.addPanel(sidebartitle, sidebarurl,""); 
+} 
+else if ( document.all ) { // IE Favorite 
+window.external.AddFavorite(url, title); 
+} 
+else if (window.opera && window.print) { 
+// do nothing 
+ } 
+else if (navigator.appName=="Netscape") { 
+alert("Please click OK, then press <Ctrl-D> to bookmark this page."); 
+} 
+ } 
 
- <!-- ÇÏ´Ü µğÀÚÀÎ Ãâ·Â ºÎºĞ -->
- <table width="960" border="1" align=center>
-   <tr>
-     <td width="200">
-       <p><br>
-        <a href='/shop_main/main_body.htm'> ÇÏ´Ü ·Î°í</a><br>
-       </p>
-       </td>
-     <td> <br>
-       È¨ÆäÀÌÁö¸í : ÃÊ±Ş¹Ì¼ÇÈ¨ÇÇ<br>
-       ¿î¿µÀÚ:À¥µ¹ÀÌ<br>
-       ÀÌ¸ŞÀÏÁÖ¼Ò : aaaa@naver.com<br>
-       <br>
-ÃÑ ´©Àû Á¢¼Ó¼ö {COUNT_TOTAL} /
-ÀÌ´Ş Á¢¼Ó¼ö {COUNT_MONTH} /
-¿À´Ã Á¢¼Ó¼ö {COUNT_TODAY} <br>
-ÃÑ °Ô½Ã¹° ¼ö {BBS_TOTAL_CNT}, »õ±Û ¼ö {BBS_NEW_CNT}<br>
-ÃÑ È¸¿ø ¼ö {MEM_TOTAL_CNT}, ½Å±Ô È¸¿ø ¼ö {MEM_NEW_CNT}<br>
-  
-
-
-</td>
-   </tr>
- </table>
+ if (window.sidebar && window.sidebar.addPanel) { 
+  document.write('<a href = "javascript:bookmarksite();" style="color:#A7A9AC;">ì¦ê²¨ì°¿ê¸°</a>'); 
+  } 
+ else if (document.all) { 
+  document.write('<a href = "javascript:bookmarksite();" style="color:#A7A9AC;">ì¦ê²¨ì°¿ê¸°</a>'); 
+ } 
+ else if (window.opera && window.print) { 
+document.write('<a href = "'+sidebarurl+'" title="'+sidebartitle+'" rel="sidebar" style="color:#A7A9AC;">ì¦ê²¨ì°¿ê¸°</a>'); 
+ } 
+ else if (navigator.appName=="Netscape") { 
+  document.write('<a href = "javascript:bookmarksite();" style="color:#A7A9AC;">ì¦ê²¨ì°¿ê¸°</a>'); 
+} 
+ </script>
 
 </body>
 </html>

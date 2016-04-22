@@ -155,25 +155,31 @@ $(function(){
 <table border="1">
 <tr>
 <td width="1200">
-<div id="tit"><h1>꼭 갖고싶지 말입니다~혜교도 반한 땡처리특가!!!</h1></div>
+<form>
+<div id="tit">제목:<input text="text"></div>
 <div style="float:right;"><b>리뷰:256</b></div>
 <div id="line01" style=""></div>
 <div id="box01">
-    <div class="aa" style="background-color:white;"><img src="../img/1.PNG" /></div>
-    <div class="aa" style="background-color:white;"><img src="../img/2.PNG" /></div>
-    <div class="aa" style="background-color:white;"><img src="../img/3.PNG" /></div>
-    <div class="aa" style="background-color:white;"><img src="../img/4.PNG" /></div>
+    <div class="aa" style="background-color:white;"> 
+		파일첨부: <input type="file" name="file" /> </div>
+    <div class="aa" style="background-color:white;"> 
+		파일첨부: <input type="file" name="file" /> </div>
+    <div class="aa" style="background-color:white;"> 
+		파일첨부: <input type="file" name="file" /> </div>
+    <div class="aa" style="background-color:white;"> 
+		파일첨부: <input type="file" name="file" /> </div>
 </div>
 
 <div id="box">
 <div id="line02" style=""></div>
 <div id="box02">
-    <div class="bb"><div><a href="1.PNG" /><img src="../img/1.PNG" /></div></div>
-    <div class="bb"><div><a href="2.PNG" /><img src="../img/2.PNG" /></div></div>
-    <div class="bb"><div><a href="3.PNG" /><img src="../img/3.PNG" /></div></div>
-    <div class="bb"><div><a href="4.PNG" /><img src="../img/4.PNG" /></div></div>
+    <div class="bb"><div><a href="1.PNG" /><img src="1.PNG" /></div></div>
+    <div class="bb"><div><a href="2.PNG" /><img src="2.PNG" /></div></div>
+    <div class="bb"><div><a href="3.PNG" /><img src="3.PNG" /></div></div>
+    <div class="bb"><div><a href="4.PNG" /><img src="4.PNG" /></div></div>
 </div>
 </div>
+</form>
 </td>
 </tr>
 </table>
@@ -184,13 +190,12 @@ $(function(){
 <ul class='tabs'>
 			<li><a href='#tab1'>상품설명</a></li>
 			<li><a href='#tab2'>상품후기</a></li>
-			<li><a href='#tab3'>리뷰작성</a></li>
 </ul>
 
 		<div id='tab1'>
 			<h3></h3>
 			<center>
-			<p><img src="../img/ㅇ.jpg"/></p>
+			<p><img src="ㅇ.jpg"/></p>
 			</center>
 		</div>
 		<div id='tab2'>
@@ -216,7 +221,7 @@ $(function(){
 		<td width="900" height="10"><input text="text"/></td>
 		</tr>
 		<tr>
-		<td width="1200" height="200"  colspan="2">사진 
+		<td width="1200" height="200"  colspan="2">
 		파일첨부: <input type="file" name="file" /> 
 		</td>
 		</tr>
@@ -229,9 +234,7 @@ $(function(){
 		</tr>
 		<tr>
 		<td width="1200" colspan="2" align="center">
-		<input type="submit" name="confirm" value="등   록" >
-        <input type="reset" name="reset" value="수  정">
-        <input type="button" value="취   소" onclick="fahion1_user.jsp">
+		<input type="submit" name="confirm" value="삭 제" >
         </td>
         </tr>
 		</form>
@@ -244,11 +247,11 @@ $(function(){
 			<h1>관련추천상품</h1>
 			<table border="1">
 			<tr>
-			<td width="300" height="200">사진</td>
-			<td width="300" height="200">사진</td>
-			<td width="300" height="200">사진</td>
-			<td width="300" height="200">사진</td>
-			<td width="300" height="200">사진</td>
+			<td width="300" height="200">파일첨부: <input type="file" name="file" /> </td>
+			<td width="300" height="200">파일첨부: <input type="file" name="file" /> </td>
+			<td width="300" height="200">파일첨부: <input type="file" name="file" /> </td>
+			<td width="300" height="200">파일첨부: <input type="file" name="file" /> </td>
+			<td width="300" height="200">파일첨부: <input type="file" name="file" /> </td>
 			</tr>
 			</table>
 </center>

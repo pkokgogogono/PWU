@@ -25,41 +25,53 @@ hr{
 	margin-top:0px;
 }
 
-.logo{
-	list-style: none;
-	text-align: center;
-	border-top: 1px solid gray;
-	border-bottom: 1px solid gray;
-	padding: 10px 0;
-	margin:10px 0;	
+div.one{
+width:1150px;
+height:200px;
+margin-top:0px;
+background-color:pink;
 }
-
 </style>
 </head>
 <body>
-<img src ="Korea_China.jpg" width="100" height="100"/>
-<div class="logo">MENU</div>
+
+<div class="one">
+<br><br><br>logo<br><br><br><br><br>
+<table width="1150" height="20">
+<tr>
+<td "textAlign=center" width="230">MENU</td>
+<td "textAlign=center" width="230">BEST20</td>
+<td "textAlign=center" width="230">FASHION</td>
+<td "textAlign=center" width="230">BEAUTY</td>
+<td "textAlign=center" width="230">ORDER</td>
+</tr>
+</table>
+</div>
+<hr>
 <BR><BR><BR><BR><BR><BR>
 <div class = "banner">
-DRAMA
+<b>DRAMA</b>
+<div style="float:right;"> <a href="fashionUser.jsp">MORE+</a></div>
 <ul>
-<li><a href="http://www.wemakeprice.com/deal/adeal/1005212/101900/?source=promotion/sleeveless"><img src="http://image.wemakeprice.com/gnb_main/2016-04-20/1461078000_d0a6d74aac5c73a00ced3a2ec0e0cc8a9566f00f.jpg" load_url="/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1" load_position="List Evt" onclick="_gaq.push(['_trackEvent', 'Banner Click', 'List Evt', '/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1']);" width="233" height="178" alt="Daily basic Sleeveless&nbsp;shirt"></a>
-<a href="http://www.wemakeprice.com/deal/adeal/1030260/102600/?source=promotion/jm03"><img src="http://image.wemakeprice.com/gnb_main/2016-04-20/1461078000_c99a9acfed41000be99b69f9ee46ec6a9b3047fd.jpg" load_url="/promotion/jm03/?source=100010_listevtbanner&amp;no=3" load_position="List Evt" onclick="_gaq.push(['_trackEvent', 'Banner Click', 'List Evt', '/promotion/jm03/?source=100010_listevtbanner&amp;no=3']);" width="233" height="178" alt="[HOT 신상 선글라스 기획전]"></a>
-<a href=""><img src="http://image.wemakeprice.com/gnb_main/2016-04-20/1461078000_d0a6d74aac5c73a00ced3a2ec0e0cc8a9566f00f.jpg" load_url="/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1" load_position="List Evt" onclick="_gaq.push(['_trackEvent', 'Banner Click', 'List Evt', '/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1']);" width="233" height="178" alt="Daily basic Sleeveless&nbsp;shirt"></a>
+<li><a href="fashion1_user.jsp"><img src="http://image.wemakeprice.com/gnb_main/2016-04-20/1461078000_d0a6d74aac5c73a00ced3a2ec0e0cc8a9566f00f.jpg" load_url="/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1" load_position="List Evt" onclick="_gaq.push(['_trackEvent', 'Banner Click', 'List Evt', '/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1']);" width="233" height="178" alt="Daily basic Sleeveless&nbsp;shirt"></a>
+<a href="fashion1_user.jsp"><img src="http://image.wemakeprice.com/gnb_main/2016-04-20/1461078000_c99a9acfed41000be99b69f9ee46ec6a9b3047fd.jpg" load_url="/promotion/jm03/?source=100010_listevtbanner&amp;no=3" load_position="List Evt" onclick="_gaq.push(['_trackEvent', 'Banner Click', 'List Evt', '/promotion/jm03/?source=100010_listevtbanner&amp;no=3']);" width="233" height="178" alt="[HOT 신상 선글라스 기획전]"></a>
+<a href="fashion1_user.jsp"><img src="http://image.wemakeprice.com/gnb_main/2016-04-20/1461078000_d0a6d74aac5c73a00ced3a2ec0e0cc8a9566f00f.jpg" load_url="/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1" load_position="List Evt" onclick="_gaq.push(['_trackEvent', 'Banner Click', 'List Evt', '/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1']);" width="233" height="178" alt="Daily basic Sleeveless&nbsp;shirt"></a>
 </li>
 </ul><bR>
-FASHION
+<b>FASHION</b>
+<div style="float:right;"> <a href="fashionUser.jsp">MORE+</a></div>
 <ul>
-<li><a href=""><img src="http://image.wemakeprice.com/gnb_main/2016-04-20/1461078000_d0a6d74aac5c73a00ced3a2ec0e0cc8a9566f00f.jpg" load_url="/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1" load_position="List Evt" onclick="_gaq.push(['_trackEvent', 'Banner Click', 'List Evt', '/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1']);" width="233" height="178" alt="Daily basic Sleeveless&nbsp;shirt"></a>
-<a href=""><img src="http://image.wemakeprice.com/gnb_main/2016-04-20/1461078000_d0a6d74aac5c73a00ced3a2ec0e0cc8a9566f00f.jpg" load_url="/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1" load_position="List Evt" onclick="_gaq.push(['_trackEvent', 'Banner Click', 'List Evt', '/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1']);" width="233" height="178" alt="Daily basic Sleeveless&nbsp;shirt"></a>
-<a href=""><img src="http://image.wemakeprice.com/gnb_main/2016-04-20/1461078000_d0a6d74aac5c73a00ced3a2ec0e0cc8a9566f00f.jpg" load_url="/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1" load_position="List Evt" onclick="_gaq.push(['_trackEvent', 'Banner Click', 'List Evt', '/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1']);" width="233" height="178" alt="Daily basic Sleeveless&nbsp;shirt"></a>
+<li><a href="fashion1_user.jsp"><img src="http://image.wemakeprice.com/gnb_main/2016-04-20/1461078000_d0a6d74aac5c73a00ced3a2ec0e0cc8a9566f00f.jpg" load_url="/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1" load_position="List Evt" onclick="_gaq.push(['_trackEvent', 'Banner Click', 'List Evt', '/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1']);" width="233" height="178" alt="Daily basic Sleeveless&nbsp;shirt"></a>
+<a href="fashion1_user.jsp"><img src="http://image.wemakeprice.com/gnb_main/2016-04-20/1461078000_d0a6d74aac5c73a00ced3a2ec0e0cc8a9566f00f.jpg" load_url="/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1" load_position="List Evt" onclick="_gaq.push(['_trackEvent', 'Banner Click', 'List Evt', '/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1']);" width="233" height="178" alt="Daily basic Sleeveless&nbsp;shirt"></a>
+<a href="fashion1_user.jsp"><img src="http://image.wemakeprice.com/gnb_main/2016-04-20/1461078000_d0a6d74aac5c73a00ced3a2ec0e0cc8a9566f00f.jpg" load_url="/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1" load_position="List Evt" onclick="_gaq.push(['_trackEvent', 'Banner Click', 'List Evt', '/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1']);" width="233" height="178" alt="Daily basic Sleeveless&nbsp;shirt"></a>
 </li>
 </ul><BR>
-AIRPORT/STREET
+<b>AIRPORT/STREET</b>
+<div style="float:right;"> <a href="fashionUser.jsp">MORE+</a></div>
 <ul>
-<li><a href=""><img src="http://image.wemakeprice.com/gnb_main/2016-04-20/1461078000_d0a6d74aac5c73a00ced3a2ec0e0cc8a9566f00f.jpg" load_url="/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1" load_position="List Evt" onclick="_gaq.push(['_trackEvent', 'Banner Click', 'List Evt', '/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1']);" width="233" height="178" alt="Daily basic Sleeveless&nbsp;shirt"></a>
-<a href=""><img src="http://image.wemakeprice.com/gnb_main/2016-04-20/1461078000_d0a6d74aac5c73a00ced3a2ec0e0cc8a9566f00f.jpg" load_url="/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1" load_position="List Evt" onclick="_gaq.push(['_trackEvent', 'Banner Click', 'List Evt', '/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1']);" width="233" height="178" alt="Daily basic Sleeveless&nbsp;shirt"></a>
-<a href=""><img src="http://image.wemakeprice.com/gnb_main/2016-04-20/1461078000_d0a6d74aac5c73a00ced3a2ec0e0cc8a9566f00f.jpg" load_url="/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1" load_position="List Evt" onclick="_gaq.push(['_trackEvent', 'Banner Click', 'List Evt', '/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1']);" width="233" height="178" alt="Daily basic Sleeveless&nbsp;shirt"></a>
+<li><a href="fashion1_user.jsp"><img src="http://image.wemakeprice.com/gnb_main/2016-04-20/1461078000_d0a6d74aac5c73a00ced3a2ec0e0cc8a9566f00f.jpg" load_url="/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1" load_position="List Evt" onclick="_gaq.push(['_trackEvent', 'Banner Click', 'List Evt', '/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1']);" width="233" height="178" alt="Daily basic Sleeveless&nbsp;shirt"></a>
+<a href="./user/fashion1_user.jsp"><img src="http://image.wemakeprice.com/gnb_main/2016-04-20/1461078000_d0a6d74aac5c73a00ced3a2ec0e0cc8a9566f00f.jpg" load_url="/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1" load_position="List Evt" onclick="_gaq.push(['_trackEvent', 'Banner Click', 'List Evt', '/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1']);" width="233" height="178" alt="Daily basic Sleeveless&nbsp;shirt"></a>
+<a href="./user/fashion1_user.jsp"><img src="http://image.wemakeprice.com/gnb_main/2016-04-20/1461078000_d0a6d74aac5c73a00ced3a2ec0e0cc8a9566f00f.jpg" load_url="/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1" load_position="List Evt" onclick="_gaq.push(['_trackEvent', 'Banner Click', 'List Evt', '/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1']);" width="233" height="178" alt="Daily basic Sleeveless&nbsp;shirt"></a>
 </li>
 </ul>
 <center>

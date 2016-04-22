@@ -1,21 +1,15 @@
-package action;
-
-
+package action.login;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-
-public class IndexFormAction implements CommandAction {
+import action.CommandAction;
+public class LoginFormAction implements CommandAction {
 	
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{
-
-		request.setCharacterEncoding("euc-kr");
 		
-		return "/index.jsp";
+		return "/login/loginForm.jsp";
 	}
   
 
 }
-       

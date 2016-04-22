@@ -1,21 +1,23 @@
+<!-- Q&A 의 사용자의 1:1문의 글쓰기 -->
+
 <%@ page contentType = "text/html; charset=utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="/customer_center/color.jsp"%>
 
 <html>
 <head>
-<title>공지사항</title>
+<title>1:1 문의</title>
 <link href="style.css" rel="stylesheet" type="text/css">
 <script src="script.js"></script>
 </head>
 
   
-<body bgcolor="${white}"> 
-<center><b>공지사항</b>
+<body bgcolor="${bodyback_c}"> 
+<center><b>1:1 문의</b>
 <br><br>
 <!-- post방식으로 writeSave()거쳐서 /JSP/mvc_board/writePro.do -> .do 실행 => controlleruri 의 dopost실행 -->
 <form method="post" name="writeform" action="/JSP/mvc_board/writePro.do" onsubmit="return writeSave()">
-<input type="hidden" name="num" value="${num}"> 
+<input type="hidden" name="num" value="${num}">
 <input type="hidden" name="ref" value="${ref}">
 <input type="hidden" name="re_step" value="${re_step}">
 <input type="hidden" name="re_level" value="${re_level}">
@@ -55,4 +57,4 @@
 </td></tr></table>   
 </form>     
 </body>
-</html> 
+</html>  

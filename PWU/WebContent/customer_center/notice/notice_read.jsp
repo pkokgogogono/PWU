@@ -57,10 +57,9 @@ body {
 		<td align=center colspan=2> 
 		<hr size=1>
 		<div align="center">
-		[ <input type="button" value="목록" onclick="move('Board_List.jsp');"> | 
-		<input type="button" value="수정" onclick="move('Board_Update.jsp');"> |
-		<input type="button" value="답변" onclick="move('Board_Reply.jsp');"> |
-		<input type="button" value="삭제" onclick="move('Board_Delete.jsp');">]<br>
+		<input type="button" value="목록" onclick="move('notice_list.jsp');"> 
+		<input type="button" value="수정" onclick="move('Board_Update.jsp');"> 
+		<input type="button" value="삭제" onclick="move('Board_Delete.jsp');"><br>
 		</div>
 		</td>
 	</tr>

@@ -33,7 +33,7 @@
      <input type="submit" value="글수정" > 
      <input type="reset" value="다시작성">
      <input type="button" value="목록보기"
-       onclick="document.location.href='/JSP/mvc_board/list.jsp?pageNum=${pageNum}'">
+       onclick="document.location.href='/PWU/customer_center/notice_list.jsp?pageNum=${pageNum}'">
    </td>
 </tr>
 </table>

@@ -18,6 +18,5 @@
 	</environments>
 	<mappers>
 		<mapper resource="mybatis/memberMapper.xml" />
-		<mapper resource="mybatis/testTableMapper.xml" />
 	</mappers>
 </configuration>

@@ -8,20 +8,6 @@
 		values(#{id},#{passwd},#{name},#{zipcode},#{address},#{email},#{admin})
 	</insert>
 	
-	<update id="modify" parameterType="test.vo.MembersVo">
-		update members set pwd=#{pwd},email=#{email},phone=#{phone} where id=#{id}
-	</update>
-	<delete id="remove" parameterType="java.lang.String">
-		delete from members where id=#{id}
-	</delete>
-	<select id="getlist" resultType="test.vo.MembersVo">
-		select * from members
-	</select>
-	<select id="find" parameterType="String" resultType="test.vo.MembersVo">
-		select * from members where id=#{id}
-	</select>
-	<select id="getInfo" parameterType="String" resultType="hashmap">
-		select * from members where id=#{id}
-	</select>
+
 </mapper>
 

@@ -32,7 +32,7 @@ public class InputProAction implements CommandAction {
 		SqlSession session = factory.openSession();
 
 		MemberVo vo = new MemberVo(request.getParameter("id"),request.getParameter("passwd"), request.getParameter("name"),
-				"158-836",request.getParameter("address"),request.getParameter("email"),1);
+				request.getParameter("zipcode"),request.getParameter("address"),request.getParameter("email"),1);
 		int n = session.insert("member.insert", vo);
 
 

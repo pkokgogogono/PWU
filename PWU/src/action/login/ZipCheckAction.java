@@ -16,35 +16,44 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import action.CommandAction;
 
 public class ZipCheckAction implements CommandAction {
-	
-	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{
+
+	public String requestPro(HttpServletRequest request,
+			HttpServletResponse response) throws Throwable {
 		request.setCharacterEncoding("euc-kr");
-		
-		String res = "config.xml";
-		
-		InputStream is;
-		try {
-			is = Resources.getResourceAsStream(res);
-		
+		if (request.getParameter("area4") != null) {
+			String res = "config.xml";
 
-		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
-		SqlSession session = factory.openSession();
+			InputStream is;
+			try {
+				is = Resources.getResourceAsStream(res);
 
-		List zipcodeList = session.selectList("member.zipcheck",request.getParameter("area4"));
-		
-		request.setAttribute("zipcodeList", zipcodeList);
+				SqlSessionFactory factory = new SqlSessionFactoryBuilder()
+						.build(is);
+				SqlSession session = factory.openSession();
 
+				List zipcodeList = session.selectList("member.zipcheck",
+						request.getParameter("area4"));
 
-		session.commit();
+				if(zipcodeList.isEmpty())
+				{
+					request.setAttribute("zipcodeList", null);
+				}else{
+				request.setAttribute("zipcodeList", zipcodeList);
+				}
 
-		session.close();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+				session.commit();
+
+				session.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		else{
+			request.setAttribute("zipcodeList", null);
 		}
 
 		return "/login/ZipCheck.jsp";
 	}
-  
 
 }

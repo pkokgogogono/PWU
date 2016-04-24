@@ -29,12 +29,13 @@ public class ConfirmIdAction implements CommandAction {
 		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 		SqlSession session = factory.openSession();
         
-	
-		if(session.selectOne("member.idcheck",request.getParameter("id"))!=null);
-		{
-		   check =1;
+		System.out.println(session.selectOne("member.idcheck2",request.getParameter("id")));
+
+		if(session.selectOne("member.idcheck",request.getParameter("id"))==null){	
 		}
-		System.out.println(check);
+		else{
+			check =1;
+		}
 		request.setAttribute("check", check);
 
 

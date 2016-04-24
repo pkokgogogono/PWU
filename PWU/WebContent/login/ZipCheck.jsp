@@ -37,13 +37,12 @@
       </tr>
      <input type="hidden" name="check" value="n">
     </form>
-<c:if test="${ param.check==n}">
+
   <c:if test="${zipcodeList==null }">
 
    <tr><td align="center"><br>검색된 결과가 없습니다.</td></tr>
   </c:if>   
-</c:if>
-<c:if test="${ param.check!=n}">
+
 <tr><td align="center"><br>
     ※검색 후, 아래 우편번호를 클릭하면 자동으로 입력됩니다.</td></tr>
 <c:forEach var="item" items="${zipcodeList}">
@@ -65,7 +64,7 @@
          ${tempZipcode}&nbsp;${temptArea1}&nbsp;${temptArea2}&nbsp;
 ${temptArea3}&nbsp;${temptArea4}</a><br>
 </c:forEach>
-</c:if>
+
 </td></tr>
 <tr><td align="center"><br><a href="javascript:this.close();">닫기</a><tr></td
 

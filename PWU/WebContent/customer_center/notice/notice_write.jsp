@@ -23,8 +23,7 @@
 <body bgcolor="${white}"> 
 <center><b>공지사항</b>
 <br><br>
-<!-- post방식으로 writeSave()거쳐서 /JSP/mvc_board/writePro.do -> .do 실행 => controlleruri 의 dopost실행 -->
-<form method="post" name="writeform" action="/JSP/mvc_board/writePro.do" onsubmit="return writeSave()">
+<form method="post" name="writeform" action="/PWU/customer_center/notice/notice_writepro.do" onsubmit="return writeSave()">
 <input type="hidden" name="num" value="${num}"> 
 <input type="hidden" name="ref" value="${ref}">
 <input type="hidden" name="re_step" value="${re_step}">

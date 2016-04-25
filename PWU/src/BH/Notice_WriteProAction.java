@@ -28,9 +28,10 @@ public class Notice_WriteProAction implements CommandAction{
 		      
 		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 		SqlSession session = factory.openSession();
-	  
-		Customer vo = new Customer(request.getParameter("num"), request.getParameter("writer"), request.getParameter("title"), request.getParameter("content")
-			,new Timestamp(System.currentTimeMillis()),request.getParameter("read_count"),1);
+	
+		Customer vo = new Customer(Integer.parseInt(request.getParameter("num")), request.getParameter("writer"), request.getParameter("title"), request.getParameter("content")
+			,new Timestamp(System.currentTimeMillis()), Integer.parseInt(request.getParameter("read_count")),1);
+
 
 		int n = session.insert("notice.insert", vo);
 
@@ -43,7 +44,7 @@ public class Notice_WriteProAction implements CommandAction{
 	}
 	
 	
-	return "/cutomer_center/notice/notice_write.jsp";
+	return "/cutomer_center/notice/notice_list.jsp";
 }
 
 

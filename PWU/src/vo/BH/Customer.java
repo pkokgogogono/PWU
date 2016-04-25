@@ -66,7 +66,7 @@ public class Customer {
 		this.read_count = read_count;
 	}
 
-	public int getRe_level() {
+	public int getlevel() {
 		return level;
 	}
 	public void setlevel(int level) {

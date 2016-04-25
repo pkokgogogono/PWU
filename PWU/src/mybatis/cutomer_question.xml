@@ -2,11 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="member">
-	<insert id="insert" parameterType="vo.MemberVo">
-		insert into member
-		values(#{id},#{passwd},#{name},#{zipcode},#{address},#{email},#{admin})
+<mapper namespace="question">
+	<insert id="insert" parameterType="vo.vo.BH.CommunityVo">
+		insert into question
+		values(#{num},#{title},#{writer},#{date},#{hit})
 	</insert>
+	
 	<select id = "idcheck" parameterType="String" resultType="String" >
       select id from member where id=#{id}
     </select>

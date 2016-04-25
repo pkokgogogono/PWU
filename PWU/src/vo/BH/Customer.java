@@ -1,8 +1,24 @@
-package BH;
+package vo.BH;
 
 import java.sql.Timestamp;
 
-class CommunityDataBean {
+public class Customer {
+	
+	
+	
+	
+	public Customer(int num, String writer, String title, String content, Timestamp reg_date, int read_count,
+			int level) {
+		super();
+		this.num = num;
+		this.writer = writer;
+		this.title = title;
+		this.content = content;
+		this.reg_date = reg_date;
+		this.read_count = read_count;
+		this.level = level;
+	}
+	
 	private int num;
 	private String writer;
 	private String title;

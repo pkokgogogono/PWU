@@ -2,6 +2,16 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="/customer_center/color.jsp"%>
 
+<script type="text/javascript">
+	function move(url) {
+		location.href=url;
+	}
+	function boardViewCheck() {
+		var form = document.BoardViewForm;
+		return true;
+	}
+	
+</script>
 <html>
 <head>
 <title>공지사항</title>
@@ -50,8 +60,8 @@
 <tr>
 <td colspan=2 bgcolor="${value_c}" align="center">
   <input type="submit" value="글쓰기" > 
-  <input type="reset" value="다시작성">
-  <input type="button" value="목록보기" OnClick="window.location='/JSP/mvc_board/list.do'">
+  <input type="reset" value="다시작성" >
+<input type="button" value="목록" onclick="move('notice_list.jsp');"> 
 </td></tr></table>   
 </form>     
 </body>

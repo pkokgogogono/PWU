@@ -29,7 +29,6 @@ public class ConfirmIdAction implements CommandAction {
 		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 		SqlSession session = factory.openSession();
         
-		System.out.println(session.selectOne("member.idcheck2",request.getParameter("id")));
 
 		if(session.selectOne("member.idcheck",request.getParameter("id"))==null){	
 		}

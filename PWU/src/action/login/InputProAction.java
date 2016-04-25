@@ -45,7 +45,7 @@ public class InputProAction implements CommandAction {
 		}
 		
 		
-		return "/login/loginForm.jsp";
+		return "/login/index.jsp";
 	}
 
   

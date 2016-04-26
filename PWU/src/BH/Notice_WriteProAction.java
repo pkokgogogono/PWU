@@ -13,8 +13,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import action.CommandAction;
-
-
+import vo.MemberVo;
 import vo.BH.Customer;
 
 public class Notice_WriteProAction implements CommandAction{
@@ -29,20 +28,25 @@ public class Notice_WriteProAction implements CommandAction{
 		      
 		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 		SqlSession session = factory.openSession();
+	  
+		Customer vo = new Customer(Integer.parseInt(request.getParameter("num")), request.getParameter("writer"), request.getParameter("title"), request.getParameter("content")
+			,new Timestamp(System.currentTimeMillis()), Integer.parseInt(request.getParameter("read_count")),1);
+
+		int n = session.insert("notice.insert", vo);
+
+		session.commit();
+
+	session.close();
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
 	
-		Customer vo = new Customer(request.getParameter(num),request.getParameter(writer),request.getParameter(title),request.getParameter(reg_date)
-				,request.getParameter(content));
-		
-		session.insert("notice.insert",vo);
-		 
-		request.setCharacterEncoding("utf-8");//한글 인코딩
-		
+	
+	return "/cutomer_center/notice/notice_write.jsp";
+}
 
 
-		
-		return "/cutomer_center/notice/notice_writepro.jsp";
-		
-		}
 }
 
 

@@ -5,7 +5,7 @@
 <mapper namespace="question">
 	<insert id="insert" parameterType="vo.vo.BH.CommunityVo">
 		insert into question
-		values(#{num},#{title},#{writer},#{reg_date},#{hit})
+		values(#{num},#{title},#{writer},#{date},#{hit})
 	</insert>
 	
 	<select id = "idcheck" parameterType="String" resultType="String" >

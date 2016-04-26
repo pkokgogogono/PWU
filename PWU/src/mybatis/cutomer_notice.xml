@@ -3,12 +3,32 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="notice">
+
 	<insert id="insert" parameterType="vo.BH.NoticeVo">
 		insert into notice
 		values(#{num},#{writer},#{title},#{reg_date},#{read_count})
 	</insert>
 	
+	<update id="update">
+		UPDATE notice SET
+			writer=#{writer}
+			title=#{title}
+			content=#{content}
+			reg_date=#{reg_date}
+		where num=#{num} LIMIT 1
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM notice where num = #{num}
+	</delete>
 
+	<select id="select">
+		SELECT * FROM notice
+	</select>
+	
+	<select id="selectOne">
+		SELECT * FROM notice where num=#{num}
+	</select>
 
 
 </mapper>

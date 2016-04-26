@@ -26,8 +26,6 @@
 <form method="post" name="writeform" action="/PWU/customer_center/notice/notice_writepro.do" onsubmit="return writeSave()">
 <input type="hidden" name="num" value="${num}"> 
 <input type="hidden" name="ref" value="${ref}">
-<input type="hidden" name="re_step" value="${re_step}">
-<input type="hidden" name="re_level" value="${re_level}">
 
 <table width="400" border="1" cellspacing="0" cellpadding="0"  align="center">
 
@@ -60,7 +58,7 @@
 <td colspan=2 bgcolor="${value_c}" align="center">
   <input type="submit" value="글쓰기" > 
   <input type="reset" value="다시작성" >
-<input type="button" value="목록" onclick="move('notice_list.jsp');"> 
+<input type="button" value="목록" OnClick="window.location='/PWU/customer_center/notice/notice_list.do'"> 
 </td></tr></table>   
 </form>     
 </body>

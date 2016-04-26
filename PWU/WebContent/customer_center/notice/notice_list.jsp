@@ -22,6 +22,28 @@
 </script>
 	
  <body>
+ 
+ <center><b>글목록(전체 글:${count})</b>
+<table width="700">
+  <tr>
+    <td align="right" bgcolor="${value_c}">
+    	<!-- 요청하면 무조건 servlet이 받는다  그래서 요청할때 [~.do] --> 
+    	<!-- 글쓰기 클릭하면 servlet으로 이동 -->
+       <a href="/PWU/customer_center/notice/notice_write.do">글쓰기</a>
+    </td>
+  </tr>
+</table>
+
+<c:if test="${count == 0}">
+<table width="700" border="1" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="center">
+      게시판에 저장된 글이 없습니다.
+    </td>
+  </tr>
+</table>
+</c:if>
+
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr height="5"><td width="5"></td></tr>
  <tr style="background:url('img/table_mid.gif') repeat-x; text-align:center;">

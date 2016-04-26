@@ -28,6 +28,7 @@ public class LoginProAction implements CommandAction {
 
 		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 		SqlSession session = factory.openSession();
+		
 		if(session.selectOne("member.idcheck",request.getParameter("id"))!=null)
 		{	
 			session2.setAttribute("check",0);

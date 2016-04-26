@@ -3,7 +3,7 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="question">
-	<insert id="insert" parameterType="vo.vo.BH.CommunityVo">
+	<insert id="insert" parameterType="String">
 		insert into question
 		values(#{num},#{title},#{writer},#{reg_date},#{hit})
 	</insert>

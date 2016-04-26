@@ -7,25 +7,19 @@ public class Customer {
 	
 	
 	
-	public Customer(int num, String writer, String title, String content, Timestamp reg_date, int read_count,
-			int level) {
-		super();
-		this.num = num;
-		this.writer = writer;
+	public Customer( String title, String content,int lev) {
 		this.title = title;
 		this.content = content;
-		this.reg_date = reg_date;
-		this.read_count = read_count;
-		this.level = level;
+		this.lev = lev;
 	}
 	
 	private int num;
 	private String writer;
 	private String title;
-	private String content;
 	private Timestamp reg_date;
+	private String content;
 	private int read_count;
-	private int level;
+	private int lev;
 	
 	public int getNum() {
 		return num;
@@ -66,11 +60,11 @@ public class Customer {
 		this.read_count = read_count;
 	}
 
-	public int getRe_level() {
-		return level;
+	public int getlev() {
+		return lev;
 	}
-	public void setlevel(int level) {
-		this.level = level;
+	public void setlev(int lev) {
+		this.lev = lev;
 	}
 
 }

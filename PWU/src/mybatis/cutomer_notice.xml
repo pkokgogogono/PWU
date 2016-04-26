@@ -4,11 +4,17 @@
 
 <mapper namespace="notice">
 
-	<insert id="insert" parameterType="vo.BH.NoticeVo">
+<!-- 	<insert id="insert" parameterType="vo.BH.Customer">
 		insert into notice
-		values(#{num},#{writer},#{title},#{reg_date},#{read_count})
+		values(notice_num.nextval,#{writer},#{title},#{reg_date},#{content},#{read_count},#{lev})
+	</insert> -->
+	
+	<insert id="insert" parameterType="vo.BH.Customer">
+		insert into notice(notice_num.nextval,title,content,lev)
+		values(notice_num.nextval,#{title},#{content},#{lev})
 	</insert>
 	
+
 	<update id="update">
 		UPDATE notice SET
 			writer=#{writer}

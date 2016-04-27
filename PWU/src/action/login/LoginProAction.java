@@ -1,24 +1,46 @@
 package action.login;
 
+import java.io.IOException;
+import java.io.InputStream;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+<<<<<<< HEAD
 import action.mypage.CommandAction;
+=======
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+import action.CommandAction;
+import dao.LoginDao;
+import vo.MemberVo;
+>>>>>>> branch 'master' of https://github.com/pkokgogogono/PWU.git
 public class LoginProAction implements CommandAction {
 	
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{
 		request.setCharacterEncoding("euc-kr");
-
-//		LogonDBBean dbPro = LogonDBBean.getInstance();// DBÃ³¸®
-//		int check =  dbPro.userCheck(request.getParameter("id"), request.getParameter("passwd"));
-//		
-//		request.setAttribute("check", check);
-//		if(check==1){
-//			HttpSession session=request.getSession(true);
-//			session.setAttribute("memId",request.getParameter("id"));
-//			return "main.do";
-//		}
+		
+		HttpSession session2=request.getSession(true);
+		LoginDao logindao = LoginDao.getInstance();
+		
+		
+		if(logindao.idCheck(request.getParameter("id"))!=null)
+		{
+			session2.setAttribute("check",0);
+			MemberVo vo = new MemberVo(request.getParameter("id"),request.getParameter("passwd"));
+			if((logindao.loginCheck(vo))==1)
+			{
+				session2.setAttribute("memId",request.getParameter("id"));
+				return "/login/index.jsp";
+			}
+		}
+		else{
+			session2.setAttribute("check",1);
+		}
 		
 		return "/login/loginPro.jsp";
 		

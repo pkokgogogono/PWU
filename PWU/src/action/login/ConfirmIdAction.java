@@ -29,7 +29,10 @@ public class ConfirmIdAction implements CommandAction {
 		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 		SqlSession session = factory.openSession();
         
+<<<<<<< HEAD
 		
+=======
+>>>>>>> branch 'master' of https://github.com/pkokgogogono/PWU.git
 
 		if(session.selectOne("member.idcheck",request.getParameter("id"))==null){	
 		}

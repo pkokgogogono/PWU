@@ -27,7 +27,7 @@
         return true;
     }
 
-/*     // 아이디 중복 여부를 판단
+    // 아이디 중복 여부를 판단
     function openConfirmid(userinput) {
         // 아이디를 입력했는지 검사
         if (userinput.id.value == "") {
@@ -39,7 +39,7 @@
        
         // 새로운 윈도우를 엽니다.
         open(url, "confirm", "toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=300,height=200");
-    } */
+    }
     
     function zipCheck(){
     	
@@ -52,7 +52,7 @@
 
 <body bgcolor="${bodyback_c}">
 
-<form method="post" action="inputPro.do" name="userinput"  onSubmit="return checkIt()">
+<form method="post" action="modifyPro.do" name="userinput"  onSubmit="return checkIt()">
   <table width="600" border="1" cellspacing="0" cellpadding="3" align="center" >
     <tr>
     <td colspan="2" height="39" align="center" bgcolor="${value_c}" >
@@ -110,7 +110,7 @@
       <td colspan="2" align="center" bgcolor="${value_c}">
           <input type="submit" name="confirm" value="등   록" >
           <input type="reset" name="reset" value="다시입력">
-          <input type="button" value="가입안함" onclick="javascript:window.location='/PWU/index.do'">
+          <input type="button" value="가입안함" onclick="javascript:window.location='/PWU/login/index.do'">
       </td>
     </tr>
   </table>

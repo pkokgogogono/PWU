@@ -1,6 +1,18 @@
 <%@ page contentType = "text/html; charset=utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="/customer_center/color.jsp"%>
+
+<script type="text/javascript">
+	function move(url) {
+		location.href=url;
+	}
+	function boardViewCheck() {
+		var form = document.BoardViewForm;
+		return true;
+	}
+
+</script>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +24,7 @@
 <body bgcolor="${bodyback_c }">
 <center><b>글수정</b>
 <br>
-<form method="post" name="writeform" action="/JSP/mvc_board/updatePro.do?pageNum=${pageNum }" onsubmit="return writeSave()">
+<form method="post" name="writeform" action="/PWU/mvc_board/updatePro.do?pageNum=${pageNum }" onsubmit="return writeSave()">
 <table width="400" border="1" cellspacing="0" cellpadding="0" align="center">
 
   <tr>
@@ -32,9 +44,7 @@
    <td colspan=2 bgcolor="${value_c}" align="center">
      <input type="submit" value="글수정" > 
      <input type="reset" value="다시작성">
-     <input type="button" value="목록보기"
-       onclick="document.location.href='/PWU/customer_center/notice_list.jsp?pageNum=${pageNum}'">
-   </td>
+<input type="button" value="목록" onclick="move('notice_list.jsp');">   </td>
 </tr>
 </table>
 </form>

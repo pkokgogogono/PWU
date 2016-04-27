@@ -63,7 +63,7 @@ public class LoginDao {
 		}
 		return logincheck;
 	}
-}
+} 
 	
 	
 

@@ -4,7 +4,7 @@
 
 <mapper namespace="notice">
 
-	<insert id="insert" parameterType="vo.BH.NoticeVo">
+	<insert id="insert" parameterType="String">
 		insert into notice
 		values(#{num},#{writer},#{title},#{reg_date},#{read_count})
 	</insert>

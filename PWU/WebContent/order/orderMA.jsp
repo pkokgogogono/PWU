@@ -2,7 +2,7 @@
 
  <html>
  <head>
- <title>상품문의 목록</title>
+ <title>주문관리</title>
  </head>
  <body>
  <center>
@@ -14,7 +14,7 @@
     <table width="100%" cellpadding="0" cellspacing="0" border="0">
      <tr style="background:url('img/table_mid.gif') repeat-x; text-align:left;">
       
-      <tr align="center"><td>상품문의 목록</tr></td>
+      <tr align="center"><td>주문관리</tr></td>
       
      </tr>
     </table>
@@ -22,11 +22,11 @@
      <tr><td width="800" height="2" bgcolor="red" colspan=7></td></tr>
     <tr>
       <tr align="center">
-      	<th width="60">NO</th>
-      	<th width="60">TITLE</th>
-      	<th width="300">WRITER</th>
-      	<th width="200">DATE</th>
-      	<th width="200">HIT</th>
+      	<th width="60">번호</th>
+      	<th width="70">주문회원</th>
+      	<th width="300">상품이름</th>
+      	<th width="200">날짜</th>
+      	<th width="200">상태</th>
       	
       <td>&nbsp;</td>
      </tr>

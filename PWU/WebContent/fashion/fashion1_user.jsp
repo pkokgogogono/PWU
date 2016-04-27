@@ -1,7 +1,56 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"%>
-<!doctype html>
+ <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ page import="com.oreilly.servlet.MultipartRequest,com.oreilly.servlet.multipart.DefaultFileRenamePolicy,java.util.*,java.io.*" %>
+<%@ page import="java.sql.*" %>
+
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko">
+<head>
+<%!
+	//Request객체와 String 객체를 각각 가져온다.
+	public String getParam(HttpServletRequest request, String paramName) 
+	{
+		if (request.getParameter(paramName) != null) 
+		{
+			return request.getParameter(paramName);
+		} 
+		else 
+		{
+			return "";
+		}
+	}
+%>
+<%
+	request.setCharacterEncoding("euc-kr");
+	int filecounter = 0;
+	if (request.getParameter("addcnt") != null) 
+	{
+		filecounter = Integer.parseInt(request.getParameter("addcnt"));
+	}
+%>
+<%
+ request.setCharacterEncoding("euc-kr");
+ String realFolder = "";
+ String file = "";
+ int maxSize = 1024*1024*5;
+ String encType = "euc-kr";
+ String savefile = "upload";
+ ServletContext scontext = getServletContext();
+ realFolder = scontext.getRealPath(savefile);
+ 
+ try{
+  MultipartRequest multi=new MultipartRequest(request, realFolder, maxSize, encType, new DefaultFileRenamePolicy());
+  Enumeration<?> files = multi.getFileNames();
+     String file1 = (String)files.nextElement();
+     file = multi.getFilesystemName(file1);
+ } catch(Exception e) {
+  e.printStackTrace();
+ }
+ 
+ String fullpath = "./upload" + "/" + file;
+%>
 <html lang="KO">
 <head>
+
 <title> </title>
 <style type="text/css">
 html, body { width:100%; height:100%;  margin:0px; padding:0px; }
@@ -148,6 +197,41 @@ $(function(){
 });
 
 
+function addFile(formName) 
+{
+	if (formName.addcnt.value == "") 
+	{
+		alert(" 입력할 파일 갯수를 입력하고 확인 단추를 눌러주세요");
+		formName.addcnt.focus();
+		return;
+	}
+	formName.submit();
+}
+
+function elementCheck(formName) 
+{
+	paramIndex = 1;
+	for (idx = 0; idx < formName.elements.length; idx++) 
+	{
+		if (formName.elements[idx].type == "file") 
+		{
+			if (formName.elements[idx].value == "") 
+			{
+				var message = paramIndex+ " 번째 파일정보가 없습니다.\n업로드할 파일을 선택해 주세요";
+				alert(message);
+				formName.elements[idx].focus();
+				return;
+			}
+			paramIndex++;
+		}
+	}
+	
+	//form태그에 Action과 같은 기능으로 스크립트를 이용하여 전송가능하다. 
+	formName.action = "reviewPro.jsp";
+	//전송
+	formName.submit();
+}
+
 </script>
 </head>
 <body>
@@ -180,7 +264,7 @@ $(function(){
 <div style="float:right;"><b>리뷰:256</b></div>
 <div id="line01" style=""></div>
 <div id="box01">
-    <div class="aa" style="background-color:white;"><img src="../img/1.PNG" /></div>
+    <div class="aa" style="background-color:white;"><img src="./img/1.PNG" /></div>
     <div class="aa" style="background-color:white;"><img src="../img/2.PNG" /></div>
     <div class="aa" style="background-color:white;"><img src="../img/3.PNG" /></div>
     <div class="aa" style="background-color:white;"><img src="../img/4.PNG" /></div>
@@ -232,60 +316,63 @@ $(function(){
 			</table>
 		</div>
 		<div id='tab3'>
-		<form method ="post" action ="fashion1_user.jsp">
-<table border="1" widdth="500">
-	<tr>
-				<td width="15%" bgcolor="pink" align="center">작성자</td>
+	<div align="center">
+		<h2>상품 후기</h2>
+		<font color="#0000ff" size="2">파일 갯수를 입력한 후 [확인] 단추를 눌러주세요.<br>
+			입력이 완료되면 파일업로드를 위한 [업로드] 단추를 눌러주세요.
+		</font>
+	</div>
+	<br>
+	<form name="frmName1" method="post">
+		<table width="50%" border="1" align="center" cellpadding="1"
+			cellspacing="1">
+			<tr>
+				<td width="15%"  align="center">작성자</td>
 				<td>
-					<input type="text" name="user" value="<%=writer%>">
+					<input type="text" name="user" value="<%=getParam(request, "user")%>">
 				</td>
 			</tr>
 			<tr>
-				<td width="15%" bgcolor="pink" align="center">제목</td>
+				<td width="15%" align="center">제목</td>
 				<td>
-					<input type="text" name="title" value="<%=title%>">
+					<input type="text" name="title" value="<%=getParam(request, "title")%>">
 				</td>
 			</tr>
 			<tr>
-				<td width="15%" bgcolor="pink" align="center">내용</td>
-				<td width="50%" colspan="3"><textarea name="abstract" cols="40"><%=content%></textarea>
+				<td width="15%"  align="center">내용</td>
+				<td width="50%" colspan="3"><textarea name="abstract" cols="40"><%=getParam(request, "abstract")%></textarea>
 				</td>
 			</tr>
 			<tr>
-				<td colspan="4" bgcolor="pink" align="center">업로드할 파일 수
-					입력 <input type="Text" name="cnt" value="<%=cnt%>" />
-					<input type="submit" value=" 확인 "/>
+				<td colspan="4"  align="center">업로드할 파일 수
+					입력 <input type="text" name="addcnt"> <input type="button"
+					value=" 확인 " onclick="addFile(this.form)">
 				</td>
 			</tr>
-</table>
-</form>
-<form method ="post" action="fileuploadOk.jsp" enctype="multipart/form-data">
-	<input type ="hidden" name ="writer" value="<%=writer %>"/>
-	<input type ="hidden" name ="title" value="<%=title%>"/>
-	<input type ="hidden" name ="content" value="<%=content %>"/>
-	
-	<table border="1" width="500">
-	<%
-		for(int i = 0; i< icnt; i++){
-			%>
-			
-		<tr>
-			<td>첨부파일<%=i+1 %></td>
-			<td><input type="file" name="file<%=i %>"></td>
-		</tr>
-	<% 
-		}
-	%>
-	<tr>
-		<td colspan="2" align="center">
-		<input type="submit" value="전송"/>
-		</td>
-	</tr>
-	</table>
-		
-		
-</form>
-		</div>
+		</table>
+	</form>
+
+	<form name="frmName2" method="post" enctype="multipart/form-data">
+		<table width="50%" border="1" align="center" cellpadding="1"
+			cellspacing="1">
+			<tr>
+				<td width="40%"  align="center">
+					<!-- hidden 형식이므로 보이지 않음 --> <input type="hidden" name="txtUser"
+					value="<%=getParam(request, "user")%>"> <input
+					type="hidden" name="txtTitle"
+					value="<%=getParam(request, "title")%>"> <input
+					type="hidden" name="txtAbstract"
+					value="<%=getParam(request, "abstract")%>"> <%
+ 	for (int i = 0; i < filecounter; i++) {
+ %> <input type="file" size="50" name="selectFile<%=i%>"> <br>
+					<%
+						}
+					%> <input type="button" value="업로드" onclick="elementCheck(this.form)">
+				</td>
+			</tr>
+		</table>
+	</form>
+</div>
 </td>
 </tr>
 </table>

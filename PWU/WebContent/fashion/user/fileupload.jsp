@@ -30,7 +30,7 @@
 	<tr>
 				<td width="15%" bgcolor="pink" align="center">작성자</td>
 				<td>
-					<input type="text" name="user" value="<%=writer%>">
+					<input type="text" name="writer" value="<%=writer%>">
 				</td>
 			</tr>
 			<tr>
@@ -41,7 +41,7 @@
 			</tr>
 			<tr>
 				<td width="15%" bgcolor="pink" align="center">내용</td>
-				<td width="50%" colspan="3"><textarea name="abstract" cols="40"><%=content%></textarea>
+				<td width="50%" colspan="3"><textarea name="content" cols="40"><%=content%></textarea>
 				</td>
 			</tr>
 			<tr>

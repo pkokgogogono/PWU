@@ -10,7 +10,7 @@
 </head>
 <body>
 <%
-	String dir=application.getRealPath("/upload");
+	String dir=application.getRealPath("c:/upload");
 	MultipartRequest mr = new MultipartRequest(request,dir,1024*1024*5,"utf-8",new DefaultFileRenamePolicy());
 	
 	String writer= mr.getParameter("writer");
@@ -23,7 +23,6 @@
 ³»¿ë:<%=content %><br>
 
 <%
-
 Enumeration<String> em = mr.getFileNames();
 while(em.hasMoreElements()){
 	String fileName = em.nextElement();

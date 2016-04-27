@@ -40,7 +40,7 @@
   </tr>
   <tr> 
     <td height="190" colspan="6">
-	<form method="post" action="mainProAction.do">
+	<form method="post" action="mainProAction.do"	>
 	<table align="center" width="75%" border="1" cellspacing="1" cellpadding="1">
         <tr> 
           <td colspan="2"><div align="center">상품 등록</div></td>

@@ -104,15 +104,15 @@
    </c:if>
          
 <c:if test="${startPage > 5}">
-        <a href="/PWU/cutomer_center/notice_list.do?pageNum=${startPage - 5 }">[이전]</a>
+        <a href="/PWU/customer_center/notice_list.do?pageNum=${startPage - 5 }">[이전]</a>
    </c:if>
 
    <c:forEach var="i" begin="${startPage}" end="${endPage}">
-       <a href="/PWU/cutomer_center/notice_list.do?pageNum=${i}">[${i}]</a>
+       <a href="/PWU/customer_center/notice_list.do?pageNum=${i}">[${i}]</a>
    </c:forEach>
 
    <c:if test="${endPage < pageCount}">
-        <a href="/PWU/cutomer_center/notice_list.do?pageNum=${startPage + 5}">[다음]</a>
+        <a href="/PWU/customer_center/notice_list.do?pageNum=${startPage + 5}">[다음]</a>
    </c:if>
   </c:if>
 

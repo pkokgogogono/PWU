@@ -25,5 +25,10 @@ public class Notice_ReadProAction implements CommandAction{
 
 		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 		SqlSession session = factory.openSession();
+		}catch(Exception e){}
+		return "/cutomer_center/notice/notice_list.jsp";
+	}
 
 }
+
+

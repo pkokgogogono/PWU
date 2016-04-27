@@ -5,7 +5,7 @@
 <mapper namespace="question">
 	<insert id="insert" parameterType="String">
 		insert into question
-		values(#{num},#{title},#{writer},#{date},#{hit})
+		values(#{num},#{title},#{writer},#{reg_date},#{hit})
 	</insert>
 	
 	<select id = "idcheck" parameterType="String" resultType="String" >

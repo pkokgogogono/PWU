@@ -18,6 +18,8 @@
 	</environments>
 	<mappers>
 		<mapper resource="mybatis/memberMapper.xml" />
-		<mapper resource="mybatis/fashionMapper.xml" />
+		<mapper resource="mybatis/cutomer_notice.xml"/>
+		<mapper resource="mybatis/cutomer_question.xml"/>		
 	</mappers>
+	
 </configuration>

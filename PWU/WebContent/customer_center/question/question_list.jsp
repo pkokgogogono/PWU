@@ -7,11 +7,8 @@
  <title>게시판</title>
  
  </head>
- <div class="title">
-            <h2><font color="#555555">NOTICE</font></h2>            
- </div>
  
- <script type="text/javascript">
+  <script type="text/javascript">
 	function move(url) {
 		location.href=url;
 	}
@@ -20,30 +17,15 @@
 		return true;
 	}
 </script>
+
+ <div class="title">
+            <h2><font color="#555555">1:1 문의 </font></h2>            
+ </div>
+ </tr>
+ 
+
 	
  <body>
- 
- <center><b>글목록(전체 글:${count})</b>
-<table width="700">
-  <tr>
-    <td align="right" bgcolor="${value_c}">
-    	<!-- 요청하면 무조건 servlet이 받는다  그래서 요청할때 [~.do] --> 
-    	<!-- 글쓰기 클릭하면 servlet으로 이동 -->
-       <a href="/PWU/customer_center/notice/notice_write.do">글쓰기</a>
-    </td>
-  </tr>
-</table>
-
-<c:if test="${count == 0}">
-<table width="700" border="1" cellpadding="0" cellspacing="0">
-  <tr>
-    <td align="center">
-      게시판에 저장된 글이 없습니다.
-    </td>
-  </tr>
-</table>
-</c:if>
-
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr height="5"><td width="5"></td></tr>
  <tr style="background:url('img/table_mid.gif') repeat-x; text-align:center;">
@@ -65,7 +47,7 @@
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr><td colspan="4" height="5"></td></tr>
   <tr align="right">
-   <td><input type=button value="글쓰기" onclick="move('notice_write.jsp');"></td>  
+   <td><input type=button value="글쓰기" onclick="move('question_write.jsp');"></td>  
   </tr>
   
   
@@ -104,15 +86,15 @@
    </c:if>
          
 <c:if test="${startPage > 5}">
-        <a href="/PWU/customer_center/notice_list.do?pageNum=${startPage - 5 }">[이전]</a>
+        <a href="/PWU/cutomer_center/question_list.do?pageNum=${startPage - 5 }">[이전]</a>
    </c:if>
 
    <c:forEach var="i" begin="${startPage}" end="${endPage}">
-       <a href="/PWU/customer_center/notice_list.do?pageNum=${i}">[${i}]</a>
+       <a href="/PWU/cutomer_center/question_list.do?pageNum=${i}">[${i}]</a>
    </c:forEach>
 
    <c:if test="${endPage < pageCount}">
-        <a href="/PWU/customer_center/notice_list.do?pageNum=${startPage + 5}">[다음]</a>
+        <a href="/PWU/cutomer_center/question_list.do?pageNum=${startPage + 5}">[다음]</a>
    </c:if>
   </c:if>
 

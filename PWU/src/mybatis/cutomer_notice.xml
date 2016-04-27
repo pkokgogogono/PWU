@@ -10,10 +10,9 @@
 	</insert> -->
 	
 	<insert id="insert" parameterType="vo.BH.Customer">
-		insert into notice(notice_num.nextval,title,content,lev)
-		values(notice_num.nextval,#{title},#{content},#{lev})
+		insert into notice(num,title,content,WRITER,reg_date)
+		values(notice_num.nextval,#{title},#{content},#{writer},sysdate)
 	</insert>
-	
 
 	<update id="update">
 		UPDATE notice SET
@@ -28,7 +27,7 @@
 		DELETE FROM notice where num = #{num}
 	</delete>
 
-	<select id="select">
+	<select id="selectList" resultType="vo.BH.Customer" >
 		SELECT * FROM notice
 	</select>
 	

@@ -3,17 +3,30 @@ package vo.BH;
 import java.sql.Timestamp;
 
 public class Customer {
+
+	public Customer()
+	{
+		
+	}
 	
-	
-	
-	
-	public Customer( String title, String content,int lev) {
+	public Customer(String title, String content) {
+		
 		this.title = title;
 		this.content = content;
-		this.lev = lev;
+		this.writer="°ü¸®ÀÚ";
 	}
 	
 	private int num;
+	public Customer(int num, String writer, String title, Timestamp reg_date, String content, int read_count, int lev) {
+		this.num = num;
+		this.writer = writer;
+		this.title = title;
+		this.reg_date = reg_date;
+		this.content = content;
+		this.read_count = read_count;
+		this.lev = lev;
+	}
+
 	private String writer;
 	private String title;
 	private Timestamp reg_date;

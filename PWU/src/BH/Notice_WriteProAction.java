@@ -29,9 +29,8 @@ public class Notice_WriteProAction implements CommandAction{
 		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 		SqlSession session = factory.openSession();
 
-
-	Customer vo = new Customer(request.getParameter("title"),request.getParameter("content"),
-			Integer.parseInt(request.getParameter("lev")));
+		//request.getSession().getAttribute(관리자 아이디)
+		Customer vo = new Customer( request.getParameter("title"),request.getParameter("content"));
 	
 		int n = session.insert("notice.insert", vo);
 

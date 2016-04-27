@@ -4,7 +4,7 @@
 <%@ page import="com.oreilly.servlet.MultipartRequest"%>
 <%@ page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
 
-<jsp:useBean id="productControl" class="ProductControl" scope="page"/>
+
 <%!
     public File reUnique(String path, String file) {
 		File sourceFile = new File(path, file);

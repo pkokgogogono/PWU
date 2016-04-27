@@ -27,6 +27,7 @@
 </tr>
 <tr>
 <td width="600">
+
 상품이름:<input text="text" name="p_name">
 <br>
 상품가격:<input text="text" name="p_price">

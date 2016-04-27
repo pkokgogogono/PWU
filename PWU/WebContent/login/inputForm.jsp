@@ -1,13 +1,17 @@
 <%@ page contentType="text/html; charset=euc-kr"%>
 <html>
 <head>
-<title>회원정보수정</title>
+<title>회원가입</title>
 <link href="style.css" rel="stylesheet" type="text/css">
 <script language="JavaScript">
    
     function checkIt() {
         var userinput = eval("document.userinput");
         
+        if(!userinput.id.value) {
+            alert("ID를 입력하세요");
+            return false;
+        }
        
         if(!userinput.passwd.value ) {
             alert("비밀번호를 입력하세요");
@@ -27,7 +31,7 @@
         return true;
     }
 
-/*     // 아이디 중복 여부를 판단
+    // 아이디 중복 여부를 판단
     function openConfirmid(userinput) {
         // 아이디를 입력했는지 검사
         if (userinput.id.value == "") {
@@ -39,7 +43,7 @@
        
         // 새로운 윈도우를 엽니다.
         open(url, "confirm", "toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=300,height=200");
-    } */
+    }
     
     function zipCheck(){
     	
@@ -56,16 +60,19 @@
   <table width="600" border="1" cellspacing="0" cellpadding="3" align="center" >
     <tr>
     <td colspan="2" height="39" align="center" bgcolor="${value_c}" >
-       <font size="+1" ><b>개인정보수정</b></font></td>
+       <font size="+1" ><b>회원가입</b></font></td>
     </tr>
     <tr>
-      
+      <td width="200" bgcolor="${value_c}"><b>아이디 입력</b></td>
       <td width="400" bgcolor="${value_c}"> </td>
     </tr> 
 
     <tr>
       <td width="200"> 사용자 ID</td>
-      <td width="400">${memId} </td>
+      <td width="400">
+        <input type="text" name="id" size="10" maxlength="12">
+        <input type="button" name="confirm_id" value="ID중복확인" OnClick="openConfirmid(this.form)">
+      </td>
     </tr>
     <tr>
       <td width="200"> 비밀번호</td>
@@ -79,8 +86,10 @@
       </td>
     </tr>
    
-  
-    
+    <tr>
+      <td colspan="2" height="39" align="center" bgcolor="${value_c}" >
+       <font size="+1" ><b>개인정보 입력</b></font></td>
+    <tr> 
     <tr>
       <td width="200">사용자 이름</td>
       <td width="400">

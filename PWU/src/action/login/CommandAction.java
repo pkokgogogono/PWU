@@ -1,4 +1,4 @@
-package action;
+package action.login;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

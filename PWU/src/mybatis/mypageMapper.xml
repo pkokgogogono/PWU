@@ -2,11 +2,30 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="member">
+<mapper namespace="mypage">
+	<select id="select" parameterType="vo.mypage.mypageVo" >
+		select * from member where id = 
+		(#{id},#{passwd},#{name},#{zipcode},#{address},#{email}) <!-- modefyForm -->
+	</select>
+	
+	
+
+	<update id="update_inform" parameterType="vo.mypage.mypageVo">
+		update member
+		set(#{passwd},#{name},#{zipcode},#{address},#{email}) <!-- modifyPro -->
+	</update>
+	
+
+
+	<delete id="delete" parameterType="vo.mypage.mypageVo">
+		delete from member where id = #{id}   <!-- modifyPro -->
+	</delete>
+	
 	<insert id="insert" parameterType="vo.MemberVo">
 		insert into member
-		values(#{id},#{passwd},#{name},#{zipcode},#{address},#{email},#{admin})
+		values(#{passwd},#{name},#{zipcode},#{address},#{email})
 	</insert>
+	
 	<select id = "idcheck" parameterType="String" resultType="String" >
       select id from member where id=#{id}
     </select>
@@ -18,5 +37,6 @@
     <select id = "zipcheck" parameterType="String" resultType="vo.ZipcodeBean" >
       select * from zipcode where area4 like '%'||#{area4}||'%'
     </select>
+
 </mapper>
 

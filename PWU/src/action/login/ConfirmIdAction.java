@@ -1,4 +1,4 @@
-package action;
+package action.login;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -11,15 +11,15 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import vo.MemberVo;
+import action.mypage.CommandAction;
 
-
-public class IndexFormAction implements CommandAction {
+public class ConfirmIdAction implements CommandAction {
 	
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{
 
 		request.setCharacterEncoding("euc-kr");
 		String res = "config.xml";
+		int check = 0;
 	
 		InputStream is;
 		try {
@@ -28,9 +28,21 @@ public class IndexFormAction implements CommandAction {
 
 		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 		SqlSession session = factory.openSession();
+        
+		
 
-		MemberVo vo = new MemberVo("test","test", "test","test","test","test",0);
-		int n = session.insert("member.insert", vo);
+		if(session.selectOne("member.idcheck",request.getParameter("id"))==null){	
+		}
+		else{
+			check =1;
+		}
+		request.setAttribute("check", check);
+		
+	/*	session.selectOne("member.idcheck",);
+		session.selectList(arg0);
+		session.insert(arg0);
+		session.update(arg0);
+		session.delete(arg0);*/
 
 
 		session.commit();
@@ -40,9 +52,9 @@ public class IndexFormAction implements CommandAction {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	    
-		return "/index.jsp";
+	    
+		return "/login/confirmId.jsp";
 	}
   
 

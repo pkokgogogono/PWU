@@ -31,7 +31,7 @@
   <TR height="30">
     <TD width="110" bgcolor="<%=value_c%>" align=center>ºñ¹Ð¹øÈ£</TD>
     <TD width="150" align=center>
-      <INPUT type=password name="passwd"  size="15" maxlength="12"></TD></TR>
+      <INPUT type=password name="passwd"  size="15" ></TD></TR>
   <TR height="30">
     <TD colspan="2" align="middle" bgcolor="<%=value_c%>" >
       <INPUT type=submit value="È¸¿øÅ»Åð">

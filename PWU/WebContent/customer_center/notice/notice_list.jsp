@@ -59,7 +59,6 @@
   
   <c:forEach var="select" items="${selectList}" >
 <tr>
-<td align="center" width="100">
     <td align="center"  width="150">${select.num}</td>
     <td align="center"  width="150">${select.writer}</td>
     <td align="center"  width="150">${select.title}</td>  
@@ -68,9 +67,6 @@
     <td align="center" width="100" >${select.read_count}</td>
   </tr>
     </c:forEach>
-
-
-
 </table>
 </c:if>
  

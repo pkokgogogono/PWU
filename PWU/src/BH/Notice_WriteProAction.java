@@ -36,7 +36,7 @@ public class Notice_WriteProAction implements CommandAction{
 
 		session.commit();
 
-	session.close();
+		session.close();
 	} catch (IOException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();

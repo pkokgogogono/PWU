@@ -54,6 +54,9 @@ public class NoticeDao {
 		}		
 		return selectList;
 	}
+	
+
+	
 }
 
 	

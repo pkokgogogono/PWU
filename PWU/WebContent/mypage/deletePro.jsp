@@ -1,5 +1,4 @@
 <%@ page contentType="text/html;charset=euc-kr" %>
-<%@ page import = "ssol.logon.LogonDBBean" %>
 <%@ include file="color.jsp"%>
 <html>
 <head>
@@ -8,7 +7,7 @@
 </head>
 
 <%
-    String id = (String)session.getAttribute("memId");
+String id = (String)session.getAttribute("memId");
 String passwd  = request.getParameter("passwd");
 
 LogonDBBean manager = LogonDBBean.getInstance();

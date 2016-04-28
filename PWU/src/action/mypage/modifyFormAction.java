@@ -12,45 +12,35 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-
+import dao.LoginDao;
+import mypage.dao.modifyFormDao;
 import vo.mypage.*;
 
 public class modifyFormAction implements CommandAction {
-	
-	 public String requestPro(HttpServletRequest request,
-		        HttpServletResponse response)throws Throwable {
-		 
-			request.setCharacterEncoding("euc-kr");
-			String res = "config.xml";
+	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{
+		request.setCharacterEncoding("euc-kr");
 		
-			InputStream is;
-			try {
-				is = Resources.getResourceAsStream(res);
-			
-
-			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
-			SqlSession session = factory.openSession();
-			
-			mypageVo vo = new mypageVo(request.getParameter("id"),request.getParameter("passwd"), request.getParameter("name"),
-					request.getParameter("zipcode"),request.getParameter("address"),request.getParameter("email"),1);
-			
-			
-			session.insert("mypage.insert", vo);
-			
-			
-			
-
-
-			session.commit();
-
-			session.close();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+		HttpSession session2=request.getSession(true);
+		modifyFormDao dao = modifyFormDao.getInstance();
+		
+		
+		if(dao.update(request.getParameter("id"))!=null)
+		{
+			session2.setAttribute("check",0);
+			MemberVo vo = new MemberVo(request.getParameter("id"),request.getParameter("passwd"));
+			if((dao.loginCheck(vo))==1)
+			{
+				session2.setAttribute("memId",request.getParameter("id"));
+				return "/login/index.jsp";
 			}
+		}
+		else{
+			session2.setAttribute("check",1);
+		}
+		
+		return "/login/loginPro.jsp";
+		
+	}
 
-		 
-		 return "/mypage/modifyForm.jsp";
-			}
-
+  
 }

@@ -3,7 +3,7 @@ package action.fashion;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import action.CommandAction;
+import action.login.CommandAction;
 import vo.fashionBoardVo;
 
 public class fashionmainAction implements CommandAction {

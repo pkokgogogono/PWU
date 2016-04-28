@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=euc-kr" import="java.sql.*" errorPage="" %>
+
 <%-- <%
     String cust_id = (String)session.getAttribute("cust_id");
 	if(cust_id == null){
@@ -39,7 +40,7 @@
   </tr>
   <tr> 
     <td height="190" colspan="6">
-	<form method="post" action="mainProAction.do" enctype="multipart/form-data">
+	<form method="post" action="mainProAction.do"	>
 	<table align="center" width="75%" border="1" cellspacing="1" cellpadding="1">
         <tr> 
           <td colspan="2"><div align="center">상품 등록</div></td>
@@ -47,25 +48,25 @@
         <tr> 
           <td width="31%"><div align="center">제목</div></td>
           <td width="69%"> <div align="left"> 
-              <input type="text" name="product_name" size="60">
+              <input type="text" name="title" size="60">
             </div></td>
         </tr>
         <tr> 
           <td width="31%"><div align="center">상품이름</div></td>
           <td width="69%"> <div align="left"> 
-              <input type="text" name="product_name" size="20">
+              <input type="text" name="p_name" size="20">
             </div></td>
         </tr>
         <tr> 
           <td height="21"><div align="center">상품가격</div></td>
           <td> <div align="left"> 
-              <input type="text" name="product_price" size="20">
+              <input type="text" name="p_price" size="20">
               원 </div></td>
         </tr>
         <tr> 
           <td><div align="center">상품 상세 내용</div></td>
           <td> <div align="left"> 
-              <textarea rows="10" cols="45" name="product_detail"></textarea>
+              <textarea rows="10" cols="45" name="content"></textarea>
             </div></td>
         </tr>
 <!--         <tr> 

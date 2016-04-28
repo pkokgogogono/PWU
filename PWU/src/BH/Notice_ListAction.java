@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 
-import action.CommandAction;
+import action.login.CommandAction;
 
 public class Notice_ListAction implements CommandAction {
 	public String requestPro(HttpServletRequest request,

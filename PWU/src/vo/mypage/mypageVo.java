@@ -12,6 +12,14 @@ public class mypageVo {
 	private int admin; 
 	
     public mypageVo(){}
+    
+    public mypageVo(String passwd, String name, String zipcode, String address, String email){
+    	this.passwd = passwd;
+    	this.name = name;
+    	this.zipcode = zipcode;
+    	this.address = address;
+    	this.email = email;
+    }
 	
     public mypageVo(String id, String passwd, String name, String zipcode, String address, String email, int admin) {
 	super();

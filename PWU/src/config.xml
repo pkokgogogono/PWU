@@ -18,12 +18,12 @@
 	</environments>
 	<mappers>
 		<mapper resource="mybatis/memberMapper.xml" />
-<<<<<<< HEAD
+
 		<mapper resource="mybatis/mypageMapper.xml" />
-=======
+
 		<mapper resource="mybatis/cutomer_notice.xml"/>
 		<mapper resource="mybatis/cutomer_question.xml"/>		
->>>>>>> branch 'master' of https://github.com/pkokgogogono/PWU.git
+
 	</mappers>
 	
 </configuration>

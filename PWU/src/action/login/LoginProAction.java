@@ -7,18 +7,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-<<<<<<< HEAD
-import action.mypage.CommandAction;
-=======
+//<<<<<<< HEAD
+import action.login.CommandAction;
+//=======
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import action.CommandAction;
+
 import dao.LoginDao;
 import vo.MemberVo;
->>>>>>> branch 'master' of https://github.com/pkokgogogono/PWU.git
+//>>>>>>> branch 'master' of https://github.com/pkokgogogono/PWU.git
 public class LoginProAction implements CommandAction {
 	
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{

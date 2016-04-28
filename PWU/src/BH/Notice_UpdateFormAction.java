@@ -3,7 +3,7 @@ package BH;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import action.CommandAction;
+import action.login.CommandAction;
 
 public class Notice_UpdateFormAction  implements CommandAction{
 	

@@ -1,7 +1,5 @@
 package action.mypage;
 
-
-
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -14,35 +12,21 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-
-import vo.mypage.mypageVo;
-
-
+import dao.LoginDao;
+import mypage.dao.modifyFormDao;
+import vo.mypage.*;
 
 public class deleteProAction implements CommandAction {
-	
-	 public String requestPro(HttpServletRequest request,
-		        HttpServletResponse response)throws Throwable {
-		 
-			request.setCharacterEncoding("euc-kr");
-			String res = "config.xml";
+	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{
+		request.setCharacterEncoding("euc-kr");
 		
-			InputStream is;
-			try {
-				is = Resources.getResourceAsStream(res);
-		 
-		 
-				SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
-				SqlSession session = factory.openSession();
+		HttpSession session2=request.getSession(true);
+		modifyFormDao dao = modifyFormDao.getInstance();
+		
+		
+		
+		
 				
-				mypageVo vo = new mypageVo(request.getParameter("id"),request.getParameter("passwd"), request.getParameter("name"),
-						request.getParameter("zipcode"),request.getParameter("address"),request.getParameter("email"),1);
-				
-				session.delete("mypage.delete",vo);
-				
-				session.commit();
-
-				session.close();
 				
 				
 				

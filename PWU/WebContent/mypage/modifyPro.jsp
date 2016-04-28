@@ -1,20 +1,11 @@
 <%@ page contentType="text/html;charset=euc-kr" %>
-<%@ page import = "ssol.logon.LogonDBBean" %>
 <%@ include file="color.jsp"%>
 
 <% request.setCharacterEncoding("euc-kr");%>
 
-<jsp:useBean id="member" class="ssol.logon.LogonDataBean">
-    <jsp:setProperty name="member" property="*" />
-</jsp:useBean>
 
-<%
-    String id = (String)session.getAttribute("memId");
-member.setId(id);
 
-LogonDBBean manager = LogonDBBean.getInstance();
-    manager.updateMember(member);
-%>
+
 <link href="style.css" rel="stylesheet" type="text/css">
 
 <table width="270" border="0" cellspacing="0" cellpadding="5" align="center">

@@ -95,7 +95,7 @@ public class mainProAction implements CommandAction {
 	}catch(IOException ioe){
 		 System.out.println(ioe);
 	}catch(Exception ioe){
-		 System.out.println(ioe+"ewf");
+		 System.out.println(ioe);
 	}
 		return "/fashion/admin/productwritePro.jsp";
 	}

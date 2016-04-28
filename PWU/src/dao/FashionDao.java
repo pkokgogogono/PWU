@@ -1,5 +1,4 @@
 package dao;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
@@ -13,18 +12,18 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import vo.MemberVo;
-import vo.BH.Customer;
+import vo.fashionBoardVo;
 
-public class NoticeDao {
+public class FashionDao {
 
-	private static NoticeDao instance = new NoticeDao();
+	private static FashionDao instance = new FashionDao();
 	   
-    public static NoticeDao getInstance() {
+    public static FashionDao getInstance() {
         return instance;
     }
    
-    private NoticeDao() {}
-    
+    private FashionDao() {}
+
 	private static SqlSessionFactory getFactory() throws Exception{
 		String res = "config.xml";
 		InputStream is;
@@ -42,54 +41,55 @@ public class NoticeDao {
 	
 	}
 	
-	public List<Customer> selectList(){
-		List<Customer> selectList = null;
-		try {		
-			SqlSession session = getFactory().openSession();
-			selectList = session.selectList("notice.selectList");
-			session.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}		
-		return selectList;
-	}
-	
+	public void fashionInsert(fashionBoardVo vo){
 
-	public void noticedelete(String num){
 		try {		
 			SqlSession session = getFactory().openSession();
-			//num이니까 integer형으로 변환후에
-			int number = Integer.parseInt(num);
-			//삭제 
-			session.delete("notice.delete",number);
+			session.insert("fashion.insert", vo);
 			session.commit();
 			session.close();
 		} catch (Exception e) {
 			e.printStackTrace();
-		}		
-	}
-		
-		public Customer selectOne(String num){
-			Customer vo = null;
-			try {		
-				SqlSession session = getFactory().openSession();
-				//num이니까 integer형으로 변환후에
-				
-				int number = Integer.parseInt(num);
-				//삭제 
-				vo=session.selectOne("notice.selectOne",number);
-				session.commit();
-				session.close();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}		
-			return vo;
+		}
 	}
 	
+	public List<fashionBoardVo> selectList(){
+		List<fashionBoardVo> selectList = null;
+		try {		
+			SqlSession session = getFactory().openSession();
+			selectList = session.selectList("fashion.selectList");
+			session.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return selectList;
+	}
 	
-	
+	public void fashionDelete(String num){
 
+		try {		
+			SqlSession session = getFactory().openSession();
+			session.delete("fashion.delete",num);
+			session.commit();
+			session.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	
+	public fashionBoardVo fashionSelect(String num){
+		fashionBoardVo vo = null;
+		try {		
+			System.out.println(num);
+			SqlSession session = getFactory().openSession();
+			vo=session.selectOne("fashion.select",num);
+			session.commit();
+			session.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return vo;
+	}
 }
-
+	
 	

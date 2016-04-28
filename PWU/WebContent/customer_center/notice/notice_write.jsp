@@ -39,7 +39,7 @@
 <input type="hidden" name="num" value="${num}"> 
 <input type="hidden" name="ref" value="${ref}">
 
-<table width="400" border="1" cellspacing="0" cellpadding="0"  align="center">
+<table width="400" border="1" cellspacing="0" cellpadding="0"  alig n="center">
 
    <tr>
     <td  width="70"  bgcolor="${value_c}" align="center">제 목</td>
@@ -50,7 +50,7 @@
 
   <tr>
 
-<c:if test="${num == 0}">
+<c:if test="${num==0}">
        <input type="text" size="40" maxlength="50" name="subject"></td>
 </c:if>
 

@@ -227,7 +227,7 @@ function elementCheck(formName)
 	}
 	
 	//form태그에 Action과 같은 기능으로 스크립트를 이용하여 전송가능하다. 
-	formName.action = "reviewPro.jsp";
+	formName.action = "./user/reviewPro.jsp";
 	//전송
 	formName.submit();
 }

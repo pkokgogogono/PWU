@@ -40,7 +40,7 @@
   </tr>
   <tr> 
     <td height="190" colspan="6">
-	<form method="post" action="mainProAction.do" enctype="multipart/form-data">
+	<form method="post" action="mainProAction.do"	>
 	<table align="center" width="75%" border="1" cellspacing="1" cellpadding="1">
         <tr> 
           <td colspan="2"><div align="center">상품 등록</div></td>
@@ -48,31 +48,34 @@
         <tr> 
           <td width="31%"><div align="center">제목</div></td>
           <td width="69%"> <div align="left"> 
-              <input type="text" name="title" size="60">
+              ${fashiondetail.title}
             </div></td>
         </tr>
         <tr> 
           <td width="31%"><div align="center">상품이름</div></td>
           <td width="69%"> <div align="left"> 
-              <input type="text" name="p_name" size="20">
+              ${fashiondetail.p_name}
             </div></td>
         </tr>
         <tr> 
           <td height="21"><div align="center">상품가격</div></td>
           <td> <div align="left"> 
-              <input type="text" name="p_price" size="20">
+              ${fashiondetail.p_price}
               원 </div></td>
         </tr>
         <tr> 
           <td><div align="center">상품 상세 내용</div></td>
           <td> <div align="left"> 
-              <textarea rows="10" cols="45" name="content"></textarea>
+              ${fashiondetail.content}
             </div></td>
         </tr>
         <tr> 
           <td><div align="center">상품이미지</div></td>
-          <td> <div align="left">       
-				<input type="file" name="path" size=40>
+          <td> <div align="left"> 
+              <form method="post" enctype="multipart/form-data" action="imgup.jsp">
+				<input type="file" name="filename1" size=40>
+				<input type="submit" value="업로드"><br><br>
+				</form>
             </div></td>
         </tr>
 <!--         <tr> 
@@ -83,9 +86,8 @@
         </tr> -->
         <tr> 
           <td colspan="2"><div align="center"> 
-              <input type="submit" value="제품등록">&nbsp;&nbsp;&nbsp;
               <input type="button" value="목록보기" onclick="window.open('productList.do')">&nbsp;&nbsp;&nbsp;
-              <input type="reset" value="다시쓰기">
+              <input type="button" value="수정하기" onclick="window.open('productupdate.do')">
             </div></td>
         </tr>
       </table>

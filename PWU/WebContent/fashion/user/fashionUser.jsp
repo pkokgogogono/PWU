@@ -51,13 +51,34 @@ ul {
 <tr height="700">
 <td><b>&nbsp;&nbsp;Total 70</b>
 <div id="wrapper"></div>
-<div class="one">&nbsp</div><div class="one"></div><div class="one"></div><div class="one"></div>
+<div class="one">
+<c:forEach var="select" items="${selectList}" >
+
+${select.num}
+${select.title}
+${select.p_name}
+${select.p_price} 
+${select.content}
+    </c:forEach>
+</div>
+<div class="one"></div>
+<div class="one"></div>
+<div class="one"></div>
 <br>
-<div class="one">&nbsp</div><div class="one"></div><div class="one"></div><div class="one"></div>
+<div class="one">&nbsp</div>
+<div class="one"></div>
+<div class="one"></div>
+<div class="one"></div>
 <br>
-<div class="one">&nbsp</div><div class="one"></div><div class="one"></div><div class="one"></div>
+<div class="one">&nbsp</div>
+<div class="one"></div>
+<div class="one"></div>
+<div class="one"></div>
 <br>
-<div class="one">&nbsp</div><div class="one"></div><div class="one"></div><div class="one"></div>
+<div class="one">&nbsp</div>
+<div class="one"></div>
+<div class="one"></div>
+<div class="one"></div>
 <br><br>
 <center>
 <form>

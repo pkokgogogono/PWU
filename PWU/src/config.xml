@@ -19,7 +19,8 @@
 	<mappers>
 		<mapper resource="mybatis/memberMapper.xml" />
 		<mapper resource="mybatis/cutomer_notice.xml"/>
-		<mapper resource="mybatis/cutomer_question.xml"/>		
+		<mapper resource="mybatis/cutomer_question.xml"/>	
+		<mapper resource="mybatis/fashionMapper.xml"	/>
 	</mappers>
 	
 </configuration>

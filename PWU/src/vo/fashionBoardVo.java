@@ -27,6 +27,12 @@ public class fashionBoardVo {
 		
 		}
 
+	    
+	    public fashionBoardVo(String num) {
+
+		this.num = num;
+		
+		}
 		public String getNum() {
 			return num;
 		}

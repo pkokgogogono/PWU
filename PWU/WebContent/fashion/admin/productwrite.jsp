@@ -78,6 +78,7 @@
         <tr> 
           <td colspan="2"><div align="center"> 
               <input type="submit" value="제품등록">&nbsp;&nbsp;&nbsp;
+              <input type="button" value="목록보기" onclick="window.open('productList.do')">&nbsp;&nbsp;&nbsp;
               <input type="reset" value="다시쓰기">
             </div></td>
         </tr>

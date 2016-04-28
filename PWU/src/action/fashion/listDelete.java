@@ -16,7 +16,7 @@ import action.CommandAction;
 import dao.FashionDao;
 import vo.fashionBoardVo;
 
-public class mainProAction implements CommandAction {
+public class listDelete implements CommandAction {
 	
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{
 
@@ -24,15 +24,13 @@ public class mainProAction implements CommandAction {
 
 		FashionDao fashionDao= FashionDao.getInstance();
 		
-		fashionBoardVo vo = new fashionBoardVo(request.getParameter("title"),
-				request.getParameter("p_name"),
-				Integer.parseInt(request.getParameter("p_price")),
-				request.getParameter("content"));
+		String num =request.getParameter("num");
 		
+		System.out.print("zzzz");
 		
-		fashionDao.fashionInsert(vo);
+		fashionDao.fashionDelete(num);
 		
-		return "/fashion/admin/productwritePro.jsp";
+		return "/fashion/admin/productList.do";
 	}
 
   

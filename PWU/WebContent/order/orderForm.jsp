@@ -32,7 +32,7 @@
    <tr>
     <td  width="150"  bgcolor="${value_c}" align="center">제 목</td>
     <td  width="400">
-       <input type="text" size="40" maxlength="10" name="name"></td>
+       <input type="text" size="40" maxlength="10" name="subject"></td>
   </tr>
   <tr>
     <td  width="150"  bgcolor="${value_c}" align="center" >문의번호</td>
@@ -62,7 +62,7 @@
     </tr>
   <tr>
       <td align="center">하고싶은말</td>
-      <td><textarea name="memo" cols="40" rows="7"></textarea></td>
+      <td><textarea name="content" cols="40" rows="7"></textarea></td>
      </tr>
      <table>  <tr>
     <td  width="500"  bgcolor="${value_c}" align="center"><td  width="300">From : memberId</th></td>

@@ -29,34 +29,34 @@ body,td,a,div,p,pre,input,textarea {font-family:굴림;font-size:9pt;}
 <table width="500" border="1" cellspacing="0" cellpadding="0" align="center"> 
   <tr height="30">
     <td align="center" width="125" bgcolor="${value_c}">글번호</td>
-    <td align="center" width="125" align="center">${vo.num}</td>
+    <td align="center" width="125" align="center">${select.num}</td>
     <td align="center" width="125" bgcolor="${value_c}">조회수</td>
-    <td align="center" width="125" align="center">${vo.readcount}</td>
+    <td align="center" width="125" align="center">${select.readcount}</td>
   </tr>
   <tr height="30">
     <td align="center" width="125" bgcolor="${value_c}">작성자</td>
-    <td align="center" width="125" align="center">${vo.writer}</td>
+    <td align="center" width="125" align="center">${select.writer}</td>
     <td align="center" width="125" bgcolor="${value_c}" >작성일</td>
-    <td align="center" width="125" align="center">${vo.reg_date}</td>
+    <td align="center" width="125" align="center">${select.reg_date}</td>
   </tr>
   <tr height="30">
     <td align="center" width="125" bgcolor="${value_c}">글제목</td>
-    <td align="center" width="375" align="center" colspan="3">${vo.subject}</td>
+    <td align="center" width="375" align="center" colspan="3">${select.subject}</td>
   </tr>
   <tr>
     <td align="center" width="125" bgcolor="${value_c}">글내용</td>
-    <td align="left" width="375" colspan="3"><pre>${vo.content}</pre></td>
+    <td align="left" width="375" colspan="3"><pre>${select.content}</pre></td>
   </tr>
   <tr height="30">     
     <td colspan="4" bgcolor="${value_c}" align="right" >
   <input type="button" value="글수정"
-       onclick="document.location.href='/PWU/order/updateForm.do?num=${article.num}&pageNum=${pageNum}'">
+       onclick="document.location.href='/PWU/order/updateForm.do?num=${select.num}&pageNum=${pageNum}'">
    &nbsp;&nbsp;&nbsp;&nbsp;
   <input type="button" value="글삭제"
-       onclick="document.location.href='/PWU/order/deleteForm.do?num=${article.num}&pageNum=${pageNum}'">
+       onclick="document.location.href='/PWU/order/deleteForm.do?num=${select.num}&pageNum=${pageNum}'">
    &nbsp;&nbsp;&nbsp;&nbsp;
       <input type="button" value="답글쓰기"
-       onclick="document.location.href='/PWU/order/InquiryForm.do?num=${article.num}&ref=${article.ref}&re_step=${article.re_step}&re_level=${article.re_level}'">
+       onclick="document.location.href='/PWU/order/InquiryForm.do?num=${select.num}&ref=${article.ref}&re_step=${article.re_step}&re_level=${article.re_level}'">
    &nbsp;&nbsp;&nbsp;&nbsp;
        <input type="button" value="글목록"
        onclick="document.location.href='/PWU/order/InquiryList.jsp?pageNum=${pageNum}'">

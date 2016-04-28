@@ -14,10 +14,9 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import action.CommandAction;
-import dao.LoginDao;
 import dao.OrderDao;
-import vo.MemberVo;
 import vo.OrderVo;
+
 public class OrderListAction implements CommandAction {
 	
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{

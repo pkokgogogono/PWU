@@ -12,8 +12,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import board.BoardDBBean;
-import board.BoardDataBean;
+import action.CommandAction;
 import vo.MemberVo;
 import vo.OrderVo;
 
@@ -33,15 +32,18 @@ public class OrderProAction implements CommandAction {
 		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 		SqlSession session = factory.openSession();
 		
+		System.out.println(Integer.parseInt(request.getParameter("num")));
+		System.out.println(request.getParameter("subject"));
+		System.out.println(request.getParameter("p_name"));
+		System.out.println(Integer.parseInt(request.getParameter("p_price")));
+		System.out.println(request.getParameter("e-mail"));
+		System.out.println(request.getParameter("address"));
+		System.out.println(request.getParameter("content"));
+		
+		
+		OrderVo vo = new OrderVo(Integer.parseInt("num"),request.getParameter("subject"), request.getParameter("p_name"), Integer.parseInt("p_price"),  
+				 request.getParameter("e-mail"), request.getParameter("address"), request.getParameter("content"));
 
-		
-		OrderVo vo = new OrderVo(request.getParameter("subject"), Integer.parseInt(request.getParameter("num")), request.getParameter("p_name"),  
-				Integer.parseInt(request.getParameter("p_price")), request.getParameter("e-mail"), request.getParameter("address"), request.getParameter("content"));
-
-		
-	
-		
-		
 		
 		session.insert("order.insert",vo);
 		

@@ -28,7 +28,7 @@
       <td align="center"  width="50" >HIT</td>  
     </tr>
 
-   <c:forEach var="article" items="${articleList}">
+   <c:forEach var="select" items="${selectList}">
    <tr height="30">
     <td align="center"  width="50" >
   <c:out value="${number}"/>
@@ -39,18 +39,18 @@
   </c:if>
   <c:if test="${article.re_level == 0}">
   </c:if> 
-      <a href="/mvc_Board/MVC/content.do?num=${article.num}&pageNum=${currentPage}">
-          ${article.subject}</a>
-          <c:if test="${article.readcount >= 20}">
+      <a href="/PWU/order/content.do?num=${article.num}&pageNum=${currentPage}">
+          ${select.subject}</a>
+          <c:if test="${select.readcount >= 20}">
   </c:if>
 </td>
     <td align="center"  width="100">
-       <a href="mailto:${article.email}">${article.writer}</a>
+       <a href="mailto:${select.email}">${select.writer}</a>
 </td>
-    <td align="center"  width="150">${article.reg_date}
+    <td align="center"  width="150">${select.reg_date}
 </td>
-    <td align="center"  width="50">${article.readcount}</td>
-    <td align="center" width="100" >${article.ip}</td>
+    <td align="center"  width="50">${select.readcount}</td>
+    <td align="center" width="100" >${select.ip}</td>
   </tr>
   </c:forEach>
 </table>
@@ -67,15 +67,15 @@
    </c:if>
          
    <c:if test="${startPage > 10}">
-        <a href="/mvc_Board/MVC/list.do?pageNum=${startPage - 10 }">[이전]</a>
+        <a href="/PWU/order/InquiryList.do?pageNum=${startPage - 10 }">[이전]</a>
    </c:if>
 
    <c:forEach var="i" begin="${startPage}" end="${endPage}">
-       <a href="/mvc_Board/MVC/list.do?pageNum=${i}">[${i}]</a>
+       <a href="/PWU/order/InquiryList.do?pageNum=${i}">[${i}]</a>
    </c:forEach>
 
    <c:if test="${endPage < pageCount}">
-        <a href="/mvc_Board/MVC/list.do?pageNum=${startPage + 10}">[다음]</a>
+        <a href="/PWU/order/InquiryList.do?pageNum=${startPage + 10}">[다음]</a>
    </c:if>
 </c:if>
 

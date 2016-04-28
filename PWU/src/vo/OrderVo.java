@@ -19,9 +19,9 @@ public class OrderVo {
 	
     public OrderVo(){}
     
-    public OrderVo(String subject, int num, String p_name, int p_price, String email, String address, String content){
-    	this.subject = subject;
+    public OrderVo(int num, String subject, String p_name, int p_price, String email, String address, String content){
     	this.num = num;
+    	this.subject = subject;
     	this.p_name = p_name;
     	this.p_price = p_price;
     	this.email = email;

@@ -29,7 +29,7 @@ public class Notice_WriteProAction implements CommandAction{
 		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 		SqlSession session = factory.openSession();
 
-		//request.getSession().getAttribute(°ü¸®ÀÚ ¾ÆÀÌµğ)
+		//request.getSession().getAttribute(ê´€ë¦¬ì ì•„ì´ë””)
 		Customer vo = new Customer( request.getParameter("title"),request.getParameter("content"));
 	
 		int n = session.insert("notice.insert", vo);

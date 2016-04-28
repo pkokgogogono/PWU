@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="notice">
+
+<!-- 	<insert id="insert" parameterType="vo.BH.Customer">
+		insert into notice
+		values(notice_num.nextval,#{writer},#{title},#{reg_date},#{content},#{read_count},#{lev})
+	</insert> -->
+	
+	<insert id="insert" parameterType="vo.BH.Customer">
+		insert into notice(num,title,content,WRITER,reg_date)
+		values(notice_num.nextval,#{title},#{content},#{writer},sysdate)
+	</insert>
+
+	<update id="update">
+		UPDATE notice SET
+			writer=#{writer}
+			title=#{title}
+			content=#{content}
+			reg_date=#{reg_date}
+		where num=#{num} LIMIT 1
+	</update>
+	
+	<delete id="delete" parameterType="Integer">
+		DELETE FROM notice where num = #{num}
+	</delete>
+
+	<select id="selectList" resultType="vo.BH.Customer" >
+		SELECT * FROM notice
+	</select>
+	
+	<select id="selectOne" parameterType="Integer" resultType="vo.BH.Customer">
+		SELECT * FROM notice where num=#{num}
+	</select>
+
+
+</mapper>
+

@@ -1,6 +1,6 @@
 package vo;
 
-public class ZipcodeBean {
+public class ZipcodeVo {
 
 //	public ZipcodeBean(){};
 //	

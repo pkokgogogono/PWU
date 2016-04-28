@@ -15,8 +15,20 @@
       select count(id) from member where id=#{id} and passwd=#{passwd}
     </select>
 
-    <select id = "zipcheck" parameterType="String" resultType="vo.ZipcodeBean" >
+    <select id = "zipcheck" parameterType="String" resultType="vo.ZipcodeVo" >
       select * from zipcode where area4 like '%'||#{area4}||'%'
+    </select>
+    
+    <select id = "findid" parameterType="vo.MemberVo" resultType="String">
+       select id from member where name=#{name} and email=#{email}
+    </select>
+    
+    <select id = "findpasswd" parameterType="vo.MemberVo" resultType="String">
+       select passwd from member where id=#{id} and email=#{email}
+    </select>
+    
+    <select id = "admincheck" parameterType="vo.MemberVo" resultType="int">
+       select admin from member where id=#{id} and passwd=#{passwd}
     </select>
 
 </mapper>

@@ -3,6 +3,7 @@ package vo;
 import java.util.Date;
 
 public class MemberVo {
+	
 	private String id;	
 	private String passwd; 
 	private String name;
@@ -16,7 +17,7 @@ public class MemberVo {
     public MemberVo(String id, String passwd) {
 		this.id = id;
 		this.passwd = passwd;
-	}
+	}    
     
     public MemberVo(String id, String passwd, String name, String zipcode, String address, String email, int admin) {
 	super();

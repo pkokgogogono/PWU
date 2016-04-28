@@ -40,7 +40,7 @@
   </tr>
   <tr> 
     <td height="190" colspan="6">
-	<form method="post" action="mainProAction.do"	>
+	<form method="post" action="mainProAction.do" enctype="multipart/form-data">
 	<table align="center" width="75%" border="1" cellspacing="1" cellpadding="1">
         <tr> 
           <td colspan="2"><div align="center">상품 등록</div></td>
@@ -69,6 +69,12 @@
               <textarea rows="10" cols="45" name="content"></textarea>
             </div></td>
         </tr>
+        <tr> 
+          <td><div align="center">상품이미지</div></td>
+          <td> <div align="left">       
+				<input type="file" name="path" size=40>
+            </div></td>
+        </tr>
 <!--         <tr> 
           <td><div align="center">상품이미지</div></td>
           <td> <div align="left"> 
@@ -78,6 +84,7 @@
         <tr> 
           <td colspan="2"><div align="center"> 
               <input type="submit" value="제품등록">&nbsp;&nbsp;&nbsp;
+              <input type="button" value="목록보기" onclick="window.open('productList.do')">&nbsp;&nbsp;&nbsp;
               <input type="reset" value="다시쓰기">
             </div></td>
         </tr>

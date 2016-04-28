@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mypage">
+
+	<select id = "informget" parameterType="vo.mypage.mypageVo">
+		select * from member where id=#{memId}
+	</select>
+
+	<select id = "passwdget" parameterType="String" resultType="String" >
+     	select passwd from member where id=#{memId}
+    </select>
+	
+	<update id="update_inform" parameterType="vo.mypage.mypageVo">
+		update member set passwd=#{passwd}, name=#{name}, 
+		zipcode=#{zipcode}, address=#{address}, email=#{email} 
+		where id = #{memId}
+	 <!-- modifyPro -->
+	</update>
+	
+	<insert id="insert" parameterType="vo.mypageVo.mypageVo">
+		insert into member
+		values(#{memId},#{passwd},#{name},#{zipcode},#{address},#{email})
+	</insert>
+
+	<delete id="deletemember" parameterType="vo.mypage.mypageVo">
+		delete from member where id = #{id}   <!-- modifyPro -->
+	</delete>
+
+    <select id = "zipcheck" parameterType="String" resultType="vo.ZipcodeBean" >
+      select * from zipcode where area4 like '%'||#{area4}||'%'
+    </select>
+    
+    <select id = "selectlist" resultType="vo.mypage.mypageVo">
+    	select * from mypage
+    </select>
+
+</mapper>
+

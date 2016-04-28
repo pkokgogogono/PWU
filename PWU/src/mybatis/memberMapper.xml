@@ -18,6 +18,7 @@
     <select id = "zipcheck" parameterType="String" resultType="vo.ZipcodeVo" >
       select * from zipcode where area4 like '%'||#{area4}||'%'
     </select>
+<<<<<<< HEAD
     
     <select id = "findid" parameterType="vo.MemberVo" resultType="String">
        select id from member where name=#{name} and email=#{email}
@@ -31,5 +32,7 @@
        select admin from member where id=#{id} and passwd=#{passwd}
     </select>
 
+=======
+>>>>>>> branch 'master' of https://github.com/pkokgogogono/PWU.git
 </mapper>
 

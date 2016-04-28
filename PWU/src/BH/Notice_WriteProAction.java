@@ -12,7 +12,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import action.CommandAction;
+import action.mypage.CommandAction;
 import vo.MemberVo;
 import vo.BH.Customer;
 
@@ -29,15 +29,15 @@ public class Notice_WriteProAction implements CommandAction{
 		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 		SqlSession session = factory.openSession();
 
-
-	Customer vo = new Customer(request.getParameter("title"),request.getParameter("content"),
-			Integer.parseInt(request.getParameter("lev")));
+		//request.getSession().getAttribute(관리자 아이디)
+		Customer vo = new Customer( request.getParameter("title"),
+				request.getParameter("content"));
 	
 		int n = session.insert("notice.insert", vo);
 
 		session.commit();
 
-	session.close();
+		session.close();
 	} catch (IOException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();

@@ -18,9 +18,22 @@
 	</environments>
 	<mappers>
 		<mapper resource="mybatis/memberMapper.xml" />
+
+		<mapper resource="mybatis/mypageMapper.xml" />
+
 		<mapper resource="mybatis/cutomer_notice.xml"/>
+<<<<<<< HEAD
 		<mapper resource="mybatis/cutomer_question.xml"/>	
 		<mapper resource="mybatis/fashionMapper.xml"/>
+=======
+<<<<<<< HEAD
+		<mapper resource="mybatis/cutomer_question.xml"/>		
+
+=======
+		<mapper resource="mybatis/cutomer_question.xml"/>	
+		<mapper resource="mybatis/fashionMapper.xml"	/>
+>>>>>>> branch 'master' of https://github.com/pkokgogogono/PWU.git
+>>>>>>> branch 'master' of https://github.com/pkokgogogono/PWU.git
 	</mappers>
 	
 </configuration>

@@ -10,7 +10,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import action.CommandAction;
+import action.login.CommandAction;
 
 public class Notice_ReadProAction implements CommandAction{
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{

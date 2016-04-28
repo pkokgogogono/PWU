@@ -53,13 +53,13 @@ ul {
 <div id="wrapper"></div>
 <div class="one">
 <c:forEach var="select" items="${selectList}" >
-
 ${select.num}
 ${select.title}
 ${select.p_name}
 ${select.p_price} 
 ${select.content}
-    </c:forEach>
+
+</c:forEach>
 </div>
 <div class="one"></div>
 <div class="one"></div>

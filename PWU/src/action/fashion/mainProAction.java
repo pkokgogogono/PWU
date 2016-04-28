@@ -39,7 +39,7 @@ public class mainProAction implements CommandAction {
 		System.out.println("realFolder:::"+realFolder);
 		
 		MultipartRequest multi = null;
-		
+		String path = null;
 		multi = new MultipartRequest(request,realFolder,maxSize,encType,new DefaultFileRenamePolicy());	
 
 		Enumeration files = multi.getFileNames();
@@ -47,6 +47,10 @@ public class mainProAction implements CommandAction {
 		    //input 태그의 속성이 file인 태그의 name 속성값 :파라미터이름
 		      String name = (String)files.nextElement();
 		   //서버에 저장된 파일 이름
+		     File up = multi.getFile(name);
+		     path = up.getAbsolutePath();
+		     
+		     System.out.println(path);
 		      String filename = multi.getFilesystemName(name);
 		   //전송전 원래의 파일 이름
 		      String original = multi.getOriginalFileName(name);
@@ -63,21 +67,15 @@ public class mainProAction implements CommandAction {
 		}
 		
 		request.setCharacterEncoding("euc-kr");
-
 		
-		Enumeration params = multi.getParameterNames();
-		
-		while(params.hasMoreElements()){ 
-		      String title = multi.getParameter("title"); //전송되는 파라미터이름
-		      String p_name = multi.getParameter("p_name");    //전송되는 파라미터값  
-		      int p_price = Integer.parseInt(multi.getParameter("p_price"));
-		      String content = request.getParameter("content");
-		      String path= request.getParameter("path");
-		}
-		
-		
+			
 		System.out.println(multi.getParameter("title"));
-	FashionDao fashionDao= FashionDao.getInstance();
+		System.out.println(multi.getParameter("p_name"));
+		System.out.println(Integer.parseInt(multi.getParameter("p_price")));
+		System.out.println(multi.getParameter("content"));
+		System.out.println(multi.getParameter("path"));
+
+		FashionDao fashionDao= FashionDao.getInstance();
 		
 		fashionBoardVo vo = new fashionBoardVo(
 				multi.getParameter("title"),

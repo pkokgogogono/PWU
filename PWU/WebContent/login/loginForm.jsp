@@ -20,6 +20,20 @@
     		   return false;
     	   }
        }
+       
+       function findId(){
+       	
+       	url="FindId.do";
+       	
+       	window.open(url,"post","toolbar=no ,width=500 ,height=300,directories=no,status=yes,scrollbars=yes,menubar=no");
+       }
+       
+       function findPasswd(){
+       	
+       	url="FindPasswd.do";
+       	
+       	window.open(url,"post","toolbar=no ,width=500 ,height=300,directories=no,status=yes,scrollbars=yes,menubar=no");
+       }
    </script>
 </head>
 <body onload="begin()">
@@ -43,6 +57,15 @@
       <input type=submit value="로그인">
       <input type=reset value="다시입력">
       <input type="button" value="회원가입" onclick="javascript:window.location='inputForm.do'"></td>
+   </tr>
+   <tr height="30">
+    <td colspan="2" align="middle" >
+    <input type="button" value="아이디찾기" onclick="findId()">
+    <input type="button" value="비밀번호찾기" onclick="findPasswd()">
+   </tr>
+   <tr height="30">
+    <td colspan="2" align="middle" >
+    <input type="button" value="메인으로" onclick="history.go(-1)">
    </tr>
 </table>
 </form>

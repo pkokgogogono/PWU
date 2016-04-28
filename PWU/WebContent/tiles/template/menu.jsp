@@ -1,2 +1,14 @@
 <%@ page contentType="text/html; charset=euc-kr" %>
-메뉴
+<style type="text/css">
+  ul{
+  list-style:none}
+</style>
+
+<ul>
+ <li>와아</li>
+ <li>2</li>
+ <li>3</li>
+ <li>4</li>
+</ul>
+
+

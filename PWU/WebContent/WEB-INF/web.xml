@@ -34,6 +34,16 @@
   </servlet-mapping>
   
   <servlet>
+		<servlet-name>DBCPInit</servlet-name>
+		<servlet-class>jdbc.loader.DBCPInit</servlet-class>
+		<init-param>
+			<param-name>jdbcdriver</param-name>
+			<param-value>oracle.jdbc.driver.OracleDriver</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+  
+  <servlet>
 		<servlet-name>ControllerUsingURI</servlet-name>
 		<servlet-class>mvc.controller.ControllerUsingURI</servlet-class>
 		<init-param>
@@ -49,3 +59,4 @@
 		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
 </web-app>
+

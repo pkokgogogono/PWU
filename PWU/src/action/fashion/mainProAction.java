@@ -38,7 +38,7 @@ System.out.println("wefwefoij");
 				Integer.parseInt(request.getParameter("p_price")),
 				request.getParameter("content"));
 		
-		int n = session.insert("fashion.insert", vo);
+		session.insert("fashion.insert", vo);
 
 		session.commit();
 

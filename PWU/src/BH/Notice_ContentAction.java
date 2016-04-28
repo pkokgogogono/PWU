@@ -12,37 +12,26 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import action.CommandAction;
+import dao.NoticeDao;
 import vo.BH.Customer;
 
 
 public class Notice_ContentAction implements CommandAction {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{
 
-		request.setCharacterEncoding("euc-kr");
-		String res = "config.xml";
+		NoticeDao noticedao = NoticeDao.getInstance();
+		
+		String num = request.getParameter("num");
+		
+		
+		request.setAttribute("noticedao",noticedao);
+		
+		
+		
 	
-		InputStream is;
-		try {
-			is = Resources.getResourceAsStream(res);
-		      
-		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
-		SqlSession session = factory.openSession();
 
-		//request.getSession().getAttribute(관리자 아이디)
-		Customer vo = new Customer( request.getParameter("title"),request.getParameter("content"));
 	
-		int n = session.insert("notice.insert", vo);
-
-		session.commit();
-
-	session.close();
-	} catch (IOException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-	
-	
-	return "/customer_center/notice/notice_list.jsp";
+	return "/customer_center/notice/notice_content.jsp";
 	}
 
 }

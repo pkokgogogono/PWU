@@ -57,12 +57,18 @@
   
   <c:forEach var="select" items="${selectList}" >
 <tr>
+<td>
+      <a href="/PWU/customer_center/notice/notice_content.do?num=${select.num}">${select.title}</a>
+   </td>
     <td align="center"  width="150">${select.num}</td>
     <td align="center"  width="150">${select.writer}</td>
     <td align="center"  width="150">${select.title}</td>  
     <td align="center"  width="150">${select.reg_date}</td>
     <td align="center"  width="50">${select.content}</td>
     <td align="center" width="100" >${select.read_count}</td>
+    <td alingn="center" width="50" >
+    <input type="button" value="삭제" onclick="javascript:window.location='Notice_Delete.do?num=${select.num}'"/>
+    </td>
   </tr>
     </c:forEach>
 </table>

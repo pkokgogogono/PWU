@@ -69,10 +69,12 @@ public class NoticeDao {
 		}		
 	}
 		
-		public void selectOne(String num){
+		public Customer selectOne(String num){
+			Customer vo = null;
 			try {		
 				SqlSession session = getFactory().openSession();
 				//num이니까 integer형으로 변환후에
+				
 				int number = Integer.parseInt(num);
 				//삭제 
 				vo=session.selectOne("notice.selectOne",number);
@@ -81,6 +83,7 @@ public class NoticeDao {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}		
+			return vo;
 	}
 	
 	

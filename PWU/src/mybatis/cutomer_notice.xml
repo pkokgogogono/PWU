@@ -23,7 +23,7 @@
 		where num=#{num} LIMIT 1
 	</update>
 	
-	<delete id="delete">
+	<delete id="delete" parameterType="Integer">
 		DELETE FROM notice where num = #{num}
 	</delete>
 
@@ -31,7 +31,7 @@
 		SELECT * FROM notice
 	</select>
 	
-	<select id="selectOne">
+	<select id="selectOne" parameterType="Integer" resultType="vo.BH.Customer">
 		SELECT * FROM notice where num=#{num}
 	</select>
 

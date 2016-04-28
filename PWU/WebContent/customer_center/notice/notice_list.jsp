@@ -1,17 +1,15 @@
-
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="EUC-KR"%>
+<%@ page contentType = "text/html; charset=utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
  <head>
- <title>°Ô½ÃÆÇ</title>
+ <title>ê²Œì‹œíŒ</title>
  
  </head>
  <div class="title">
             <h2><font color="#555555">NOTICE</font></h2>            
  </div>
- 
+  
  <script type="text/javascript">
 	function move(url) {
 		location.href=url;
@@ -24,60 +22,62 @@
 	
  <body>
  
- <center><b>±Û¸ñ·Ï(ÀüÃ¼ ±Û:${count})</b>
+ <center><b>ê¸€ëª©ë¡(ì „ì²´ ê¸€:${count})</b>
 <table width="700">
   <tr>
     <td align="right" bgcolor="${value_c}">
-    	<!-- ¿äÃ»ÇÏ¸é ¹«Á¶°Ç serv
-    	letÀÌ ¹Ş´Â´Ù  ±×·¡¼­ ¿äÃ»ÇÒ¶§ [~.do] --> 
-    	<!-- ±Û¾²±â Å¬¸¯ÇÏ¸é servletÀ¸·Î ÀÌµ¿ -->
-       <a href="/PWU/customer_center/notice/notice_write.do">±Û¾²±â</a>
+    	<!-- ìš”ì²­í•˜ë©´ ë¬´ì¡°ê±´ serv
+    	letì´ ë°›ëŠ”ë‹¤  ê·¸ë˜ì„œ ìš”ì²­í• ë•Œ [~.do] --> 
+    	<!-- ê¸€ì“°ê¸° í´ë¦­í•˜ë©´ servletìœ¼ë¡œ ì´ë™ -->
+       <a href="/PWU/customer_center/notice/notice_write.do">ê¸€ì“°ê¸°ì…ë‹ˆë‹¤.</a>
     </td>
   </tr>
 </table>
 
 <c:if test="${count == 0}">
-<table width="700" border="1" cellpadding="0" cellspacing="0">
+<table width="699" border="1" cellpadding="0" cellspacing="0">
   <tr>
     <td align="center">
-      °Ô½ÃÆÇ¿¡ ÀúÀåµÈ ±ÛÀÌ ¾ø½À´Ï´Ù.
+      ê²Œì‹œíŒì— ì €ì¥ëœ ê¸€ì´ ì—†ìŠµë‹ˆë‹¤.
     </td>
   </tr>
 </table>
 </c:if>
 
-<c:if test="${count > 0}">
+<c:if test="${count>0}">
 <table border="1" width="700" cellpadding="0" cellspacing="0" align="center">
     <tr height="30" bgcolor="${value_c}">
-   <td width="73">¹øÈ£</td>
-   <td width="73">ÀÛ¼ºÀÚ</td>
-   <td width="379">Á¦¸ñ</td>
-   <td width="164">ÀÛ¼ºÀÏ</td>
-   <td width="73">³»¿ë</td>
-   <td width="58">Á¶È¸¼ö</td>
+   <td width="73">ë²ˆí˜¸</td>
+   <td width="73">ì‘ì„±ì</td>
+   <td width="379">ì œëª©</td>
+   <td width="164">ì‘ì„±ì¼</td>
+   <td width="73">ë‚´ìš©</td>
+   <td width="58">ì¡°íšŒìˆ˜</td>
   </tr>
   
   <c:forEach var="select" items="${selectList}" >
 <tr>
-<td align="center" width="100">
+<td>
+      <a href="/PWU/customer_center/notice/notice_content.do?num=${select.num}">${select.title}</a>
+   </td>
     <td align="center"  width="150">${select.num}</td>
     <td align="center"  width="150">${select.writer}</td>
     <td align="center"  width="150">${select.title}</td>  
     <td align="center"  width="150">${select.reg_date}</td>
     <td align="center"  width="50">${select.content}</td>
     <td align="center" width="100" >${select.read_count}</td>
+    <td alingn="center" width="50" >
+    <input type="button" value="ì‚­ì œ" onclick="javascript:window.location='Notice_Delete.do?num=${select.num}'"/>
+    </td>
   </tr>
     </c:forEach>
-
-
-
 </table>
 </c:if>
  
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr><td colspan="4" height="5"></td></tr>
   <tr align="right">
-   <td><input type=button value="±Û¾²±â" onclick="move('notice_write.jsp');"></td>  
+   <td><input type=button value="ê¸€ì“°ê¸°" onclick="move('notice_write.do');"></td>  
   </tr>
 
   
@@ -87,18 +87,18 @@
         <td colspan="7"> <br/>
             <form name="serach" method ="post">
             <select name="keyField">
-                <option value="0"> ----¼±ÅÃ----</option>
-                <option value="id">Á¦¸ñ</option>
-                <option value="name">³»¿ë</option>
+                <option value="0"> ----ì„ íƒ----</option>
+                <option value="id">ì œëª©</option>
+                <option value="name">ë‚´ìš©</option>
             </select>
             <input type="text" name="keyWord" />
-            <input type="button" value="°Ë»ö" onclick="searchCheck(form)" />
+            <input type="button" value="ê²€ìƒ‰" onclick="searchCheck(form)" />
             </form>
         </td>      
 
     </tr>
 </table>
-
+<%-- 
 <c:if test="${count > 0}">
    <c:set var="pageCount" value="${count / pageSize + ( count % pageSize == 0 ? 0 : 1)}"/>
    <c:set var="pageBlock" value="${10}"/>
@@ -110,7 +110,7 @@
    </c:if>
          
 <c:if test="${startPage > 5}">
-        <a href="/PWU/customer_center/notice_list.do?pageNum=${startPage - 5 }">[ÀÌÀü]</a>
+        <a href="/PWU/customer_center/notice_list.do?pageNum=${startPage - 5 }">[ì´ì „]</a>
    </c:if>
 
    <c:forEach var="i" begin="${startPage}" end="${endPage}">
@@ -118,10 +118,10 @@
    </c:forEach>
 
    <c:if test="${endPage < pageCount}">
-        <a href="/PWU/customer_center/notice_list.do?pageNum=${startPage + 5}">[´ÙÀ½]</a>
+        <a href="/PWU/customer_center/notice_list.do?pageNum=${startPage + 5}">[ë‹¤ìŒ]</a>
    </c:if>
   </c:if>
-
+ --%>
 </body> 
 
 </html>

@@ -47,13 +47,46 @@ public class NoticeDao {
 		try {		
 			SqlSession session = getFactory().openSession();
 			selectList = session.selectList("notice.selectList");
-			System.out.println(selectList+"찐");
 			session.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}		
 		return selectList;
 	}
+	
+
+	public void noticedelete(String num){
+		try {		
+			SqlSession session = getFactory().openSession();
+			//num이니까 integer형으로 변환후에
+			int number = Integer.parseInt(num);
+			//삭제 
+			session.delete("notice.delete",number);
+			session.commit();
+			session.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}		
+	}
+		
+		public void selectOne(String num){
+			try {		
+				SqlSession session = getFactory().openSession();
+				//num이니까 integer형으로 변환후에
+				int number = Integer.parseInt(num);
+				//삭제 
+				vo=session.selectOne("notice.selectOne",number);
+				session.commit();
+				session.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}		
+	}
+	
+	
+	
+
+	
 }
 
 	

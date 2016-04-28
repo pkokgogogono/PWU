@@ -50,7 +50,7 @@
 
   <tr>
 
-<c:if test="${num == 0}">
+<c:if test="${num==0}">
        <input type="text" size="40" maxlength="50" name="subject"></td>
 </c:if>
 

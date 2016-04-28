@@ -9,7 +9,12 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+<<<<<<< HEAD
 import action.CommandAction;
+=======
+
+import action.login.CommandAction;
+>>>>>>> branch 'master' of https://github.com/pkokgogogono/PWU.git
 
 public class Notice_ReadProAction implements CommandAction{
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{

@@ -8,10 +8,17 @@
 		values(#{num},#{id},#{name},#{email},#{address},#{zipcode},#{reg_date},#{p_name},#{p_price},#{status})
 	</insert>
 	
+<<<<<<< HEAD
 <!-- 	<insert id="insert" parameterType="vo.OrderVo"> -->
 <!-- 		insert into notice(num, subject, p_name, p_price, email, address, content) -->
 <!-- 		values(notice_num.nextval,#{subject},#{p_name},#{p_price},#{email},#{address},#{content}) -->
 <!-- 	</insert> -->
+=======
+	<insert id="insert" parameterType="vo.OrderVo">
+		insert into notice(num, subject, p_name, p_price, email, address, content)
+		values(notice_num.nextval,#{subject},#{p_name},#{p_price},#{email},#{address},#{content})
+	</insert>
+>>>>>>> branch 'master' of https://github.com/pkokgogogono/PWU.git
 	
 	<select id="selectList" resultType="vo.OrderVo" >
 		SELECT * FROM order

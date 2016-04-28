@@ -12,6 +12,11 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+<<<<<<< HEAD
+=======
+import board.BoardDBBean;
+import board.BoardDataBean;
+>>>>>>> branch 'master' of https://github.com/pkokgogogono/PWU.git
 import vo.MemberVo;
 import vo.OrderVo;
 

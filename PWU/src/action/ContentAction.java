@@ -13,6 +13,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import board.BoardDataBean;
 import vo.OrderVo;
+<<<<<<< HEAD
 
 
 public class ContentAction implements CommandAction {//글내용 처리
@@ -34,6 +35,29 @@ public class ContentAction implements CommandAction {//글내용 처리
 //		OrderVo vo = new OrderVo(request.getParameter("name"), request.getParameter("email")
 //				, request.getParameter("address"), request.getParameter("zipcode"), request.getParameter("p_name")
 //				);
+=======
+import board.BoardDBBean;
+
+public class ContentAction implements CommandAction {//글내용 처리
+
+	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
+		request.setCharacterEncoding("euc-kr");
+		String res = "config.xml";
+	
+		InputStream is;
+	
+		try {
+			is = Resources.getResourceAsStream(res);
+		
+
+		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+		SqlSession session = factory.openSession();
+ 
+        //해당 뷰에서 사용할 속성
+		OrderVo vo = new OrderVo(request.getParameter("name"), request.getParameter("email")
+				, request.getParameter("address"), request.getParameter("zipcode"), request.getParameter("p_name")
+				);
+>>>>>>> branch 'master' of https://github.com/pkokgogogono/PWU.git
 		
 		session.insert("order.insert",vo);
 		

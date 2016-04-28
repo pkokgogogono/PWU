@@ -33,23 +33,25 @@ body {
 	<tr>
 		<td colspan=2>
 		<table border="1" summary="목록 테이블 구성"> 
-    <tr> 
-		<td align=center bgcolor=#dddddd width=20%> 작성자</td>
-		<td bgcolor=#ffffe8 width=40%>픽위업</td>
-		<td align=center bgcolor=#dddddd width=50%> 작성일</td>
-		<td bgcolor=#ffffe8 width=40%>2015/11/23</td>
-	</tr>
-
 	<tr> 
 		<td align=center bgcolor=#dddddd> 제 목</td>
 		<td bgcolor=#ffffe8 colspan=3> 게시판 글입니다</td>
    </tr>
+    <tr> 
+    <td colspan="2">
+ 작성자 : 
+ <br/>
+ 날짜 :           
+ <td align=right> 조회수 :</td>
+ </td>
+	</tr>
+	
+
+
    <tr> 
-		<td colspan=4><br>가나다라마바사<br></td>
+		<td colspan=4><br>내용<br></td>
    </tr>
-   <tr>
-		<td colspan=4 align=right> 조회수  : </td>
-   </tr>
+
 	</table>
 	</td>
  	</tr>
@@ -58,7 +60,7 @@ body {
 		<hr size=1>
 		<div align="center">
 		<input type="button" value="목록" onclick="move('notice_list.jsp');"> 
-		<input type="button" value="수정" onclick="move('Board_Update.jsp');"> 
+		<input type="button" value="수정" onclick="move('notice_update.jsp');"> 
 		<input type="button" value="삭제" onclick="move('Board_Delete.jsp');"><br>
 		</div>
 		</td>

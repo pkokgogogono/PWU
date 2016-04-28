@@ -8,7 +8,9 @@
 		values(#{num},#{id},#{name},#{email},#{address},#{zipcode},#{reg_date},#{p_name},#{p_price},#{status})
 	</insert>
 	
-	
+	<select id="selectList" resultType="vo.OrderVo" >
+		SELECT * FROM order
+	</select>
 	
 
 </mapper>

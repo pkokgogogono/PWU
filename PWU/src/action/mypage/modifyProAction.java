@@ -1,16 +1,7 @@
 package action.mypage;
 
-<<<<<<< HEAD
 
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-
-
-
-=======
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -25,7 +16,6 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 
 import dao.LoginDao;
->>>>>>> branch 'master' of https://github.com/pkokgogogono/PWU.git
 import mypage.dao.mypageDao;
 import vo.mypage.*;
 

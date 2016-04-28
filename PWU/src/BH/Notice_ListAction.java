@@ -5,23 +5,13 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-<<<<<<< HEAD
+
+
+
 
 import action.CommandAction;
 import dao.NoticeDao;
 import vo.BH.Customer;
-=======
-
-
-
-<<<<<<< HEAD
-import action.login.CommandAction;
-=======
-import action.CommandAction;
-import dao.NoticeDao;
-import vo.BH.Customer;
->>>>>>> branch 'master' of https://github.com/pkokgogogono/PWU.git
->>>>>>> branch 'master' of https://github.com/pkokgogogono/PWU.git
 
 public class Notice_ListAction implements CommandAction {
 	public String requestPro(HttpServletRequest request,

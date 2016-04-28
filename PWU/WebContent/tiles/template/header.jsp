@@ -112,11 +112,7 @@ img {
 		<td>
 		    <table border="0" ID="menu0" style="display: inline;"  width="100%" >
 			  <tr>
-<<<<<<< HEAD
 			       <td border="0" height="24"></td>
-=======
-			       <td border="0" height="25"></td>
->>>>>>> branch 'master' of https://github.com/pkokgogogono/PWU.git
 			  <tr>
 			</table>
 			<table border="1" ID="menu1" style="display: none;" width="100%"  >

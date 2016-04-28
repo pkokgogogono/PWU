@@ -1,5 +1,4 @@
 <%@ page contentType="text/html;charset=euc-kr"%>
-<%@ include file="view/color.jsp"%>
 
 <%!
 	//Request객체와 String 객체를 각각 가져온다.

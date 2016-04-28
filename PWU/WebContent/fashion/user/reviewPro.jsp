@@ -4,7 +4,6 @@
 <%@ page import="java.util.*"%>
 <%@ page import="java.net.*"%>
 <%@ page import="java.io.*"%>
-<%@ include file="view/color.jsp"%>
 
 <%
 String realPath = "";

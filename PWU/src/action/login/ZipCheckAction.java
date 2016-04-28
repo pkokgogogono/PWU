@@ -4,26 +4,15 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-<<<<<<< HEAD
 import action.CommandAction;
 import dao.login.LoginDao;
 import vo.ZipcodeVo;
 
-=======
-<<<<<<< HEAD
-import action.CommandAction;
-import dao.login.LoginDao;
-import vo.ZipcodeVo;
-=======
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
-
-import action.mypage.CommandAction;
->>>>>>> branch 'master' of https://github.com/pkokgogogono/PWU.git
->>>>>>> branch 'master' of https://github.com/pkokgogogono/PWU.git
 
 public class ZipCheckAction implements CommandAction {
 

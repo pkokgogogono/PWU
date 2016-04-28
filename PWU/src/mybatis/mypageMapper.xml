@@ -4,7 +4,7 @@
 
 <mapper namespace="mypage">
 
-<<<<<<< HEAD
+
 <!-- 	<select id = "informget" parameterType="vo.mypage.mypageVo"> -->
 <!-- 		select * from member where id=#{memId} -->
 <!-- 	</select> -->
@@ -29,34 +29,17 @@
 		delete from member where id = #{id}   <!-- modifyPro -->
 	</delete>
 
-    <select id = "zipcheck" parameterType="String" resultType="vo.ZipcodeVo" >
-=======
 	<select id = "informget" parameterType="vo.mypage.mypageVo">
 		select * from member where id=#{memId}
 	</select>
 
-	<select id = "passwdget" parameterType="String" resultType="String" >
-     	select passwd from member where id=#{memId}
-    </select>
 	
-	<update id="update_inform" parameterType="vo.mypage.mypageVo">
-		update member set passwd=#{passwd}, name=#{name}, 
-		zipcode=#{zipcode}, address=#{address}, email=#{email} 
-		where id = #{memId}
-	 <!-- modifyPro -->
-	</update>
-	
-	<insert id="insert" parameterType="vo.mypageVo.mypageVo">
+	<insert id="insert" parameterType="vo.mypage.mypageVo">
 		insert into member
 		values(#{memId},#{passwd},#{name},#{zipcode},#{address},#{email})
 	</insert>
 
-	<delete id="deletemember" parameterType="vo.mypage.mypageVo">
-		delete from member where id = #{id}   <!-- modifyPro -->
-	</delete>
-
-    <select id = "zipcheck" parameterType="String" resultType="vo.ZipcodeBean" >
->>>>>>> branch 'master' of https://github.com/pkokgogogono/PWU.git
+    <select id = "zipcheck" parameterType="String" resultType="vo.ZipcodeVo" >
       select * from zipcode where area4 like '%'||#{area4}||'%'
     </select>
     

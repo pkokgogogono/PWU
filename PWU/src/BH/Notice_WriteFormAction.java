@@ -3,11 +3,8 @@ package BH;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-<<<<<<< HEAD
 import action.CommandAction;
-=======
-import action.login.CommandAction;
->>>>>>> branch 'master' of https://github.com/pkokgogogono/PWU.git
+
 
 public class Notice_WriteFormAction  implements CommandAction{
 	

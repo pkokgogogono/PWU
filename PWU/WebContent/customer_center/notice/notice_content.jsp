@@ -28,23 +28,23 @@ body,td,a,div,p,pre,input,textarea {font-family:굴림;font-size:9pt;}
 <table width="500" border="1" cellspacing="0" cellpadding="0" align="center"> 
   <tr height="30">
     <td align="center" width="125" bgcolor="${value_c}">글번호</td>
-    <td align="center" width="125" align="center">${article.num}</td>
+    <td align="center" width="125" align="center">${select.num}</td>
     <td align="center" width="125" bgcolor="${value_c}">조회수</td>
-    <td align="center" width="125" align="center">${article.readcount}</td>
+    <td align="center" width="125" align="center">${select.read_count}</td>
   </tr>
   <tr height="30">
     <td align="center" width="125" bgcolor="${value_c}">작성자</td>
-    <td align="center" width="125" align="center">${article.writer}</td>
+    <td align="center" width="125" align="center">${select.writer}</td>
     <td align="center" width="125" bgcolor="${value_c}" >작성일</td>
-    <td align="center" width="125" align="center">${article.reg_date}</td>
+    <td align="center" width="125" align="center">${select.reg_date}</td>
   </tr>
   <tr height="30">
     <td align="center" width="125" bgcolor="${value_c}">글제목</td>
-    <td align="center" width="375" align="center" colspan="3">${article.subject}</td>
+    <td align="center" width="375" align="center" colspan="3">${select.title}</td>
   </tr>
   <tr>
     <td align="center" width="125" bgcolor="${value_c}">글내용</td>
-    <td align="left" width="375" colspan="3"><pre>${article.content}</pre></td>
+    <td align="left" width="375" colspan="3"><pre>${select.content}</pre></td>
   </tr>
   <tr height="30">     
     <td colspan="4" bgcolor="${value_c}" align="right" >
@@ -57,8 +57,7 @@ body,td,a,div,p,pre,input,textarea {font-family:굴림;font-size:9pt;}
       <input type="button" value="답글쓰기"
        onclick="document.location.href='/MVC_board/writeForm.do?num=${article.num}&ref=${article.ref}&re_step=${article.re_step}&re_level=${article.re_level}'">
    &nbsp;&nbsp;&nbsp;&nbsp;
-       <input type="button" value="글목록"
-       onclick="document.location.href='/MVC_board/list.do?pageNum=${pageNum}'">
+       <input type="button" value="글목록" OnClick="window.location='/PWU/customer_center/notice/notice_list.do'"> 
     </td>
   </tr>
 </table>   

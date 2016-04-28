@@ -1,7 +1,8 @@
-package BH;
+package action.fashion;
 
 import java.io.IOException;
 import java.io.InputStream;
+
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,25 +13,23 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import action.CommandAction;
-import dao.NoticeDao;
-import vo.BH.Customer;
+import dao.FashionDao;
+import vo.fashionBoardVo;
 
-
-public class Notice_ContentAction implements CommandAction {
+public class productDetail implements CommandAction {
+	
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{
 
-		NoticeDao noticedao = NoticeDao.getInstance();
+		request.setCharacterEncoding("euc-kr");
+
+		FashionDao fashionDao= FashionDao.getInstance();
 		
 		String num = request.getParameter("num");
-			
-		request.setAttribute("noticedao",noticedao.selectOne(num));
-		
-		
-		
-	
-
-	
-	return "/customer_center/notice/notice_content.jsp";
+		System.out.println(request.getParameter("num"));
+		request.setAttribute("fashiondetail",fashionDao.fashionSelect(num));
+		System.out.println(fashionDao.fashionSelect(num));
+		return "/fashion/admin/productDetail.jsp";
 	}
 
+  
 }

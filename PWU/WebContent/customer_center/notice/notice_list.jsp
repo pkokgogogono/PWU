@@ -31,7 +31,7 @@
     	<!-- 요청하면 무조건 serv
     	let이 받는다  그래서 요청할때 [~.do] --> 
     	<!-- 글쓰기 클릭하면 servlet으로 이동 -->
-       <a href="/PWU/customer_center/notice/notice_write.do">글쓰기</a>
+       <a href="/PWU/customer_center/notice/notice_write.do">글쓰기입니다.</a>
     </td>
   </tr>
 </table>

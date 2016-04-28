@@ -1,15 +1,21 @@
-package BH;
+package action.mypage;
+
+
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import action.login.CommandAction;
 
-public class Notice_UpdateFormAction  implements CommandAction{
+
+public class IndexFormAction implements CommandAction {
 	
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{
+
+		request.setCharacterEncoding("euc-kr");
 		
-		return "/cutomer_center/notice/notice_update.jsp";
+		return "/index.jsp";
+	}
+  
 
 }
-}
+       

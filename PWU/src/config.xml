@@ -19,7 +19,11 @@
 	<mappers>
 		<mapper resource="mybatis/memberMapper.xml" />
 
+<<<<<<< HEAD
 		<mapper resource="mybatis/orderMapper.xml" />
+=======
+		<mapper resource="mybatis/mypageMapper.xml" />
+>>>>>>> branch 'master' of https://github.com/pkokgogogono/PWU.git
 
 		<mapper resource="mybatis/cutomer_notice.xml"/>
 <<<<<<< HEAD

@@ -3,7 +3,7 @@ package action.login;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import action.CommandAction;
+import action.login.CommandAction;
 
 
 public class LogoutAction implements CommandAction {

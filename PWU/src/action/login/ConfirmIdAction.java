@@ -11,7 +11,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import action.CommandAction;
+import action.mypage.CommandAction;
 
 public class ConfirmIdAction implements CommandAction {
 	
@@ -29,6 +29,10 @@ public class ConfirmIdAction implements CommandAction {
 		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 		SqlSession session = factory.openSession();
         
+//<<<<<<< HEAD
+		
+//=======
+//>>>>>>> branch 'master' of https://github.com/pkokgogogono/PWU.git
 
 		if(session.selectOne("member.idcheck",request.getParameter("id"))==null){	
 		}
@@ -36,6 +40,12 @@ public class ConfirmIdAction implements CommandAction {
 			check =1;
 		}
 		request.setAttribute("check", check);
+		
+	/*	session.selectOne("member.idcheck",);
+		session.selectList(arg0);
+		session.insert(arg0);
+		session.update(arg0);
+		session.delete(arg0);*/
 
 
 		session.commit();

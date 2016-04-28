@@ -1,4 +1,4 @@
-package action.login;
+package action.mypage;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,7 +15,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import action.mypage.CommandAction;
 
-public class ZipCheckAction implements CommandAction {
+public class ZipcheckAction implements CommandAction {
 
 	public String requestPro(HttpServletRequest request,
 			HttpServletResponse response) throws Throwable {
@@ -31,7 +31,7 @@ public class ZipCheckAction implements CommandAction {
 						.build(is);
 				SqlSession session = factory.openSession();
 
-				List zipcodeList = session.selectList("member.zipcheck",
+				List zipcodeList = session.selectList("mypage.zipcheck",
 						request.getParameter("area4"));
 
 				if(zipcodeList.isEmpty())
@@ -53,7 +53,7 @@ public class ZipCheckAction implements CommandAction {
 			request.setAttribute("zipcodeList", null);
 		}
 
-		return "/login/ZipCheck.jsp";
+		return "/mypage/ZipCheck.jsp";
 	}
 
 }

@@ -2,6 +2,8 @@ package vo.mypage;
 
 import java.util.Date;
 
+
+
 public class mypageVo {
 	private String id;
 	private String passwd; 
@@ -11,7 +13,13 @@ public class mypageVo {
 	private String email;
 	private int admin; 
 	
+
     public mypageVo(){}
+    
+    public mypageVo(String id, String passwd) {
+		this.id = id;
+		this.passwd = passwd;
+	}
     
     public mypageVo(String passwd, String name, String zipcode, String address, String email){
     	this.passwd = passwd;

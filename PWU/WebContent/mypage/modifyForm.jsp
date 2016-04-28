@@ -84,7 +84,7 @@
     <tr>
       <td width="200">사용자 이름</td>
       <td width="400">
-        <input type="text" name="name" size="15" maxlength="10">
+        <input type="text" name="name" size="15" maxlength="10" value="${c.name}">
       </td>
     </tr>
         <tr> 
@@ -96,13 +96,13 @@
     <tr>
     <tr> 
        <td>주소</td>
-       <td><input type="text" name="address" size="70">
-       주소를 적어 주세요.</td>
+       <td><input type="text" name="address" size="70" value="${c.address}">
+       수정할 주소를 적어 주세요.</td>
     </tr>
     <tr>
       <td width="200">E-Mail</td>
       <td width="400">
-        <input type="text" name="email" size="40" maxlength="30">
+        <input type="text" name="email" size="40" maxlength="30" value="${c.email}">
       </td>
     </tr>
 
@@ -110,7 +110,7 @@
       <td colspan="2" align="center" bgcolor="${value_c}">
           <input type="submit" name="confirm" value="등   록" >
           <input type="reset" name="reset" value="다시입력">
-          <input type="button" value="가입안함" onclick="javascript:window.location='/PWU/login/index.do'">
+          <input type="button" value="돌아가기" onclick="javascript:window.location='/PWU/login/index.do'">
       </td>
     </tr>
   </table>

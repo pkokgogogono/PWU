@@ -2,7 +2,6 @@ package BH;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.sql.Timestamp;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,11 +11,11 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import action.mypage.CommandAction;
-import vo.MemberVo;
+import action.CommandAction;
 import vo.BH.Customer;
 
-public class Notice_WriteProAction implements CommandAction{
+
+public class Notice_ContentAction implements CommandAction {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{
 
 		request.setCharacterEncoding("euc-kr");
@@ -36,7 +35,7 @@ public class Notice_WriteProAction implements CommandAction{
 
 		session.commit();
 
-		session.close();
+	session.close();
 	} catch (IOException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
@@ -44,10 +43,6 @@ public class Notice_WriteProAction implements CommandAction{
 	
 	
 	return "/customer_center/notice/notice_list.jsp";
+	}
+
 }
-
-
-}
-
-
-

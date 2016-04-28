@@ -13,43 +13,32 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 
-import vo.MemberVo;
-import vo.mypage.mypageVo;
+import dao.LoginDao;
+import mypage.dao.mypageDao;
+import vo.mypage.*;
 
 public class modifyProAction implements CommandAction {
-	
-	 public String requestPro(HttpServletRequest request,
-		        HttpServletResponse response)throws Throwable {
-		 
-			request.setCharacterEncoding("euc-kr");
-			String res = "config.xml";
+	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{
+		request.setCharacterEncoding("euc-kr");
 		
-			InputStream is;
-			try {
-				is = Resources.getResourceAsStream(res);
-		 
-		 
-				SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
-				SqlSession session = factory.openSession();
-				
-				mypageVo vo = new mypageVo(request.getParameter("id"),request.getParameter("passwd"), request.getParameter("name"),
-						request.getParameter("zipcode"),request.getParameter("address"),request.getParameter("email"),1);
-				
-				
-				session.update("mypage.update_inform",vo);
-				
-				session.commit();
+		HttpSession session2=request.getSession(true);
+		mypageDao dao = mypageDao.getInstance();
+		
+		mypageVo c = new mypageVo();
+		c.setName(request.getParameter("name"));
+        c.setZipcode(request.getParameter("zipcode"));
+        c.setAddress(request.getParameter("address"));
+        c.setEmail(request.getParameter("email"));
+        
+        int check = dao.updateArticle(c);
+        
+        request.setAttribute("check", check);
+       
+		
+	    
+		return "/mypage/modifyPro.jsp";
+	    
+	}
 
-				session.close();
-				
-				
-				
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		 
-		 return "/mypage/modifyPro.jsp";
-	 }
-
+  
 }

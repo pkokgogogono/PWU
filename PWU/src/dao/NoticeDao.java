@@ -1,4 +1,4 @@
-package mypage.dao;
+package dao;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,18 +12,19 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import vo.mypage.mypageVo;
+import vo.MemberVo;
+import vo.BH.Customer;
 
-public class modifyFormDao {
+public class NoticeDao {
 
-	private static modifyFormDao instance = new modifyFormDao();
+	private static NoticeDao instance = new NoticeDao();
 	   
-    public static modifyFormDao getInstance() {
+    public static NoticeDao getInstance() {
         return instance;
     }
    
-    private modifyFormDao() {}
-
+    private NoticeDao() {}
+    
 	private static SqlSessionFactory getFactory() throws Exception{
 		String res = "config.xml";
 		InputStream is;
@@ -41,35 +42,21 @@ public class modifyFormDao {
 	
 	}
 	
-	public List<mypageVo> selectList(){
-		List<mypageVo> selectList = null;
-		try{
+	public List<Customer> selectList(){
+		List<Customer> selectList = null;
+		try {		
 			SqlSession session = getFactory().openSession();
-			selectList = session.selectList("mypage.selectList");
-			System.out.println(selectList+"12");
-			session.close();
-		}catch(Exception e){
-			e.printStackTrace();
-		}
-		
-		return selectList;
-	}
-	
-	
-	
-	
-/*	public int loginCheck(MemberVo vo){
-		int logincheck = 0;
-		try {
-			SqlSession session = getFactory().openSession();
-			logincheck = session.selectOne("member.logincheck", vo);
+			selectList = session.selectList("notice.selectList");
+			System.out.println(selectList+"Âð");
 			session.close();
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
-		return logincheck;
-	}*/
-}
-	
+		}		
+		return selectList;
+	}
 	
 
+	
+}
+
+	

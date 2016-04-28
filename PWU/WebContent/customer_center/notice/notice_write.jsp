@@ -35,7 +35,7 @@
 <center><b>공지사항</b>
 <br><br>
 <!-- post방식으로 writeSave()거쳐서 /JSP/mvc_board/writePro.do -> .do 실행 => controlleruri 의 dopost실행 -->
-<form method="post" name="writeform" action="notice_writepro.do">
+<form method="post" name="writeform" action="/PWU/customer_center/notice/notice_list.do">
 <input type="hidden" name="num" value="${num}"> 
 <input type="hidden" name="ref" value="${ref}">
 
@@ -44,19 +44,13 @@
    <tr>
     <td  width="70"  bgcolor="${value_c}" align="center">제 목</td>
     <td  width="330">
-       <input type="text" size="10" maxlength="10" name="writer"></td>
+       <input type="text" size="10" maxlength="10" name="title"></td>
    </tr>
-   
-      <tr>
-    <td  width="70"  bgcolor="${value_c}" align="center">lev</td>
-    <td  width="330">
-    <input type ="text" onKeyDown="ONumber();" name="lev"/></td>
-   </tr>
-   
-   
+
+
   <tr>
 
-<c:if test="${num == 0}">
+<c:if test="${num==0}">
        <input type="text" size="40" maxlength="50" name="subject"></td>
 </c:if>
 
@@ -78,7 +72,16 @@
   <input type="submit" value="글쓰기" > 
   <input type="reset" value="다시작성" >
 <input type="button" value="목록" OnClick="window.location='/PWU/customer_center/notice/notice_list.do'"> 
-
+  
+<!--    <tr> 
+   	<select name="lev" size="1">
+   		<option value="0">0</option>
+   		<option value="1">1</option>
+   		<option value="2">2</option>
+   		<option value="3">3</option>  	
+   	</select>
+   </tr> -->
+   
 </td></tr></table>   
 </form>     
 </body>

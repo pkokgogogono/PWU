@@ -13,7 +13,8 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import dao.LoginDao;
-import mypage.dao.modifyFormDao;
+import mypage.dao.mypageDao;
+import vo.MemberVo;
 import vo.mypage.*;
 
 public class deleteProAction implements CommandAction {
@@ -21,15 +22,30 @@ public class deleteProAction implements CommandAction {
 		request.setCharacterEncoding("euc-kr");
 		
 		HttpSession session2=request.getSession(true);
-		modifyFormDao dao = modifyFormDao.getInstance();
+		mypageDao dao = mypageDao.getInstance();
 		
 		
 		
-		
+
+        
+		try{
+			String id = (String)session2.getAttribute("memId");
+			String password  = request.getParameter("password");
+			
+			
+			
+			if((dao.dbpass((String)session2.getAttribute("memId"))!=null)){
+				session2.setAttribute("check",0);
+				mypageVo vo = new mypageVo((String)session2.getAttribute("memId"),request.getParameter("passwd"));
+				if((dao.passwdcheck(password))==1){
+					dao.deletemember("memId","passwd");
+				}
+			}else{
+				session2.setAttribute("check",1);
 				
-				
-				
-				
+			}
+	     
+			
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

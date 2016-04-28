@@ -12,8 +12,9 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+
 import dao.LoginDao;
-import mypage.dao.modifyFormDao;
+import mypage.dao.mypageDao;
 import vo.mypage.*;
 
 public class modifyFormAction implements CommandAction {
@@ -21,25 +22,24 @@ public class modifyFormAction implements CommandAction {
 		request.setCharacterEncoding("euc-kr");
 		
 		HttpSession session2=request.getSession(true);
-		modifyFormDao dao = modifyFormDao.getInstance();
+		mypageDao dao = mypageDao.getInstance();
 		
+		mypageVo c = new mypageVo();
+		c.setName(request.getParameter("name"));
+        c.setZipcode(request.getParameter("zipcode"));
+        c.setAddress(request.getParameter("address"));
+        c.setEmail(request.getParameter("email"));
+        
+        int check = dao.updateArticle(c);
+        
+        request.setAttribute("check", check);
+       
 		
-		if(dao.update(request.getParameter("id"))!=null)
-		{
-			session2.setAttribute("check",0);
-			MemberVo vo = new MemberVo(request.getParameter("id"),request.getParameter("passwd"));
-			if((dao.loginCheck(vo))==1)
-			{
-				session2.setAttribute("memId",request.getParameter("id"));
-				return "/login/index.jsp";
-			}
-		}
-		else{
-			session2.setAttribute("check",1);
-		}
-		
-		return "/login/loginPro.jsp";
-		
+        
+        
+	    
+		return "/mypage/modifyForm.jsp";
+	    
 	}
 
   

@@ -13,7 +13,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import vo.MemberVo;
-import vo.BH.Customer;
+import vo.OrderVo;
 
 public class OrderDao {
 

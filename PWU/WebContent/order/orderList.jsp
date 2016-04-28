@@ -29,35 +29,17 @@
       <td align="center"  width="50" >이름</td>  
     </tr>
 
-   <c:forEach var="article" items="${articleList}">
-   <tr height="30">
-    <td align="center"  width="50" >
-  <c:out value="${number}"/>
-  <c:set var="number" value="${number - 1}"/>
-</td>
-    <td  width="250" >
-  <c:if test="${article.re_level > 0}">
-  
-  </c:if>
-  <c:if test="${article.re_level == 0}">
-    
-  </c:if>
-          
-      <a href="/PWU/order/content.do?num=${article.num}&pageNum=${currentPage}">
-          ${article.subject}</a>
-          <c:if test="${article.readcount >= 20}">
-            
-  </c:if>
-</td>
-    <td align="center"  width="100">
-       <a href="mailto:${article.email}">${article.writer}</a>
-</td>
-    <td align="center"  width="150">${article.reg_date}
-</td>
-    <td align="center"  width="50">${article.readcount}</td>
-    <td align="center" width="100" >${article.ip}</td>
+   <c:forEach var="select" items="${selectList}" >
+<tr>
+<td align="center" width="100">
+    <td align="center"  width="150">${select.num}</td>
+    <td align="center"  width="150">${select.reg_date}</td>
+    <td align="center"  width="150">${select.p_name}</td>  
+    <td align="center"  width="150">${select.p_price}</td>
+    <td align="center"  width="50">${select.e_mail}</td>
+    <td align="center" width="100" >${select.name}</td>
   </tr>
-  </c:forEach>
+    </c:forEach>
 </table>
 <%-- </c:if> --%>
 

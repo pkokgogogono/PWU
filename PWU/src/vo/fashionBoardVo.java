@@ -17,13 +17,14 @@ public class fashionBoardVo {
 		
 	    public fashionBoardVo(){}
 		
-	    public fashionBoardVo(String title,  String p_name, int p_price, String content
-	    		) {
+	    public fashionBoardVo(String title,  String p_name, int p_price, String content,
+	    		String path) {
 
 		this.title = title;
 		this.p_name = p_name;
 		this.p_price = p_price;
 		this.content = content;
+		this.path = path;
 		
 		}
 

@@ -76,6 +76,20 @@ public class FashionDao {
 			e.printStackTrace();
 		}
 	}
+	
+	public fashionBoardVo fashionSelect(String num){
+		fashionBoardVo vo = null;
+		try {		
+			System.out.println(num);
+			SqlSession session = getFactory().openSession();
+			vo=session.selectOne("fashion.select",num);
+			session.commit();
+			session.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return vo;
+	}
 }
 	
 	

@@ -15,7 +15,8 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import action.CommandAction;
 import dao.FashionDao;
 import vo.fashionBoardVo;
-public class listDelete implements CommandAction {
+
+public class productDetail implements CommandAction {
 	
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{
 
@@ -23,11 +24,11 @@ public class listDelete implements CommandAction {
 
 		FashionDao fashionDao= FashionDao.getInstance();
 		
-		String num =request.getParameter("num");
-		
-		fashionDao.fashionDelete(num);
-		
-		return "/fashion/admin/productList.do";
+		String num = request.getParameter("num");
+		System.out.println(request.getParameter("num"));
+		request.setAttribute("fashiondetail",fashionDao.fashionSelect(num));
+		System.out.println(fashionDao.fashionSelect(num));
+		return "/fashion/admin/productDetail.jsp";
 	}
 
   

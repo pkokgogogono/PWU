@@ -56,17 +56,20 @@
    <td width="73">상품이름</td>
    <td width="379">상품가격</td>
    <td width="379">상품내용</td>
+   <td width-"379">상품이미지</td>
    <td width="164"></td>
    
   </tr>
   
   <c:forEach var="select" items="${selectList}" >
 <tr>
-    <td align="center"  width="150">${select.num}</td>	
+    <td align="center"  width="150"><a href="productDetail.do?num=${select.num}">${select.num}</td>	
     <td align="center"  width="150">${select.title}</td>
     <td align="center"  width="150">${select.p_name}</td>
     <td align="center"  width="150">${select.p_price}</td>  
     <td align="center"  width="150">${select.content}</td>
+     <td align="center"  width="150"><img src ="${select.path}"/></td>   
+    
     <td width="164"><input type=button value="삭제" OnClick="window.location='listDelete.do?num=${select.num}'"></td>
   </tr>
     </c:forEach>

@@ -88,8 +88,6 @@ public class mainProAction implements CommandAction {
 		
 		fashionDao.fashionInsert(vo);
 		
-
-		
 	}catch(IOException ioe){
 		 System.out.println(ioe);
 	}catch(Exception ioe){

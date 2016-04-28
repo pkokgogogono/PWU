@@ -22,9 +22,8 @@ public class Notice_ContentAction implements CommandAction {
 		NoticeDao noticedao = NoticeDao.getInstance();
 		
 		String num = request.getParameter("num");
-		
-		
-		request.setAttribute("noticedao",noticedao);
+			
+		request.setAttribute("noticedao",noticedao.selectOne(num));
 		
 		
 		

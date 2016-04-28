@@ -19,7 +19,6 @@ public class Notice_ListAction implements CommandAction {
 			NoticeDao noticedao = NoticeDao.getInstance();
 
 			List<Customer> selectList = noticedao.selectList();
-			   System.out.println(noticedao.selectList());
 			request.setAttribute("selectList",selectList);
 			request.setAttribute("count", 1);
 			if(selectList.isEmpty()){

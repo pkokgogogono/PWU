@@ -16,9 +16,6 @@
       select id from member where id like '%'||#{id}||'%'
     </select>
 
-    <select id = "zipcheck" parameterType="String" resultType="vo.ZipcodeBean" >
-      select * from zipcode where area4 like '%'||#{area4}||'%'
-    </select>
 
 </mapper>
 

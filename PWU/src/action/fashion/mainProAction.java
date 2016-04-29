@@ -91,7 +91,7 @@ public class mainProAction implements CommandAction {
 	}catch(Exception ioe){
 		 System.out.println(ioe);
 	}
-		return "/fashion/admin/productwritePro.jsp";
+		return "/fashion/admin/productList.do";
 	}
 
   

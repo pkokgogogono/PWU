@@ -14,15 +14,14 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import action.CommandAction;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
-import action.CommandAction;
+
+
 import dao.FashionDao;
 import vo.fashionBoardVo;
-
-
-
 
 public class mainProAction implements CommandAction {
 	
@@ -62,9 +61,10 @@ public class mainProAction implements CommandAction {
 		   //�쟾�넚�맂 �뙆�씪 �냽�꽦�씠 file�씤 �깭洹몄쓽 name �냽�꽦媛믪쓣 �씠�슜�빐 �뙆�씪 媛앹껜 �깮�꽦//�뙆�씪媛��졇�삤湲�
 		      File file = multi.getFile(name);
 	
-		      
+
+	
 			  if(file!=null){
-				  System.out.println("�겕湲� : " + file.length());
+				  System.out.println("크기: " + file.length());
 				  System.out.println("<br>");
 		      }
 
@@ -72,12 +72,6 @@ public class mainProAction implements CommandAction {
 		
 		request.setCharacterEncoding("euc-kr");
 		
-			
-		System.out.println(multi.getParameter("title"));
-		System.out.println(multi.getParameter("p_name"));
-		System.out.println(Integer.parseInt(multi.getParameter("p_price")));
-		System.out.println(multi.getParameter("content"));
-		System.out.println(multi.getParameter("path"));
 
 		FashionDao fashionDao= FashionDao.getInstance();
 		

@@ -12,9 +12,9 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import action.CommandAction;
+import action.login.CommandAction;
 import dao.FashionDao;
-import vo.fashionBoardVo;
+import vo.fashionBoardVo; 
 public class listDelete implements CommandAction {
 	
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{

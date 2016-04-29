@@ -5,7 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import action.CommandAction;
+import action.login.CommandAction;
 import dao.FashionDao;
 import vo.fashionBoardVo;
 import vo.BH.Customer;

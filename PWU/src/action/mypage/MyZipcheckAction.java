@@ -9,10 +9,6 @@ import mypage.dao.mypageDao;
 import vo.mypage.ZipcodemyVo;
 
 
-import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 public class MyZipcheckAction implements CommandAction {
 

@@ -42,7 +42,7 @@ img, table td tr table tr td{
 		<img align="left" src="/PWU/tiles/template/logo.JPG"
 			onClick="return checkIt2()"> <img
 			src="/PWU/tiles/template/mypage.JPG" align="right"
-			onClick="javascript:window.location='inputForm.do'"> <img
+			onClick="javascript:window.location='/PWU/mypage/modifyForm.do'"> <img
 			src="/PWU/tiles/template/membership.JPG" align="right"
 			onClick="javascript:window.location='inputForm.do'"> <img
 			src="/PWU/tiles/template/logout.JPG" alt="·Î°«" align="right"

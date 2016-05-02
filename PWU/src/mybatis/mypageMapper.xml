@@ -4,42 +4,28 @@
 
 <mapper namespace="mypage">
 
-
-<!-- 	<select id = "informget" parameterType="vo.mypage.mypageVo"> -->
-<!-- 		select * from member where id=#{memId} -->
-<!-- 	</select> -->
-
+<!-- parameterType = 입력값 , resultType = 출력값 -->
+	
+	<update id="update_inform" parameterType="vo.mypage.mypageVo" >
+		update member set passwd=#{passwd}, name=#{name}, 
+		zipcode='2', address=#{address}, email=#{email} 
+		where id = '1'
+	</update>
+	<!-- modifyPro -->
 	<select id = "passwdget" parameterType="String" resultType="String" >
-     	select passwd from member where id=#{memId}
+     	select passwd from member where id='1'
     </select>
 	
-	<update id="update_inform" parameterType="vo.mypage.mypageVo">
-		update member set passwd=#{passwd}, name=#{name}, 
-		zipcode=#{zipcode}, address=#{address}, email=#{email} 
-		where id = #{memId}
-	 <!-- modifyPro -->
-	</update>
-	
-<!-- 	<insert id="insert" parameterType="vo.mypageVo.mypageVo"> -->
-<!-- 		insert into member -->
-<!-- 		values(#{memId},#{passwd},#{name},#{zipcode},#{address},#{email}) -->
-<!-- 	</insert> -->
-
-	<delete id="deletemember" parameterType="vo.mypage.mypageVo">
-		delete from member where id = #{id}   <!-- modifyPro -->
+	<delete id="deletemember" parameterType="String">
+		delete from member where id = #{id}   
 	</delete>
+	<!-- modifyPro -->
 
-	<select id = "informget" parameterType="vo.mypage.mypageVo">
-		select * from member where id=#{memId}
+	<select id = "informget" parameterType="String" resultType="vo.mypage.mypageVo">
+		select * from member where id='1'
 	</select>
-
 	
-	<insert id="insert" parameterType="vo.mypage.mypageVo">
-		insert into member
-		values(#{memId},#{passwd},#{name},#{zipcode},#{address},#{email})
-	</insert>
-
-    <select id = "zipcheck" parameterType="String" resultType="vo.ZipcodeVo" >
+	<select id = "zipcheck1" parameterType="String" resultType="vo.mypage.ZipcodemyVo" >
       select * from zipcode where area4 like '%'||#{area4}||'%'
     </select>
     

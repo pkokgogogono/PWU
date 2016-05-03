@@ -95,6 +95,12 @@ data-cycle-pager-event="mouseover">
     <img src="/PWU/login/3.jpg">
     <img src="/PWU/login/4.jpg">
     <img src="/PWU/login/5.jpg">
-</div>   
+</div>  
+<table align="left">
+<tr>
+	<td valign="top" width="0"></td>
+	<td valign="top"><iframe frameborder="0" scrolling="auto" height="220" width="560" allowtransparency="true" marginwidth="0" marginheight="0" src="http://fxrates.kr.forexprostools.com/index_exchange.php?params&inner-border-color=%23CBCBCB&border-color=%23cbcbcb&bg1=%23F6F6F6&bg2=%23ffffff&inner-text-color=%23000000&currency-name-color=%23000000&header-text-color=%23FFFFFF&header-bg=%23979797" align="center"></iframe><br /><div style="width:540px"><a href="http://kr.investing.com" target="_blank"><span style="font-size: 11px;color: #333333;text-decoration: none;"></span></span></div></td>
+</tr> 
+</table>
 </body>
 </html>

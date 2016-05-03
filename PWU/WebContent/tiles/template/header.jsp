@@ -25,7 +25,7 @@ img, table td tr table tr td{
 <html>
 <c:if test="${memId==null}">
 	<body>
-		<img src="/PWU/tiles/template/logo.JPG" onClick="document.location.href='/PWU/index.do'">
+		<img src="/PWU/tiles/template/logo.JPG" onClick="document.location.href='/PWU/login/index.do'">
 		<img src="/PWU/tiles/template/mypage.JPG" align="right"
 			onClick="javascript:window.location='inputForm.do'">
 		<img src="/PWU/tiles/template/membership.JPG" align="right"
@@ -37,7 +37,7 @@ img, table td tr table tr td{
     <c:if test="${admin=='f'}">
 	<div align="right">
 		<img align="left" src="/PWU/tiles/template/logo.JPG"
-			onClick="document.location.href='/PWU/index.do'"> <img
+			onClick="document.location.href='/PWU/login/index.do'"> <img
 			src="/PWU/tiles/template/mypage.JPG" align="right"
 			onClick="javascript:window.location='/PWU/mypage/modifyForm.do'"> <img
 			src="/PWU/tiles/template/membership.JPG" align="right"
@@ -71,7 +71,7 @@ img, table td tr table tr td{
 			<table cellpadding="0" cellspacing="0" width="791"  >
 			  <tr>
 				<td onmouseover="javascript:menuShow('menu0');" width="120"
-					align="center" valign="middle" onClick="document.location.href='/PWU/index.do'"><img
+					align="center" valign="middle" onClick="document.location.href='/PWU/login/index.do'"><img
 						src="/PWU/tiles/template/logo2.JPG" width="100" height="45"
 						border="0"></td>
 				<td onmouseover="javascript:menuShow('menu0');" width="120"
@@ -79,10 +79,9 @@ img, table td tr table tr td{
 						src="/PWU/tiles/template/best20.JPG" width="100" height="45"
 						border="0"></td>
 				<td onmouseover="javascript:menuShow('menu3');" width="120"
-					align="center" valign="middle" onClick="sub_menuShow(3)"><a
-					href="/shop/goods/goods_list.php"><img
+					align="center" valign="middle" onClick="sub_menuShow(3)"><img
 						src="/PWU/tiles/template/fashion.JPG" width="100" height="45"
-						border="0"></a></td>
+						border="0" onClick="document.location.href='/PWU/fashion/Fashion.do'"></a></td>
 				<td onmouseover="javascript:menuShow('menu4');" width="120"
 					align="center" valign="middle" onClick="sub_menuShow(4)"><a
 					href="/shop/main/html.php?htmid=member/members.htm"><img

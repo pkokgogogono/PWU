@@ -1,4 +1,4 @@
-package BH;
+package action.customer.notice;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,9 +12,9 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import action.mypage.CommandAction;
+import action.CommandAction;
+import vo.CustomerVo;
 import vo.MemberVo;
-import vo.BH.Customer;
 
 public class Notice_WriteProAction implements CommandAction{
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{
@@ -29,12 +29,12 @@ public class Notice_WriteProAction implements CommandAction{
 		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 		SqlSession session = factory.openSession();
 
-		//request.getSession().getAttribute(관리자 아이디)
-		Customer vo = new Customer( request.getParameter("title"),
-				request.getParameter("content"));
+		//request.getSession().getAttribute(�?리자 ?��?��?��)
+		CustomerVo vo = new CustomerVo( request.getParameter("title"),
+				request.getParameter("content"),request.getParameter("writer"));
 	
 		int n = session.insert("notice.insert", vo);
-
+/*		System.out.println("vo : " + vo); */
 		session.commit();
 
 		session.close();
@@ -44,7 +44,7 @@ public class Notice_WriteProAction implements CommandAction{
 	}
 	
 	
-	return "/customer_center/notice/notice_list.jsp";
+	return "/customer_center/notice/notice_writepro.jsp";
 }
 
 

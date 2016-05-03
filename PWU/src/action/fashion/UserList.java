@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 import action.CommandAction;
 import dao.FashionDao;
 import vo.fashionBoardVo;
-import vo.BH.Customer;
 
 public class UserList implements CommandAction {
 	
@@ -17,16 +16,17 @@ public class UserList implements CommandAction {
 		request.setCharacterEncoding("euc-kr");
 
 		FashionDao fashiondao= FashionDao.getInstance();
-		
+	
+
 		List<fashionBoardVo> selectList = fashiondao.selectList();
-		   System.out.println(selectList);
 		request.setAttribute("selectList",selectList);
 		request.setAttribute("count", 1);
+	
 		if(selectList.isEmpty()){
 			request.setAttribute("count", 0);
 		}
 
-		return "/fashion/user/fashionUser.jsp";
+		return "/fashion/user/fashionmain.jsp";
 	}
 
   

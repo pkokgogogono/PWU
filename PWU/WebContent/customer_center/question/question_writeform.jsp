@@ -31,10 +31,11 @@
 
   
 <body bgcolor="${white}"> 
-<center><b>공지사항</b>
+<tr>
+<td  width="70"  bgcolor="${value_c}" align="center"><b>공지사항</b></td></tr>
 <br><br>
 <!-- post방식으로 writeSave()거쳐서 /JSP/mvc_board/writePro.do -> .do 실행 => controlleruri 의 dopost실행 -->
-<form method="post" name="writeform" action="/PWU/customer_center/notice/notice_writepro.do">
+<form method="post" name="writeform" action="/PWU/customer_center/question/question_writepro.do">
 <input type="hidden" name="num" value="${num}"> 
 
 <table width="400" border="1" cellspacing="0" cellpadding="0"  align="center">
@@ -69,7 +70,7 @@
 <td colspan=2 bgcolor="${value_c}" align="center">
   <input type="submit" value="글쓰기" > 
   <input type="reset" value="다시작성" >
-<input type="button" value="목록" OnClick="window.location='/PWU/customer_center/notice/notice_list.do'"> 
+<input type="button" value="목록" OnClick="window.location='/PWU/customer_center/question/question_list.do'"> 
   
 <!--    <tr> 
    	<select name="lev" size="1">

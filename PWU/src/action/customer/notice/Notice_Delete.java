@@ -1,4 +1,4 @@
- package BH;
+ package action.customer.notice;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import action.CommandAction;
 import dao.NoticeDao;
-import vo.BH.Customer;
+import vo.CustomerVo;
 
 public class Notice_Delete implements CommandAction {
 	public String requestPro(HttpServletRequest request,
@@ -18,12 +18,12 @@ public class Notice_Delete implements CommandAction {
 			NoticeDao noticedao = NoticeDao.getInstance();
 			
 			String num = request.getParameter("num");
-			//NoticeDao ¿¡¼­ noticedelete ¸Þ¼­µå Ã£¾Æ¼­ ½ÇÇà
+			//NoticeDao ï¿½ï¿½ï¿½ï¿½ noticedelete ï¿½Þ¼ï¿½ï¿½ï¿½ Ã£ï¿½Æ¼ï¿½ ï¿½ï¿½ï¿½ï¿½
 			noticedao.noticedelete(num);
 
 			
 
-		return"/customer_center/notice/notice_list.do";//ÇØ´çºä
+		return"/customer_center/notice/notice_list.do";//ï¿½Ø´ï¿½ï¿½
 
 	}
 }

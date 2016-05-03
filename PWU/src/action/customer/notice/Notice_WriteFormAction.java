@@ -1,4 +1,4 @@
-package BH;
+package action.customer.notice;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,7 +11,7 @@ public class Notice_WriteFormAction  implements CommandAction{
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{
 	
 		
-		return "/customer_center/notice/notice_write.jsp";//ÇØ´ç ºä Á¤º¸ return
+		return "/customer_center/notice/notice_write.jsp";//ï¿½Ø´ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ return
 		
 		
 

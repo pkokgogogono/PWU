@@ -3,18 +3,37 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="question">
-	<insert id="insert" parameterType="String">
-		insert into question
-		values(#{num},#{title},#{writer},#{reg_date},#{hit})
-	</insert>
+
+<!-- 	<insert id="insert" parameterType="vo.Customer">
+		insert into notice
+		values(notice_num.nextval,#{writer},#{title},#{reg_date},#{content},#{read_count},#{lev})
+	</insert> -->
 	
-	<select id = "idcheck" parameterType="String" resultType="String" >
-      select id from member where id=#{id}
-    </select>
-    
-    <select id = "idcheck2" parameterType="String" resultType="String" >
-      select id from member where id like '%'||#{id}||'%'
-    </select>
+	<insert id="insert" parameterType="vo.QuestionVo">
+		insert into FAQ(num,title,content,WRITER,reg_date)
+		values(notice_num.nextval,#{title},#{content},#{writer},sysdate)
+	</insert>
+
+	<update id="update">
+		UPDATE FAQ SET
+			writer=#{writer}
+			title=#{title}
+			content=#{content}
+			reg_date=#{reg_date}
+		where num=#{num} LIMIT 1
+	</update>
+	
+	<delete id="delete" parameterType="Integer">
+		DELETE FROM FAQ where num = #{num}
+	</delete>
+
+	<select id="selectList" resultType="vo.QuestionVo" >
+		SELECT * FROM FAQ
+	</select>
+	
+	<select id="selectOne" parameterType="Integer" resultType="vo.QuestionVo">
+		SELECT * FROM FAQ where num=#{num}
+	</select>
 
 
 </mapper>

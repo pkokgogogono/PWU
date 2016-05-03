@@ -11,12 +11,10 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import board.BoardDataBean;
 import vo.OrderVo;
 
-import board.BoardDBBean;
 
-public class ContentAction implements CommandAction {//±Û³»¿ë Ã³¸®
+public class ContentAction implements CommandAction {//ï¿½Û³ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
 
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		request.setCharacterEncoding("euc-kr");
@@ -31,14 +29,7 @@ public class ContentAction implements CommandAction {//±Û³»¿ë Ã³¸®
 		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 		SqlSession session = factory.openSession();
  
-        //ÇØ´ç ºä¿¡¼­ »ç¿ëÇÒ ¼Ó¼º
-//		OrderVo vo = new OrderVo(request.getParameter("name"), request.getParameter("email")
-//				, request.getParameter("address"), request.getParameter("zipcode"), request.getParameter("p_name")
-//				);
 
-		
-//		session.insert("order.insert",vo);
-//		
 		session.commit();
 
 		session.close();
@@ -47,6 +38,6 @@ public class ContentAction implements CommandAction {//±Û³»¿ë Ã³¸®
 			e.printStackTrace();
 		}
        
-        return "/order/content.jsp";//ÇØ´ç ºä
+        return "/order/content.jsp";//ï¿½Ø´ï¿½ ï¿½ï¿½
     }
 }

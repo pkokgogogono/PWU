@@ -1,4 +1,4 @@
-package BH;
+package action.customer.question;
 
 
 import java.util.List;
@@ -6,28 +6,30 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-
-
 import action.CommandAction;
-import dao.NoticeDao;
-import vo.BH.Customer;
+import dao.QuestionDao;
+import vo.CustomerVo;
+import vo.QuestionVo;
 
-public class Notice_ListAction implements CommandAction {
+public class ListAction implements CommandAction {
 	public String requestPro(HttpServletRequest request,
 			HttpServletResponse response) throws Throwable{
 		
-			NoticeDao noticedao = NoticeDao.getInstance();
 
-			List<Customer> selectList = noticedao.selectList();
+		
+		
+		
+			QuestionDao questiondao = QuestionDao.getInstance();
+
+			List<QuestionVo> selectList = questiondao.selectList();
 			request.setAttribute("selectList",selectList);
 			request.setAttribute("count", 1);
-			if(selectList.isEmpty()){
+			if(selectList == null){
 				request.setAttribute("count", 0);
 			}
 			
 
-		return"/customer_center/notice/notice_list.jsp";//ÇØ´çºä
+		return"/customer_center/question/question_list.jsp";//ÇØ´çºä
 
 	}
 }

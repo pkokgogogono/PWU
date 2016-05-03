@@ -31,6 +31,7 @@ public class modifyProAction implements CommandAction {
 				request.getParameter("zipcode"),request.getParameter("address"),request.getParameter("email"));
 		
         dao.updateInform(c);
+        System.out.println(c.getPasswd());
 	    
 		return "/mypage/modifyPro.jsp";
 	    

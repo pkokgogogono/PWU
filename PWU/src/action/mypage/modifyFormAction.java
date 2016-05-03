@@ -26,12 +26,11 @@ public class modifyFormAction implements CommandAction {
 		
 		mypageVo vo = new mypageVo();		
 		
-		dao.setInform((String)session2.getAttribute("memId"));
-	
+		session2.getAttribute("memId");
+		vo = dao.setInform(request.getParameter("memId"));
+		
 		session2.setAttribute("vo", vo);
-	
-		System.out.println(vo.getId());
-		System.out.println(vo.getPasswd());
+		
 		return "/mypage/modifyForm.jsp";
 	    
 	}

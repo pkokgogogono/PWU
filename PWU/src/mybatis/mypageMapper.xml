@@ -15,23 +15,31 @@
 	<select id = "passwdget" parameterType="String" resultType="String" >
      	select passwd from member where id='1'
     </select>
-	
+
 	<delete id="deletemember" parameterType="String">
 		delete from member where id = #{id}   
 	</delete>
 	<!-- modifyPro -->
 
 	<select id = "informget" parameterType="String" resultType="vo.mypage.mypageVo">
-		select * from member where id='1'
+		select * from member where id= '1'
 	</select>
 	
 	<select id = "zipcheck1" parameterType="String" resultType="vo.mypage.ZipcodemyVo" >
       select * from zipcode where area4 like '%'||#{area4}||'%'
     </select>
-    
+    <!-- 
     <select id = "selectlist" resultType="vo.mypage.mypageVo">
     	select * from mypage
+    </select> --> 
+     
+    <select id = "getArticleSearchCount" parameterType="String" resultType="int">
+    	select count(*) from f_dramaboard where "+combo+" like '%'||#{search}||'%'
     </select>
-
+    
+ <!--    <select id = "getSearchArticles" parameterType="int" resultType="vo.mypage.mypageVo">
+    	select num,writer,email,subject,passwd,reg_date,ref,re_step,re_level,content,ip,readcount,r from (select num,writer,email,subject,passwd,reg_date,ref,re_step,re_level,content,ip,readcount,rownum r from (select num,writer,email,subject,passwd,reg_date,ref,re_step,re_level,content,ip,readcount from board order by ref desc, re_step asc) order by ref desc, re_step asc ) where r = ? and r = ? and "+combo+" like '%"+search+"%'")
+    </select>
+  -->
 </mapper>
 

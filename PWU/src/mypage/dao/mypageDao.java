@@ -137,6 +137,8 @@ public class mypageDao {
 			vo.setZipcode("zipcode");
             vo.setAddress("address");
             vo.setEmail("email");*/
+			System.out.println(vo.getId());
+			System.out.println(vo.getPasswd());
             System.out.println("¿À³Ä");
             
 			

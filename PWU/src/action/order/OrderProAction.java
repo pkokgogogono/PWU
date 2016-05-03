@@ -1,4 +1,4 @@
-package action;
+package action.order;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,6 +13,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import action.CommandAction;
+import dao.OrderDao;
 import vo.MemberVo;
 import vo.OrderVo;
 
@@ -31,22 +32,41 @@ public class OrderProAction implements CommandAction {
 
 		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 		SqlSession session = factory.openSession();
+		/*
 		
-		System.out.println(Integer.parseInt(request.getParameter("num")));
-		System.out.println(request.getParameter("subject"));
+		System.out.println(request.getParameter("name"));
+		System.out.println(request.getParameter("id"));
 		System.out.println(request.getParameter("p_name"));
 		System.out.println(Integer.parseInt(request.getParameter("p_price")));
-		System.out.println(request.getParameter("e-mail"));
+		System.out.println(request.getParameter("email"));
+		System.out.println(request.getParameter("zipcode"));
 		System.out.println(request.getParameter("address"));
-		System.out.println(request.getParameter("content"));
-		
-		
-		OrderVo vo = new OrderVo(Integer.parseInt("num"),request.getParameter("subject"), request.getParameter("p_name"), Integer.parseInt("p_price"),  
-				 request.getParameter("e-mail"), request.getParameter("address"), request.getParameter("content"));
+		System.out.println(request.getParameter("status"));
+		*/
+		OrderDao dao = OrderDao.getInstance();
 
+		OrderVo vo = new OrderVo(request.getParameter("name"), 
+				request.getParameter("id"),
+				request.getParameter("p_name"), 
+				Integer.parseInt(request.getParameter("p_price")),  
+				 request.getParameter("email"),
+				 request.getParameter("zipcode"),
+				 request.getParameter("address"), 
+				 request.getParameter("content"));
+
+
+		 System.out.println(request.getParameter("name"));
+		 System.out.println(request.getParameter("id"));
+		 System.out.println(request.getParameter("p_name"));
+		 System.out.println(Integer.parseInt(request.getParameter("p_price")));
+		 System.out.println(request.getParameter("email"));
+		 System.out.println(request.getParameter("zipcode"));
+		 System.out.println(request.getParameter("address"));
+		 System.out.println(request.getParameter("status"));
 		
-		session.insert("order.insert",vo);
 		
+		dao.insert(vo);
+	
 		session.commit();
 
 		session.close();

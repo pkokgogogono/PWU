@@ -25,9 +25,9 @@ public class productDetail implements CommandAction {
 		FashionDao fashionDao= FashionDao.getInstance();
 		
 		String num = request.getParameter("num");
-		System.out.println(request.getParameter("num"));
+	
 		request.setAttribute("fashiondetail",fashionDao.fashionSelect(num));
-		System.out.println(fashionDao.fashionSelect(num));
+	
 		return "/fashion/admin/productDetail.jsp";
 	}
 

@@ -1,5 +1,8 @@
 eclipse.preferences.version=1
 encoding//WebContent/fashion/admin/fashionmain.jsp=UTF-8
+encoding//WebContent/fashion/user/fashionmain.jsp=UTF-8
 encoding//WebContent/mypage/NewFile.jsp=UTF-8
 encoding//src/BH/Notice_WriteProAction.java=UTF-8
 encoding//src/action/fashion/mainProAction.java=UTF-8
+encoding//src/action/fashion/productUpdatePro.java=UTF-8
+encoding//src/action/fashion/reviewFormAction.java=UTF-8

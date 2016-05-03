@@ -15,10 +15,10 @@
 <center><b>상품주문</b>
 <br>
 <form method="post" name="writeform" action="/PWU/order/orderPro.do" onsubmit="return writeSave()">
-<input type="hidden" name="num" value="${num}">
+<%-- <input type="hidden" name="num" value="${num}">
 <input type="hidden" name="ref" value="${ref}">
 <input type="hidden" name="re_step" value="${re_step}">
-<input type="hidden" name="re_level" value="${re_level}">
+<input type="hidden" name="re_level" value="${re_level}"> --%>
 
 <table>  <tr>
     <td  width="1"  bgcolor="${value_c}" align="center"><td  width="400">TO : pickweup</th></td>
@@ -32,12 +32,17 @@
    <tr>
     <td  width="150"  bgcolor="${value_c}" align="center">제 목</td>
     <td  width="400">
-       <input type="text" size="40" maxlength="10" name="subject"></td>
+       <input type="text" size="40" maxlength="10" name="name"></td>
+  </tr>
+  <tr>
+    <td  width="150"  bgcolor="${value_c}" align="center">사용자 ID</td>
+    <td  width="400">
+       <input type="text" size="40" maxlength="10" name="id"></td>
   </tr>
   <tr>
     <td  width="150"  bgcolor="${value_c}" align="center" >문의번호</td>
     <td  width="400">
-       <input type="text" size="40" maxlength="50" name="num"></td>
+       </td>
   </tr>
   <tr>
     <td  width="150"  bgcolor="${value_c}" align="center">상품이름</td>
@@ -51,17 +56,22 @@
   <tr>
     <td  width="150"  bgcolor="${value_c}" align="center">E-mail</td>
     <td  width="400">
-       <input type="text" size="40" maxlength="50" name="e-mail" ></td>
+       <input type="text" size="40" maxlength="50" name="email" ></td>
   </tr>
-  <tr> 
+<tr> 
+       <td width="200">우편번호</td>
+       <td> <input type="text" name="zipcode" size="7" >
+            <!-- <input type="button" value="우편번호찾기" onClick="zipCheck()">
+               우편번호를 검색하세요. --></td>
+          </tr>
+   <tr> 
        <td  width="150"  bgcolor="${value_c}" align="center">주 소</td>
-       <td> <input type="text" name="zipcode" size="7" readonly>
-               <input type="button" value="우편번호찾기" onClick="zipCheck()">
-               <input type="text" size="40" maxlength="30"></td>
+       <td> 
+               <input type="text" size="40" name = "address"  maxlength="30"></td>
               </td>
     </tr>
   <tr>
-      <td align="center">하고싶은말</td>
+      <td align="center">남기고 싶은 말씀</td>
       <td><textarea name="content" cols="40" rows="7"></textarea></td>
      </tr>
      <table>  <tr>
@@ -70,7 +80,7 @@
        </table>
 <tr align="center">
       <td colspan="2"><input type=submit value="주문하기">
-       <input type=button value="주문취소" OnClick="window.location='/PWU/order/orderList.jsp'">
+       <input type=button value="주문취소" OnClick="window.location='/PWU/order/orderList.do'">
      </tr></table>    
 </form>     
 </body>

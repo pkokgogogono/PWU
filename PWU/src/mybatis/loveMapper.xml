@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="love">
+
+	<insert id="loveInsert" parameterType="vo.loveVo">
+		insert into member_f_love(num,id,f_d_num,f_m_num,f_sa_num,reg_date)
+		values(f_love_num.NEXTVAL,'1',#{f_d_num},null,null, sysdate)
+	</insert>
+	
+	<select id="loveSelect" parameterType="int" resultType="int">
+		select count(f_d_num) from member_f_love where id='1' and f_d_num=#{num}
+	</select>
+
+	<delete id="loveDelete" parameterType="int">
+		delete from member_f_love where f_d_num = #{f_d_num}
+	</delete>
+	
+</mapper>
+

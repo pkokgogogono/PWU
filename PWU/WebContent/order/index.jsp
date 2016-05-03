@@ -5,6 +5,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<% response.sendRedirect("/PWU/order/InquiryList.do"); %>
+<% response.sendRedirect("/PWU/order/orderList.do"); %>
 </body>
 </html>

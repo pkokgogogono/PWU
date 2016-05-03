@@ -5,7 +5,7 @@
 <link href="style.css" rel="stylesheet" type="text/css">
 
    <script language="javascript">
-     
+     <!--
        function begin(){
          document.myform.passwd.focus();
        }
@@ -17,7 +17,7 @@
            return false;
          }
    }  
-     
+     -->
    </script>
 </head>
 <BODY onload="begin()" bgcolor="<%=bodyback_c%>">

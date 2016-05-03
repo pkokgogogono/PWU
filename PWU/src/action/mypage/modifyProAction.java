@@ -2,7 +2,6 @@ package action.mypage;
 
 
 
-
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -15,7 +14,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import action.CommandAction;
+
+import dao.LoginDao;
 import mypage.dao.mypageDao;
 import vo.mypage.*;
 
@@ -26,12 +26,17 @@ public class modifyProAction implements CommandAction {
 		HttpSession session2=request.getSession(true);
 		mypageDao dao = mypageDao.getInstance();
 		
+		mypageVo c = new mypageVo();
+		c.setName(request.getParameter("name"));
+        c.setZipcode(request.getParameter("zipcode"));
+        c.setAddress(request.getParameter("address"));
+        c.setEmail(request.getParameter("email"));
+        
+        int check = dao.updateArticle(c);
+        
+        request.setAttribute("check", check);
+       
 		
-		mypageVo c = new mypageVo(request.getParameter("passwd"),request.getParameter("name"),
-				request.getParameter("zipcode"),request.getParameter("address"),request.getParameter("email"));
-		
-        dao.updateInform(c);
-        System.out.println(c.getPasswd());
 	    
 		return "/mypage/modifyPro.jsp";
 	    

@@ -19,6 +19,7 @@ public class productList implements CommandAction {
 		FashionDao fashiondao= FashionDao.getInstance();
 		
 		List<fashionBoardVo> selectList = fashiondao.selectList();
+		   System.out.println(selectList);
 		request.setAttribute("selectList",selectList);
 		request.setAttribute("count", 1);
 		if(selectList.isEmpty()){

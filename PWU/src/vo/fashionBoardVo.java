@@ -2,10 +2,6 @@ package vo;
 
 public class fashionBoardVo {
 
-		
-
-	public fashionBoardVo(){}
-
 		private String num;
 		private String title; 
 		private String p_name;
@@ -17,25 +13,13 @@ public class fashionBoardVo {
 		private String reg_date;
 		private String read_count;
 		private String content;
-
+		private String like;
 		
-		
-
+	    public fashionBoardVo(){}
 		
 	    public fashionBoardVo(String title,  String p_name, int p_price, String content,
 	    		String path) {
 
-		this.title = title;
-		this.p_name = p_name;
-		this.p_price = p_price;
-		this.content = content;
-		this.path = path;
-		
-		}
-	    
-	    public fashionBoardVo(String num,String title,  String p_name, int p_price, String content,
-	    		String path) {
-        this.num = num;
 		this.title = title;
 		this.p_name = p_name;
 		this.p_price = p_price;
@@ -138,6 +122,13 @@ public class fashionBoardVo {
 			this.content = content;
 		}
 
+		public String getLike() {
+			return like;
+		}
+
+		public void setLike(String like) {
+			this.like = like;
+		}
 
 
 }

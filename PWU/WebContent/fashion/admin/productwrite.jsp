@@ -69,18 +69,18 @@
               <textarea rows="10" cols="45" name="content"></textarea>
             </div></td>
         </tr>
-<!--         <tr>  -->
-<!--           <td><div align="center">상품이미지</div></td> -->
-<!--           <td> <div align="left">        -->
-<!-- 				<input type="file" size=40> -->
-<!--             </div></td> -->
-<!--         </tr> -->
-         <tr> 
+        <tr> 
+          <td><div align="center">상품이미지</div></td>
+          <td> <div align="left">       
+				<input type="file" name="path" size=40>
+            </div></td>
+        </tr>
+<!--         <tr> 
           <td><div align="center">상품이미지</div></td>
           <td> <div align="left"> 
               <input type="file" name="product_image">
             </div></td>
-        </tr> 
+        </tr> -->
         <tr> 
           <td colspan="2"><div align="center"> 
               <input type="submit" value="제품등록">&nbsp;&nbsp;&nbsp;

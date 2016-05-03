@@ -72,7 +72,7 @@
         <tr> 
           <td><div align="center">상품이미지</div></td>
           <td> <div align="left"> 
-		<img src ="${fashiondetail.path}"/>
+
             </div></td>
         </tr>
 <!--         <tr> 
@@ -83,13 +83,11 @@
         </tr> -->
         <tr> 
           <td colspan="2"><div align="center"> 
-              <input type="button" value="목록보기" onclick="productList.do">&nbsp;&nbsp;&nbsp;
-              <input type="button" value="수정하기" onclick="productUpdate.do?num=${fashiondetail.num}">
+              <input type="button" value="목록보기" onclick="window.open('productList.do')">&nbsp;&nbsp;&nbsp;
+              <input type="button" value="수정하기" onclick="window.open('productupdate.do')">
             </div></td>
         </tr>
       </table>
-<br><br><br>
-
 
 	</form>
 	</td>

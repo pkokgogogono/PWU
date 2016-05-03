@@ -9,6 +9,11 @@ import dao.login.LoginDao;
 import vo.ZipcodeVo;
 
 
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
 public class ZipCheckAction implements CommandAction {
 
 	public String requestPro(HttpServletRequest request,

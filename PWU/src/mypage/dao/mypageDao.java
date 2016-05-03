@@ -15,7 +15,6 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 
-import vo.mypage.ZipcodemyVo;
 import vo.mypage.mypageVo;
 
 public class mypageDao {
@@ -47,7 +46,7 @@ public class mypageDao {
 	
 	}
 	
-/*	public List<mypageVo> selectList(){
+	public List<mypageVo> selectList(){
 		List<mypageVo> selectList = null;
 		try{
 			SqlSession session = getFactory().openSession();
@@ -59,61 +58,43 @@ public class mypageDao {
 		}
 		
 		return selectList;
-	}*/
+	}
 	
-
-/*	public String passwdCheck(String memId){ //비밀번호 체크
+	public String dbpass(String memId){
 		String dbpasswd = null;
-		
 		try {		
 			SqlSession session = getFactory().openSession();
 			dbpasswd = session.selectOne("mypage.passwdget",memId);
-			session.commit();
+			
+			
 			session.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-			
 		
 		return dbpasswd;
 	}
-*/	
-/*	public int delMember(String id){
-		int x = -1;
-		try{
-			SqlSession session = getFactory().openSession();
-			session.selectOne("mypage.deletemember",id);
-		
-
-		session.commit();
-		session.close();
-	} catch (Exception e) {
-		e.printStackTrace();
-	}
 	
-	return x;
-}*/
-	
-	
-	
-	  public int delMember(String id,String passwd){ //회원 탈퇴
+	public int updateArticle(mypageVo vo){
 		String dbpasswd = null;
-		
 		int x = -1;
 		try {		
 			SqlSession session = getFactory().openSession();
-			dbpasswd = session.selectOne("mypage.passwdget",id);
+			dbpasswd = session.selectOne("mypage.passwdget",vo);
 			
-		    if(dbpasswd== passwd){
-		    	session.selectOne("mypage.deletemember",id);
-                
-                x=1; //탈퇴 성공
+		    if(dbpasswd.equals(vo.getPasswd())){
+		    	
+                vo.setName("name");
+                vo.setAddress("address");
+                vo.setZipcode("zipcode");
+                vo.setEmail("email");
+                x=1;
 		    }else{
-				x= 0;//실패
+				x= 0;
 		    }
 		  
 			
-			session.commit();
+			
 			session.close();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -123,68 +104,7 @@ public class mypageDao {
 	}
 		
 	
-	public mypageVo setInform(String id){ // 원래정보 보여주기
-		mypageVo vo = new mypageVo();
-		
-		try {		
-			SqlSession session = getFactory().openSession();
-			vo = session.selectOne("mypage.informget",id);
-			/*System.out.println(vo.getId());
-			System.out.println(vo.getPasswd());
-			*//*
-			vo.setPasswd("passwd");
-			vo.setName("name");
-			vo.setZipcode("zipcode");
-            vo.setAddress("address");
-            vo.setEmail("email");*/
-			System.out.println(vo.getId());
-			System.out.println(vo.getPasswd());
-            System.out.println("오냐");
-            
-			
-			session.close();
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		return vo;
-	}
-	
-
-	
-	public void updateInform(mypageVo vo){ //db에 정보 업데이트
-		
-		
-		try{
-			SqlSession session = getFactory().openSession();
-			vo = session.selectOne("mypage.update_inform", vo);
-			System.out.println("왔다");
-
-			session.commit();
-			session.close();
-		}catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
-	
-	public List<ZipcodemyVo> zipCheck1(String area4){
-		List<ZipcodemyVo> zipcodeList = null;
-		try {
-			SqlSession session = getFactory().openSession();
-			zipcodeList = session.selectList("mypage.zipcheck1",area4);
-			session.commit();
-			session.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return zipcodeList;
-	}
-		
-	
-	
-/*	public List<mypageVo> updateGetArticle(){
+	public List<mypageVo> updateGetArticle(){
 		List<mypageVo> article=null;
 		try {		
 			SqlSession session = getFactory().openSession();
@@ -198,7 +118,7 @@ public class mypageDao {
         
 		return article;
 	}
-*/
+
 	
 	
 	

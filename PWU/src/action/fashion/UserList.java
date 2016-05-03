@@ -19,14 +19,14 @@ public class UserList implements CommandAction {
 		FashionDao fashiondao= FashionDao.getInstance();
 		
 		List<fashionBoardVo> selectList = fashiondao.selectList();
+		   System.out.println(selectList);
 		request.setAttribute("selectList",selectList);
 		request.setAttribute("count", 1);
 		if(selectList.isEmpty()){
 			request.setAttribute("count", 0);
 		}
 
-		System.out.println("zzzz");
-		return "/fashion/user/fashionmain.jsp";
+		return "/fashion/user/fashionUser.jsp";
 	}
 
   

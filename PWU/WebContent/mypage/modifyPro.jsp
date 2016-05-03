@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=euc-kr" %>
 <%@ include file="color.jsp"%>
 
-
+<% request.setCharacterEncoding("euc-kr");%>
 
 
 
@@ -21,9 +21,9 @@
   <tr>
     <td bgcolor="<%=value_c%>" align="center">
       <form>
-    <input type="button" value="메인으로" onclick="window.location='PWU/login/main.do'">
+    <input type="button" value="메인으로" onclick="window.location='main.jsp'">
       </form>
-      <!-- 5초후에 메인으로 이동합니다.<meta http-equiv="Refresh" content="5;url=login/main.do" > -->
+      5초후에 메인으로 이동합니다.<meta http-equiv="Refresh" content="5;url=main.jsp" >
     </td>
   </tr>
 </table>

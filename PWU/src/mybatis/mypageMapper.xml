@@ -4,42 +4,48 @@
 
 <mapper namespace="mypage">
 
-<!-- parameterType = 입력값 , resultType = 출력값 -->
-	
-	<update id="update_inform" parameterType="vo.mypage.mypageVo" >
-		update member set passwd=#{passwd}, name=#{name}, 
-		zipcode='2', address=#{address}, email=#{email} 
-		where id = '1'
-	</update>
-	<!-- modifyPro -->
+
+<!-- 	<select id = "informget" parameterType="vo.mypage.mypageVo"> -->
+<!-- 		select * from member where id=#{memId} -->
+<!-- 	</select> -->
+
 	<select id = "passwdget" parameterType="String" resultType="String" >
-     	select passwd from member where id='1'
+     	select passwd from member where id=#{memId}
     </select>
-
-	<delete id="deletemember" parameterType="String">
-		delete from member where id = #{id}   
-	</delete>
-	<!-- modifyPro -->
-
-	<select id = "informget" parameterType="String" resultType="vo.mypage.mypageVo">
-		select * from member where id= '1'
-	</select>
 	
-	<select id = "zipcheck1" parameterType="String" resultType="vo.mypage.ZipcodemyVo" >
+	<update id="update_inform" parameterType="vo.mypage.mypageVo">
+		update member set passwd=#{passwd}, name=#{name}, 
+		zipcode=#{zipcode}, address=#{address}, email=#{email} 
+		where id = #{memId}
+	 <!-- modifyPro -->
+	</update>
+	
+<!-- 	<insert id="insert" parameterType="vo.mypageVo.mypageVo"> -->
+<!-- 		insert into member -->
+<!-- 		values(#{memId},#{passwd},#{name},#{zipcode},#{address},#{email}) -->
+<!-- 	</insert> -->
+
+	<delete id="deletemember" parameterType="vo.mypage.mypageVo">
+		delete from member where id = #{id}   <!-- modifyPro -->
+	</delete>
+
+	<select id = "informget" parameterType="vo.mypage.mypageVo">
+		select * from member where id=#{memId}
+	</select>
+
+	
+	<insert id="insert" parameterType="vo.mypage.mypageVo">
+		insert into member
+		values(#{memId},#{passwd},#{name},#{zipcode},#{address},#{email})
+	</insert>
+
+    <select id = "zipcheck" parameterType="String" resultType="vo.ZipcodeVo" >
       select * from zipcode where area4 like '%'||#{area4}||'%'
     </select>
-    <!-- 
+    
     <select id = "selectlist" resultType="vo.mypage.mypageVo">
     	select * from mypage
-    </select> --> 
-     
-    <select id = "getArticleSearchCount" parameterType="String" resultType="int">
-    	select count(*) from f_dramaboard where "+combo+" like '%'||#{search}||'%'
     </select>
-    
- <!--    <select id = "getSearchArticles" parameterType="int" resultType="vo.mypage.mypageVo">
-    	select num,writer,email,subject,passwd,reg_date,ref,re_step,re_level,content,ip,readcount,r from (select num,writer,email,subject,passwd,reg_date,ref,re_step,re_level,content,ip,readcount,rownum r from (select num,writer,email,subject,passwd,reg_date,ref,re_step,re_level,content,ip,readcount from board order by ref desc, re_step asc) order by ref desc, re_step asc ) where r = ? and r = ? and "+combo+" like '%"+search+"%'")
-    </select>
-  -->
+
 </mapper>
 

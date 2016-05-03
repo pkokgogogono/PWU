@@ -90,5 +90,5 @@ public class ControllerUsingURI extends HttpServlet {
 		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 		dispatcher.forward(request, response);
-	} 
+	}
 }

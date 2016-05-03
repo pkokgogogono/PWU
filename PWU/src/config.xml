@@ -23,9 +23,6 @@
 		<mapper resource="mybatis/cutomer_notice.xml"/>
 		<mapper resource="mybatis/cutomer_question.xml"/>	
 		<mapper resource="mybatis/fashionMapper.xml"/>
-	    <mapper resource="mybatis/reviewMapper.xml"/>
-	    <mapper resource="mybatis/loveMapper.xml"/>
-		
 	</mappers>
 	
 </configuration>

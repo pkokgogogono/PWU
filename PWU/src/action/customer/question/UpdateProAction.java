@@ -2,7 +2,6 @@ package action.customer.question;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import board.BoardDataBean;
 import action.CommandAction;
 
 public class UpdateProAction implements CommandAction {

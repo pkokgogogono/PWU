@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 import action.CommandAction;
 import dao.ReviewDao;
 import vo.ReviewVo;
-import vo.BH.Customer;
 
 public class reviewProAction implements CommandAction {
 	

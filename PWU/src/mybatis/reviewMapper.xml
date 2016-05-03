@@ -10,7 +10,7 @@
 	</insert>
 	
 <select id="reviewSelectList" resultType="vo.ReviewVo" parameterType="int">
-		select * from f_drama_review where num=#{num}
+		select * from f_drama_review where num=#{num} order by re_num desc
 	</select>
 	
 	<delete id="reviewDelete" parameterType="String">

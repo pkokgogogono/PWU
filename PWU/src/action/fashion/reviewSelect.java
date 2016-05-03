@@ -24,7 +24,7 @@ public class reviewSelect implements CommandAction {
 
 		FashionDao fashionDao= FashionDao.getInstance();
 		
-		String num = request.getParameter("num");
+		int num = Integer.parseInt(request.getParameter("num"));
 	
 		request.setAttribute("fashiondetail",fashionDao.fashionSelect(num));
 	

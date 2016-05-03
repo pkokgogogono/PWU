@@ -68,6 +68,12 @@
               ${fashiondetail.content}
             </div></td>
         </tr>
+         <tr> 
+          <td><div align="center">조회수</div></td>
+          <td> <div align="left"> 
+              ${fashiondetail.read_count}
+            </div></td>
+        </tr>
         <tr> 
           <td><div align="center">상품이미지</div></td>
           <td> <div align="left"> 
@@ -87,6 +93,7 @@
 	<tr width="1200" height="10">
 	<td>
   <div style="float:right;"> <a href="/PWU/fashion/admin/reviewSelect.do?num=${fashiondetail.num}">글쓰기</a></div>
+  <div style="float:center;"> <a href="/PWU/fashion/admin/fashionList.do?num=${fashiondetail.num}">상품목록 가기</a></div>
   <div style="float:left;"> <a href="/PWU/fashion/admin/reviewProAction.do?num=${fashiondetail.num}">상품후기 보러가기</a></div>
   </td>
   </tr>

@@ -17,8 +17,8 @@ public class UserList implements CommandAction {
 		request.setCharacterEncoding("euc-kr");
 
 		FashionDao fashiondao= FashionDao.getInstance();
-		
-		
+	
+
 		List<fashionBoardVo> selectList = fashiondao.selectList();
 		request.setAttribute("selectList",selectList);
 		request.setAttribute("count", 1);
@@ -27,7 +27,6 @@ public class UserList implements CommandAction {
 			request.setAttribute("count", 0);
 		}
 
-		System.out.println("zzzz");
 		return "/fashion/user/fashionmain.jsp";
 	}
 

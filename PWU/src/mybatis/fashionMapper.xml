@@ -12,12 +12,16 @@
 		select * from f_dramaboard 
 	</select>
 	
+	<select id="selectListRead" resultType="vo.fashionBoardVo">
+		select * from f_dramaboard order by read_count desc 
+	</select>
+	
 	<delete id="delete" parameterType="String">
 		delete from f_dramaboard where num = #{num}
 	</delete>
 	
-	<update id="readUpdate" parameterType="vo.fashionBoardVo">
-		update f_dramaboard set read_count=#{read_count}+1
+	<update id="readUpdate" parameterType="int">
+		update f_dramaboard set read_count= read_count+1
 		where num = #{num}
 	</update>
 	
@@ -28,7 +32,7 @@
 		where num = #{num}
 	</update>
 	
-	<select id="select" parameterType="String" resultType="vo.fashionBoardVo">
+	<select id="select" parameterType="int" resultType="vo.fashionBoardVo">
 		select * from f_dramaboard where num=#{num}
 	</select>
 

@@ -11,12 +11,12 @@
 <b>BEST ITEM¢¾</b>
 <table border="1">
  <tr>
-  <c:forEach var="select" items="${selectList}" end="3">
+  <c:forEach var="best" items="${selectListread}" end="3">
 <td width="300" height="300">
- <a href="userDetail.do?num=${select.num}"><img src="${select.path}" width="300" height="280"/></a>
+ <a href="userDetail.do?num=${best.num}"><img src="${best.path}" width="300" height="280"/></a>
  <br>  
- ${select.title} <a href="loveInsert.do?num=${select.num}"><img src="/PWU/fashion/user/love.jpg" width="20" height="20"/></a>
-
+ ${best.title} <a href="loveInsert.do?num=${best.num}"><img src="/PWU/fashion/user/love.jpg" width="20" height="20"/></a>
+ ${best.read_count}
  </td>
     </c:forEach>
   </tr>
@@ -33,6 +33,7 @@
  <br>  
  ${select.title}
  <a href="loveInsert.do?num=${select.num}"><img src="/PWU/fashion/user/love.jpg" width="20" height="20"/></a>
+ ${select.read_count}
  </td>
     </c:forEach>
     
@@ -45,6 +46,7 @@
  <br>  
  ${select.title}
  <a href="loveInsert.do?num=${select.num}"><img src="/PWU/fashion/user/love.jpg" width="20" height="20"/></a>
+  ${select.read_count}
  </td>
     </c:forEach>
   </tr>
@@ -57,6 +59,7 @@
  <br>  
  ${select.title}
  <a href="loveInsert.do?num=${select.num}"><img src="/PWU/fashion/user/love.jpg" width="20" height="20"/></a>
+  ${select.read_count}
  </td>
     </c:forEach>
   </tr>

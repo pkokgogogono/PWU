@@ -24,10 +24,12 @@ public class userDetail implements CommandAction {
 
 		FashionDao fashionDao= FashionDao.getInstance();
 		
-		String num = request.getParameter("num");
-	
+		int num = Integer.parseInt(request.getParameter("num"));
+
+		fashionDao.readUpdate(num);
+		
 		request.setAttribute("fashiondetail",fashionDao.fashionSelect(num));
-	
+
 		request.setAttribute("num",request.getParameter("num"));
 		
 		return "/fashion/user/userDetail.jsp";

@@ -19,7 +19,11 @@ public class fashionList implements CommandAction {
 		FashionDao fashiondao= FashionDao.getInstance();
 		
 		List<fashionBoardVo> selectList = fashiondao.selectList();
+		List<fashionBoardVo> selectListread = fashiondao.selectListRead();
+		
 		request.setAttribute("selectList",selectList);
+		request.setAttribute("selectListread",selectListread);
+		
 		request.setAttribute("count", 1);
 		if(selectList.isEmpty()){
 			request.setAttribute("count", 0);

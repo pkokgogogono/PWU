@@ -67,6 +67,18 @@ public class FashionDao {
 		return selectList;
 	}
 	
+	public List<fashionBoardVo> selectListRead(){
+		List<fashionBoardVo> selectList = null;
+		try {		
+			SqlSession session = getFactory().openSession();
+			selectList = session.selectList("fashion.selectListRead");
+			session.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return selectList;
+	}
+	
 	public void fashionDelete(String num){
 
 		try {		
@@ -79,7 +91,7 @@ public class FashionDao {
 		}
 	}
 	
-	public fashionBoardVo fashionSelect(String num){
+	public fashionBoardVo fashionSelect(int num){
 		fashionBoardVo vo = null;
 		try {		
 	
@@ -105,11 +117,11 @@ public class FashionDao {
 
 	}
 	
-	public void readUpdate(fashionBoardVo vo){
+	public void readUpdate(int num){
 		
 		try {		
 			SqlSession session = getFactory().openSession();
-			session.update("fashion.readUpdate",vo);
+			session.update("fashion.readUpdate",num);
 			session.commit();
 			session.close();
 		} catch (Exception e) {

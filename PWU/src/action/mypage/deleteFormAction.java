@@ -13,27 +13,24 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import action.CommandAction;
-
+import dao.LoginDao;
 import mypage.dao.mypageDao;
+import vo.MemberVo;
 import vo.mypage.*;
 
-public class modifyFormAction implements CommandAction {
+public class deleteFormAction implements CommandAction {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{
 		request.setCharacterEncoding("euc-kr");
 		
 		HttpSession session2=request.getSession(true);
 		mypageDao dao = mypageDao.getInstance();
 		
-		mypageVo vo = new mypageVo();		
+		return "/mypage/deleteForm.jsp";
 		
-		session2.getAttribute("memId");
-		vo = dao.setInform(request.getParameter("memId"));
-		
-		session2.setAttribute("vo", vo);
-		
-		return "/mypage/modifyForm.jsp";
-	    
-	}
+		  
 
-  
+	}
 }
+
+
+       

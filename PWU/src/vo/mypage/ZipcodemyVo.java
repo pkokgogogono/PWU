@@ -1,10 +1,17 @@
 package vo.mypage;
 
-public class ZipcodeBean {
+public class ZipcodemyVo {
 
-	public ZipcodeBean(){};
+	public ZipcodemyVo(){};
 	
-	public ZipcodeBean(String zipcode, String area1, String area2, String area3, String area4) {
+	private String zipcode;
+	
+	private String area1;
+	private String area2;
+	private String area3;
+	private String area4;
+	
+	public ZipcodemyVo(String zipcode, String area1, String area2, String area3, String area4) {
 		
 		this.zipcode = zipcode;
 		this.area1 = area1;
@@ -12,12 +19,7 @@ public class ZipcodeBean {
 		this.area3 = area3;
 		this.area4 = area4;
 	}
-	private String zipcode;
-	
-	private String area1;
-	private String area2;
-	private String area3;
-	private String area4;
+
 	
 	public String getZipcode() {
 		return zipcode;

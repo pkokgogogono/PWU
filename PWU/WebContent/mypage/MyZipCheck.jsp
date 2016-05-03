@@ -28,7 +28,7 @@
 <center>
 <b>우편번호 찾기</b>
 <table>
-<form name="zipForm" method="post" action="ZipCheck.do">
+<form name="zipForm" method="post" action="ZipCheck2.do">
       <tr>
         <td><br>
           도로명 주소 입력 : <input name="area4" type="text">

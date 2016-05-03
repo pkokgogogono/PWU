@@ -1,8 +1,8 @@
 <%@ page contentType = "text/html; charset=euc-kr" %>
 <html>
 <head>
-<title>마이페이지(주문조회)</title>
-<center><b>주문조회</b>
+<title>마이페이지(옛날에주문했던거조회)</title>
+<center><b>옛날에주문했던거조회</b>
 </head>
 <table border="1" width="700" cellpadding="0" cellspacing="0" align="center">
     <tr height="30" bgcolor="${value_c}">

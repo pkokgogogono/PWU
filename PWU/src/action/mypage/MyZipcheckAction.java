@@ -1,25 +1,26 @@
-package action.login;
+package action.mypage;
 
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import action.CommandAction;
-import dao.login.LoginDao;
-import vo.ZipcodeVo;
+import mypage.dao.mypageDao;
+import vo.mypage.ZipcodemyVo;
 
 
-public class ZipCheckAction implements CommandAction {
+
+public class MyZipcheckAction implements CommandAction {
 
 	public String requestPro(HttpServletRequest request,
 			HttpServletResponse response) throws Throwable {
 		request.setCharacterEncoding("euc-kr");
 		
-		LoginDao logindao = LoginDao.getInstance();
+		mypageDao dao = mypageDao.getInstance();
 		
 		if (request.getParameter("area4") != null) {
 			
-				List<ZipcodeVo> zipcodeList = logindao.zipCheck(request.getParameter("area4"));
+				List<ZipcodemyVo> zipcodeList = dao.zipCheck1(request.getParameter("area4"));
 
 				if(zipcodeList.isEmpty())
 				{
@@ -32,7 +33,7 @@ public class ZipCheckAction implements CommandAction {
 			request.setAttribute("zipcodeList", null);
 		}
 
-		return "/login/ZipCheck.jsp";
+		return "/mypage/MyZipCheck.jsp";
 	}
 
 }

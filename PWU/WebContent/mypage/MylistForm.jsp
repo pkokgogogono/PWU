@@ -1,8 +1,8 @@
 <%@ page contentType = "text/html; charset=euc-kr" %>
 <html>
 <head>
-<title>마이페이지(주문목록)</title>
-<center><b>주문목록(전체:${count})</b>
+<title>마이페이지(주문하고싶은목록)</title>
+<center><b>주문하고싶은목록(전체:${count})</b>
 </head>
 
 

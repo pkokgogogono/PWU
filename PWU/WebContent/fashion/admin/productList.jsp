@@ -11,7 +11,6 @@
  <div class="title">
             <h2><font color="#555555">상품등록리스트</font></h2>            
  </div>
- 
  <script type="text/javascript">
 	function move(url) {
 		location.href=url;
@@ -56,7 +55,7 @@
    <td width="73">상품이름</td>
    <td width="379">상품가격</td>
    <td width="379">상품내용</td>
-   <td width-"379">상품이미지</td>
+   <td width="379">상품이미지</td>
    <td width="164"></td>
    
   </tr>
@@ -68,14 +67,13 @@
     <td align="center"  width="150">${select.p_name}</td>
     <td align="center"  width="150">${select.p_price}</td>  
     <td align="center"  width="150">${select.content}</td>
-     <td align="center"  width="150"><img src ="${select.path}"/></td>   
+     <td align="center"  width="100" height="100"><img src="${select.path}" width="50" height="50"/></td>   
     
-    <td width="164"><input type=button value="삭제" OnClick="window.location='listDelete.do?num=${select.num}'"></td>
+    <td width="164"><input type=button value="삭제" OnClick="window.location='listDelete.do?num=${select.num}'">
+    <input type=button value="수정" OnClick="window.location='productUpdate.do?num=${select.num}'"></td>
   </tr>
     </c:forEach>
-
-
-
+    
 </table>
 </c:if>
  

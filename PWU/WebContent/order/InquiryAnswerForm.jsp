@@ -50,12 +50,12 @@
     <td  width="400" >
      <textarea name="content" rows="13" cols="40"></textarea> </td>
   </tr>
-  <tr>
+  <%-- <tr>
     <td  width="100"  bgcolor="${value_c}" align="center" >첨부파일</td>
     <td><div class="tb-left"><input type='file' name='userfile'  class="MS_input_file" onchange="document.getElementById('size_checker').src = 
 this.value;"/></div>
 </td>
-  </tr>
+  </tr> --%>
   <tr>
     <td  width="100"  bgcolor="${value_c}" align="center"><img alt="123" src="images/lock.png" width="70" height = "60"></td>
     <td  width="400" >

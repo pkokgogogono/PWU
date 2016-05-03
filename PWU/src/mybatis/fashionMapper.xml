@@ -16,10 +16,16 @@
 		delete from f_dramaboard where num = #{num}
 	</delete>
 	
+	<update id="update" parameterType="vo.fashionBoardVo">
+		update f_dramaboard set title =#{title}, p_name=#{p_name}, 
+		p_price = #{p_price}, content= #{content}, path=#{path}
+		where num = #{num}
+	</update>
+	
 	<select id="select" parameterType="String" resultType="vo.fashionBoardVo">
 		select * from f_dramaboard where num=#{num}
 	</select>
 
-
+	
 </mapper>
 

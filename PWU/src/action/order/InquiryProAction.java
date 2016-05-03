@@ -1,4 +1,4 @@
-package action;
+package action.order;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,7 +12,9 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-
+import action.CommandAction;
+import dao.OrderDao;
+import vo.InquiryVo;
 import vo.MemberVo;
 import vo.OrderVo;
 
@@ -28,22 +30,24 @@ public class InquiryProAction implements CommandAction {
 		try {
 			is = Resources.getResourceAsStream(res);
 		
-
-		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
-		SqlSession session = factory.openSession();
-		
-
-		
-		OrderVo vo = new OrderVo(0, request.getParameter("name"), request.getParameter("email")
-				, request.getParameter("address"), request.getParameter("zipcode"), request.getParameter("p_name"), null, res, 0, res
-				);
+	    SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+	    SqlSession session = factory.openSession();
+							
+	    OrderDao dao = OrderDao.getInstance();
 
 		
 	
 		
 		
 		
-		session.insert("order.insert",vo);
+	    InquiryVo vo = new InquiryVo(request.getParameter("title"),
+	    		request.getParameter("writer"), request.getParameter("content"),
+				request.getParameter("passwd")); 
+				 
+		
+		
+		dao.inquiryInsert(vo);
+		
 		
 		session.commit();
 

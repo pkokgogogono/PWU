@@ -1,7 +1,10 @@
-<%@ page contentType="text/html; charset=euc-kr"%>
+<%@ page contentType="text/html; charset=utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+
 <html>
 <head>
-<title>È¸¿øÁ¤º¸¼öÁ¤</title>
+<title>íšŒì›ì •ë³´ìˆ˜ì •</title>
 <link href="style.css" rel="stylesheet" type="text/css">
 <script language="JavaScript">
    
@@ -10,40 +13,40 @@
         
        
         if(!userinput.passwd.value ) {
-            alert("ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
+            alert("ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”");
             return false;
         }
         if(userinput.passwd.value != userinput.passwd2.value)
         {
-            alert("ºñ¹Ğ¹øÈ£¸¦ µ¿ÀÏÇÏ°Ô ÀÔ·ÂÇÏ¼¼¿ä");
+            alert("ë¹„ë°€ë²ˆí˜¸ë¥¼ ë™ì¼í•˜ê²Œ ì…ë ¥í•˜ì„¸ìš”");
             return false;
         }
       
         if(!userinput.name.value) {
-            alert("»ç¿ëÀÚ ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä");
+            alert("ì‚¬ìš©ì ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš”");
             return false;
         }
 
         return true;
     }
 
-    // ¾ÆÀÌµğ Áßº¹ ¿©ºÎ¸¦ ÆÇ´Ü
+    // ì•„ì´ë”” ì¤‘ë³µ ì—¬ë¶€ë¥¼ íŒë‹¨
     function openConfirmid(userinput) {
-        // ¾ÆÀÌµğ¸¦ ÀÔ·ÂÇß´ÂÁö °Ë»ç
+        // ì•„ì´ë””ë¥¼ ì…ë ¥í–ˆëŠ”ì§€ ê²€ì‚¬
         if (userinput.id.value == "") {
-            alert("¾ÆÀÌµğ¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
+            alert("ì•„ì´ë””ë¥¼ ì…ë ¥í•˜ì„¸ìš”");
             return;
         }
-        // url°ú »ç¿ëÀÚ ÀÔ·Â id¸¦ Á¶ÇÕÇÕ´Ï´Ù.
+        // urlê³¼ ì‚¬ìš©ì ì…ë ¥ idë¥¼ ì¡°í•©í•©ë‹ˆë‹¤.
         url = "confirmId.do?id=" + userinput.id.value ;
        
-        // »õ·Î¿î À©µµ¿ì¸¦ ¿±´Ï´Ù.
+        // ìƒˆë¡œìš´ ìœˆë„ìš°ë¥¼ ì—½ë‹ˆë‹¤.
         open(url, "confirm", "toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=300,height=200");
     }
     
     function zipCheck(){
     	
-    	url="ZipCheck.do?check=y";
+    	url="ZipCheck2.do?check=y";
     	
     	window.open(url,"post","toolbar=no ,width=500 ,height=300,directories=no,status=yes,scrollbars=yes,menubar=no");
     }
@@ -56,7 +59,7 @@
   <table width="600" border="1" cellspacing="0" cellpadding="3" align="center" >
     <tr>
     <td colspan="2" height="39" align="center" bgcolor="${value_c}" >
-       <font size="+1" ><b>°³ÀÎÁ¤º¸¼öÁ¤</b></font></td>
+       <font size="+1" ><b>ê°œì¸ì •ë³´ìˆ˜ì •</b></font></td>
     </tr>
     <tr>
       
@@ -64,53 +67,53 @@
     </tr> 
 
     <tr>
-      <td width="200"> »ç¿ëÀÚ ID</td>
-      <td width="400">${memId} </td>
+      <td width="200"> ì‚¬ìš©ì ID</td>
+      <td width="400"> ${memId} </td> 
     </tr>
     <tr>
-      <td width="200"> ºñ¹Ğ¹øÈ£</td>
+      <td width="200"> ë¹„ë°€ë²ˆí˜¸</td>
       <td width="400" >
-        <input type="password" name="passwd" size="15" maxlength="12">
+        <input type="password" name="passwd" size="15" maxlength="12" value="${vo.passwd}">
       </td>
     <tr> 
-      <td width="200">ºñ¹Ğ¹øÈ£ È®ÀÎ</td>
+      <td width="200">ë¹„ë°€ë²ˆí˜¸ í™•ì¸</td>
       <td width="400">
-        <input type="password" name="passwd2" size="15" maxlength="12">
+        <input type="password" name="passwd2" size="15" maxlength="12" value="${vo.passwd}">
       </td>
     </tr>
    
   
     
     <tr>
-      <td width="200">»ç¿ëÀÚ ÀÌ¸§</td>
+      <td width="200">ì‚¬ìš©ì ì´ë¦„</td>
       <td width="400">
-        <input type="text" name="name" size="15" maxlength="10" value="${c.name}">
+        <input type="text" name="name" size="15" maxlength="10" value="${vo.name}">
       </td>
     </tr>
         <tr> 
-       <td width="200">¿ìÆí¹øÈ£</td>
-       <td> <input type="text" name="zipcode" size="7" readonly>
-               <input type="button" value="¿ìÆí¹øÈ£Ã£±â" onClick="zipCheck()">
-               ¿ìÆí¹øÈ£¸¦ °Ë»öÇÏ¼¼¿ä.</td>
+       <td width="200">ìš°í¸ë²ˆí˜¸</td>
+       <td> <input type="text" name="zipcode" size="7" value="${vo.zipcode}" readonly>
+               <input type="button" value="ìš°í¸ë²ˆí˜¸ì°¾ê¸°" onClick="zipCheck()">
+               ìš°í¸ë²ˆí˜¸ë¥¼ ê²€ìƒ‰í•˜ì„¸ìš”.</td>
           </tr>
     <tr>
     <tr> 
-       <td>ÁÖ¼Ò</td>
-       <td><input type="text" name="address" size="70" value="${c.address}">
-       ¼öÁ¤ÇÒ ÁÖ¼Ò¸¦ Àû¾î ÁÖ¼¼¿ä.</td>
+       <td>ì£¼ì†Œ</td>
+       <td><input type="text" name="address" size="70" value="${vo.address}">
+       ìˆ˜ì •í•  ì£¼ì†Œë¥¼ ì ì–´ ì£¼ì„¸ìš”.</td>
     </tr>
     <tr>
       <td width="200">E-Mail</td>
       <td width="400">
-        <input type="text" name="email" size="40" maxlength="30" value="${c.email}">
+        <input type="text" name="email" size="40" maxlength="30" value="${vo.email}">
       </td>
     </tr>
 
     <tr>
       <td colspan="2" align="center" bgcolor="${value_c}">
-          <input type="submit" name="confirm" value="µî   ·Ï" >
-          <input type="reset" name="reset" value="´Ù½ÃÀÔ·Â">
-          <input type="button" value="µ¹¾Æ°¡±â" onclick="javascript:window.location='/PWU/login/index.do'">
+          <input type="submit" name="confirm" value="ë“±   ë¡" >
+          <input type="reset" name="reset" value="ë‹¤ì‹œì…ë ¥">
+          <input type="button" value="ëŒì•„ê°€ê¸°" onclick="javascript:window.location='/PWU/login/main.do'">
       </td>
     </tr>
   </table>

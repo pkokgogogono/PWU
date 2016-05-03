@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class mypageVo {
 	private String id;
-	private String passwd; 
+	private String passwd;
 	private String name;
 	private String zipcode; 
 	private String address; 
@@ -21,6 +21,7 @@ public class mypageVo {
 		this.passwd = passwd;
 	}
     
+    
     public mypageVo(String passwd, String name, String zipcode, String address, String email){
     	this.passwd = passwd;
     	this.name = name;
@@ -28,6 +29,16 @@ public class mypageVo {
     	this.address = address;
     	this.email = email;
     }
+    
+    public mypageVo(String id, String passwd, String name, String zipcode, String address, String email){
+    	this.id = id;
+    	this.passwd = passwd;
+    	this.name = name;
+    	this.zipcode = zipcode;
+    	this.address = address;
+    	this.email = email;
+    }
+    
 	
     public mypageVo(String id, String passwd, String name, String zipcode, String address, String email, int admin) {
 	super();

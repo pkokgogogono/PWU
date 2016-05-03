@@ -1,10 +1,12 @@
-package action;
+package action.order;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+import action.CommandAction;
 import board.BoardDataBean;
+import dao.OrderDao;
+import vo.InquiryVo;
 
 public class UpdateProAction implements CommandAction {
 
@@ -12,21 +14,15 @@ public class UpdateProAction implements CommandAction {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		request.setCharacterEncoding("utf-8");
 		
-		String pageNum = request.getParameter("pageNum");
+		OrderDao orderdao= OrderDao.getInstance();
 		
-		BoardDataBean article = new BoardDataBean();
-        article.setNum(Integer.parseInt(request.getParameter("num")));
-        article.setWriter(request.getParameter("writer"));
-        article.setEmail(request.getParameter("email"));
-        article.setSubject(request.getParameter("subject"));
-        article.setContent(request.getParameter("content"));
-        article.setPasswd(request.getParameter("passwd"));
-//        
-//        BoardDBBean dbPro = BoardDBBean.getInstance();
-//        int check = dbPro.updateArticle(article);
-//        
-//        request.setAttribute("pageNum", new Integer(pageNum));
-//        request.setAttribute("check", check);
+		InquiryVo vo = new InquiryVo(
+				request.getParameter("title"),
+				request.getParameter("writer"),
+				request.getParameter("content"),
+				request.getParameter("passwd"));
+		
+		orderdao.inquiryUpdate(vo);
 
         
 		return "/order/updatePro.jsp";

@@ -13,6 +13,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import vo.MemberVo;
 import vo.fashionBoardVo;
+import vo.loveVo;
 
 public class FashionDao {
 
@@ -53,6 +54,7 @@ public class FashionDao {
 		}
 	}
 	
+	
 	public List<fashionBoardVo> selectList(){
 		List<fashionBoardVo> selectList = null;
 		try {		
@@ -80,15 +82,27 @@ public class FashionDao {
 	public fashionBoardVo fashionSelect(String num){
 		fashionBoardVo vo = null;
 		try {		
-			System.out.println(num);
+	
 			SqlSession session = getFactory().openSession();
 			vo=session.selectOne("fashion.select",num);
-			session.commit();
 			session.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return vo;
+	}
+	
+	public void fashionUpdate(fashionBoardVo vo){
+		
+		try {		
+			SqlSession session = getFactory().openSession();
+			session.update("fashion.update",vo);
+			session.commit();
+			session.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 	}
 }
 	

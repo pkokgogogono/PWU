@@ -54,21 +54,23 @@ public class mainProAction implements CommandAction {
 		     
 		     System.out.println(path);
 		      String filename = multi.getFilesystemName(name);
+		      System.out.println(filename);
 		   //�쟾�넚�쟾 �썝�옒�쓽 �뙆�씪 �씠由�
 		      String original = multi.getOriginalFileName(name);
+		      System.out.println(original);
 		   //�쟾�넚�맂 �뙆�씪�쓽 �궡�슜 ���엯
 		      String type = multi.getContentType(name);
+		      System.out.println(type);
 		   //�쟾�넚�맂 �뙆�씪 �냽�꽦�씠 file�씤 �깭洹몄쓽 name �냽�꽦媛믪쓣 �씠�슜�빐 �뙆�씪 媛앹껜 �깮�꽦//�뙆�씪媛��졇�삤湲�
 		      File file = multi.getFile(name);
 	
-
 	
 			  if(file!=null){
 				  System.out.println("크기: " + file.length());
 				  System.out.println("<br>");
 		      }
 
-		}
+		
 		
 		request.setCharacterEncoding("euc-kr");
 		
@@ -80,19 +82,25 @@ public class mainProAction implements CommandAction {
 				multi.getParameter("p_name"),
 				Integer.parseInt(multi.getParameter("p_price")),
 				multi.getParameter("content"),
-				multi.getParameter("path"));
+				"\\PWU\\fileSave\\"+filename);
 		
 
+		System.out.println(multi.getParameter("title"));
+		System.out.println(multi.getParameter("p_name"));
+		System.out.println(Integer.parseInt(multi.getParameter("p_price")));
+		System.out.println(multi.getParameter("content"));
+		System.out.println(path);
 		
 		fashionDao.fashionInsert(vo);
 		
+		}
 	}catch(IOException ioe){
 		 System.out.println(ioe);
 	}catch(Exception ioe){
 		 System.out.println(ioe);
 	}
-		return "/fashion/admin/productList.do";
+		return "/fashion/admin/productwritePro.jsp";
 	}
 
-  
 }
+

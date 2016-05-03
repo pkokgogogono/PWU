@@ -11,7 +11,6 @@
  <div class="title">
             <h2><font color="#555555">상품등록리스트</font></h2>            
  </div>
- 
  <script type="text/javascript">
 	function move(url) {
 		location.href=url;
@@ -38,7 +37,7 @@
   </tr>
 </table>
 
-<c:if test="${count == 0}">
+<c:if test="${count <= 0}">
 <table width="700" border="1" cellpadding="0" cellspacing="0">
   <tr>
     <td align="center">
@@ -56,7 +55,7 @@
    <td width="73">상품이름</td>
    <td width="379">상품가격</td>
    <td width="379">상품내용</td>
-   <td width-"379">상품이미지</td>
+   <td width="379">상품이미지</td>
    <td width="164"></td>
    
   </tr>
@@ -68,14 +67,13 @@
     <td align="center"  width="150">${select.p_name}</td>
     <td align="center"  width="150">${select.p_price}</td>  
     <td align="center"  width="150">${select.content}</td>
-     <td align="center"  width="150"><img src ="${select.path}"/></td>   
+     <td align="center"  width="100" height="100"><img src="${select.path}" width="50" height="50"/></td>   
     
-    <td width="164"><input type=button value="삭제" OnClick="window.location='listDelete.do?num=${select.num}'"></td>
+    <td width="164"><input type=button value="삭제" OnClick="window.location='listDelete.do?num=${select.num}'">
+    <input type=button value="수정" OnClick="window.location='productUpdate.do?num=${select.num}'"></td>
   </tr>
     </c:forEach>
-
-
-
+    
 </table>
 </c:if>
  
@@ -103,29 +101,8 @@
 
     </tr>
 </table>
-
-<%-- <c:if test="${count > 0}">
-   <c:set var="pageCount" value="${count / pageSize + ( count % pageSize == 0 ? 0 : 1)}"/>
-   <c:set var="pageBlock" value="${10}"/>
-   <fmt:parseNumber var="result" value="${currentPage / 10}" integerOnly="true" />
-   <c:set var="startPage" value="${result * 10 + 1}" />
-   <c:set var="endPage" value="${startPage + pageBlock-1}"/>
-   <c:if test="${endPage > pageCount}">
-        <c:set var="endPage" value="${pageCount}"/>
-   </c:if>
-         
-<c:if test="${startPage > 5}">
-        <a href="/PWU/customer_center/notice_list.do?pageNum=${startPage - 5 }">[이전]</a>
-   </c:if>
-
-   <c:forEach var="i" begin="${startPage}" end="${endPage}">
-       <a href="/PWU/customer_center/notice_list.do?pageNum=${i}">[${i}]</a>
-   </c:forEach>
-
-   <c:if test="${endPage < pageCount}">
-        <a href="/PWU/customer_center/notice_list.do?pageNum=${startPage + 5}">[다음]</a>
-   </c:if>
-  </c:if> --%>
+</tr>
+</table>
 
 </body> 
 

@@ -3,21 +3,54 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="order">
-	<insert id="insert" parameterType="vo.OrderVo">
+<!-- 	<insert id="insert" parameterType="vo.OrderVo">
 		insert into order
 		values(#{num},#{id},#{name},#{email},#{address},#{zipcode},#{reg_date},#{p_name},#{p_price},#{status})
 	</insert>
-	
+	 -->
 
-<!-- 	<insert id="insert" parameterType="vo.OrderVo"> -->
-<!-- 		insert into notice(num, subject, p_name, p_price, email, address, content) -->
-<!-- 		values(notice_num.nextval,#{subject},#{p_name},#{p_price},#{email},#{address},#{content}) -->
-<!-- 	</insert> -->
+ 	<insert id="insert" parameterType="vo.OrderVo"> 
+ 		insert into order_(num, id, name, reg_date, p_name, p_price, email, address, zipcode, status, content)
+		values(order_num.NEXTVAL,#{id},#{name},sysdate,#{p_name},#{p_price},#{email},#{address},#{zipcode},1,#{content}) 
+	</insert> 
+	
+	<insert id="inquiryInsert" parameterType="vo.InquiryVo"> 
+ 		insert into product_inquiry(num, title, writer, content, passwd, reg_date, read_count, level)
+		values(product_inquiry_num.NEXTVAL,#{title}, #{writer},#{content}, #{passwd},sysdate,0,0) 
+	</insert> 
 
 	
 	<select id="selectList" resultType="vo.OrderVo" >
-		SELECT * FROM order
+		SELECT * FROM order_
 	</select>
 	
+	<select id="inquiryselectList" resultType="vo.InquiryVo" >
+		SELECT * FROM product_inquiry
+	</select>
+	
+	<select id="selectOne" parameterType="string" resultType="vo.InquiryVo">
+		SELECT * FROM product_inquiry 
+		where num=#{num}
+	</select>
+	
+	<select id="passwdget" parameterType="string" resultType="string">
+		SELECT passwd FROM product_inquiry 
+		where num=#{num}
+	</select>
+	
+	<delete id="delete" parameterType="string">
+		DELETE FROM product_inquiry
+		where num=#{num}
+	</delete>
+	
+	<update id="update" parameterType="String">
+		update product_inquiry set title =#{title}, writer =#{writer}, content=#{content}, passwd =#{passwd} 
+		where num=#{num}
+	</update>
+	
+	<select id="select" parameterType="String" resultType="vo.InquiryVo">
+		select * from product_inquiry 
+		where num=#{num} order by num desc
+	</select>
 
 </mapper>

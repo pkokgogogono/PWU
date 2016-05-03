@@ -4,41 +4,36 @@
 
 <html>
 <head>
-<title>게시판</title>
+<title>상품문의 글수정</title>
 <link href="style.css" rel="stylesheet" type="text/css">
 <script language="JavaScript" src="script.js"></script>
 </head>
 
 <body bgcolor="${bodyback_c}"> 
-<center><b>글수정</b>
+<center><b>상품문의 글수정</b>
 <br>
 <form method="post" name="writeform" action="/PWU/order/updatePro.do?pageNum=${pageNum}" onsubmit="return writeSave()">
 <table width="400" border="1" cellspacing="0" cellpadding="0" align="center">
   <tr>
-    <td  width="70"  bgcolor="${value_c}" align="center">이 름</td>
+    <td  width="70"  bgcolor="${value_c}" align="center">제목</td>
     <td align="left" width="330">
-       <input type="text" size="10" maxlength="10" name="writer" value="${article.writer}">
-   <input type="hidden" name="num" value="${article.num}"></td>
+       <input type="text" size="10" maxlength="10" name="title" value="${Inquiry.title}">
+   <input type="hidden" name="num" value="${select.num}"></td>
   </tr>
   <tr>
-    <td  width="70"  bgcolor="${value_c}" align="center" >제 목</td>
+    <td  width="70"  bgcolor="${value_c}" align="center" >닉네임</td>
     <td align="left" width="330">
-       <input type="text" size="40" maxlength="50" name="subject" value="${article.subject}"></td>
-  </tr>
-  <tr>
-    <td  width="70"  bgcolor="${value_c}" align="center">Email</td>
-    <td align="left" width="330">
-       <input type="text" size="40" maxlength="30" name="email" value="${article.email}"></td>
+       <input type="text" size="40" maxlength="50" name="writer" value="${Inquiry.writer}"></td>
   </tr>
   <tr>
     <td  width="70"  bgcolor="${value_c}" align="center" >내 용</td>
     <td align="left" width="330">
-     <textarea name="content" rows="13" cols="40">${article.content}</textarea></td>
+     <input type="text" name="content" rows="13" cols="40" value="${Inquiry.content}"/></td>
   </tr>
   <tr>
     <td  width="70"  bgcolor="${value_c}" align="center" >비밀번호</td>
     <td align="left" width="330" >
-     <input type="password" size="8" maxlength="12" name="passwd">
+     <input type="password" size="8" maxlength="12" name="passwd" value="${Inquiry.passwd}">
 </td>
   </tr>
   <tr>     

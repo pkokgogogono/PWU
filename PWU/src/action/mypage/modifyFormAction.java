@@ -12,8 +12,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import action.CommandAction;
 
-import dao.LoginDao;
 import mypage.dao.mypageDao;
 import vo.mypage.*;
 
@@ -24,20 +24,13 @@ public class modifyFormAction implements CommandAction {
 		HttpSession session2=request.getSession(true);
 		mypageDao dao = mypageDao.getInstance();
 		
-		mypageVo c = new mypageVo();
-		c.setName(request.getParameter("name"));
-        c.setZipcode(request.getParameter("zipcode"));
-        c.setAddress(request.getParameter("address"));
-        c.setEmail(request.getParameter("email"));
-        
-        int check = dao.updateArticle(c);
-        
-        request.setAttribute("check", check);
-       
+		mypageVo vo = new mypageVo();		
 		
-        
-        
-	    
+		session2.getAttribute("memId");
+		vo = dao.setInform(request.getParameter("memId"));
+		
+		session2.setAttribute("vo", vo);
+		
 		return "/mypage/modifyForm.jsp";
 	    
 	}

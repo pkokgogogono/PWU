@@ -13,6 +13,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import vo.MemberVo;
 import vo.fashionBoardVo;
+import vo.loveVo;
 
 public class FashionDao {
 
@@ -53,11 +54,24 @@ public class FashionDao {
 		}
 	}
 	
+	
 	public List<fashionBoardVo> selectList(){
 		List<fashionBoardVo> selectList = null;
 		try {		
 			SqlSession session = getFactory().openSession();
 			selectList = session.selectList("fashion.selectList");
+			session.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return selectList;
+	}
+	
+	public List<fashionBoardVo> selectListRead(){
+		List<fashionBoardVo> selectList = null;
+		try {		
+			SqlSession session = getFactory().openSession();
+			selectList = session.selectList("fashion.selectListRead");
 			session.close();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -77,18 +91,43 @@ public class FashionDao {
 		}
 	}
 	
-	public fashionBoardVo fashionSelect(String num){
+	public fashionBoardVo fashionSelect(int num){
 		fashionBoardVo vo = null;
 		try {		
-			System.out.println(num);
+	
 			SqlSession session = getFactory().openSession();
 			vo=session.selectOne("fashion.select",num);
-			session.commit();
 			session.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return vo;
+	}
+	
+	public void fashionUpdate(fashionBoardVo vo){
+		
+		try {		
+			SqlSession session = getFactory().openSession();
+			session.update("fashion.update",vo);
+			session.commit();
+			session.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+	
+	public void readUpdate(int num){
+		
+		try {		
+			SqlSession session = getFactory().openSession();
+			session.update("fashion.readUpdate",num);
+			session.commit();
+			session.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 	}
 }
 	

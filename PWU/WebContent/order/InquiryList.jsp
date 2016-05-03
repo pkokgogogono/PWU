@@ -24,39 +24,24 @@
       <td align="center"  width="50"  >NO</td>
       <td align="center"  width="250" >TITLE</td>
       <td align="center"  width="100" >WRITER</td>
-      <td align="center"  width="150" >DATE</td>
-      <td align="center"  width="50" >HIT</td>  
+      <td align="center"  width="150" >DATE</td>  
     </tr>
 
-   <c:forEach var="select" items="${selectList}">
-   <tr height="30">
-    <td align="center"  width="50" >
-  <c:out value="${number}"/>
-  <c:set var="number" value="${number - 1}"/>
-</td>
-    <td  width="250" >
-  <c:if test="${article.re_level > 0}">
-  </c:if>
-  <c:if test="${article.re_level == 0}">
-  </c:if> 
-      <a href="/PWU/order/content.do?num=${article.num}&pageNum=${currentPage}">
-          ${select.subject}</a>
-          <c:if test="${select.readcount >= 20}">
-  </c:if>
-</td>
-    <td align="center"  width="100">
-       <a href="mailto:${select.email}">${select.writer}</a>
-</td>
-    <td align="center"  width="150">${select.reg_date}
-</td>
-    <td align="center"  width="50">${select.readcount}</td>
-    <td align="center" width="100" >${select.ip}</td>
+   <c:forEach var="select" items="${selectList}" >
+<tr>
+    <!-- <td align="center"  width="100"> -->
+    <td align="center"  width="150">${select.num}</td>
+    <td align="center"  width="150">${select.title}<a href="/PWU/order/Inquirycontent.do?num=${select.num}">${select.title} </a></td>
+    <td align="center"  width="50">${select.writer}</td>
+    <td align="center" width="100" >${select.reg_date}</td>
   </tr>
+  
+  	
   </c:forEach>
 </table>
 <%-- </c:if> --%>
 
-<c:if test="${count > 0}">
+<%-- <c:if test="${count > 0}">
    <c:set var="pageCount" value="${count / pageSize + ( count % pageSize == 0 ? 0 : 1)}"/>
    <c:set var="pageBlock" value="${10}"/>
    <fmt:parseNumber var="result" value="${currentPage / 10}" integerOnly="true" />
@@ -77,7 +62,7 @@
    <c:if test="${endPage < pageCount}">
         <a href="/PWU/order/InquiryList.do?pageNum=${startPage + 10}">[다음]</a>
    </c:if>
-</c:if>
+</c:if> --%>
 
 <form name="search" method="POST" action="/mvc_Board/MVC/listSearch.do">
 <SELECT name="combo">

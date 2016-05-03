@@ -133,7 +133,7 @@ img, table td tr table tr td{
 					<td width="20%" onClick="sub_menuShow(4)">beauty-movie</td>
 					<td width="20%" onClick="sub_menuShow(4)">beauty-street&air</td>
 					<td></td>
-				</tr>
+				</tr> 
 			</table>
 			<table border="1" ID="menu5" style="display: none;" width="100%" >
 				<tr>

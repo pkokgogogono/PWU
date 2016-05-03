@@ -16,6 +16,7 @@
  <a href="userDetail.do?num=${select.num}"><img src="${select.path}" width="300" height="280"/></a>
  <br>  
  ${select.title} <a href="loveInsert.do?num=${select.num}"><img src="/PWU/fashion/user/love.jpg" width="20" height="20"/></a>
+
  </td>
     </c:forEach>
   </tr>

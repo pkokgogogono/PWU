@@ -104,6 +104,19 @@ public class FashionDao {
 		}
 
 	}
+	
+	public void readUpdate(fashionBoardVo vo){
+		
+		try {		
+			SqlSession session = getFactory().openSession();
+			session.update("fashion.readUpdate",vo);
+			session.commit();
+			session.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
 }
 	
 	

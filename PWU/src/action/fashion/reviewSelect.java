@@ -14,9 +14,9 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import action.CommandAction;
 import dao.FashionDao;
-import vo.fashionBoardVo;
+import dao.ReviewDao;
 
-public class productDetail implements CommandAction {
+public class reviewSelect implements CommandAction {
 	
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{
 
@@ -28,7 +28,8 @@ public class productDetail implements CommandAction {
 	
 		request.setAttribute("fashiondetail",fashionDao.fashionSelect(num));
 	
-		return "/fashion/admin/productDetail.jsp";
+		System.out.println(fashionDao.fashionSelect(num).getNum()+"°Ù³Ñ");
+		return "/fashion/user/reviewForm.jsp";
 	}
 
   

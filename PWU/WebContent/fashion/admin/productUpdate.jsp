@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=euc-kr" import="java.sql.*" errorPage="" %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%-- <%
     String cust_id = (String)session.getAttribute("cust_id");
 	if(cust_id == null){
@@ -40,7 +40,8 @@
   </tr>
   <tr> 
     <td height="190" colspan="6">
-	<form method="post" action="mainProAction.do"	>
+    
+	<form method="post" action="productUpdatePro.do?num=${fashiondetail.num}" enctype="multipart/form-data">
 	<table align="center" width="75%" border="1" cellspacing="1" cellpadding="1">
         <tr> 
           <td colspan="2"><div align="center">상품 등록</div></td>
@@ -48,49 +49,49 @@
         <tr> 
           <td width="31%"><div align="center">제목</div></td>
           <td width="69%"> <div align="left"> 
-              ${fashiondetail.title}
+              <input type="text" name="title" size="60" value="${fashiondetail.title}">
             </div></td>
         </tr>
         <tr> 
           <td width="31%"><div align="center">상품이름</div></td>
           <td width="69%"> <div align="left"> 
-              ${fashiondetail.p_name}
+              <input type="text" name="p_name" size="20" value="${fashiondetail.p_name}">
             </div></td>
         </tr>
         <tr> 
           <td height="21"><div align="center">상품가격</div></td>
           <td> <div align="left"> 
-              ${fashiondetail.p_price}
+              <input type="text" name="p_price" size="20" value="${fashiondetail.p_price}">
               원 </div></td>
         </tr>
         <tr> 
           <td><div align="center">상품 상세 내용</div></td>
           <td> <div align="left"> 
-              ${fashiondetail.content}
+              <input type="text" rows="10" cols="45" name="content" value="${fashiondetail.content}"/>
             </div></td>
         </tr>
-        <tr> 
+<!--         <tr>  -->
+<!--           <td><div align="center">상품이미지</div></td> -->
+<!--           <td> <div align="left">        -->
+<!-- 				<input type="file" size=40> -->
+<!--             </div></td> -->
+<!--         </tr> -->
+         <tr> 
           <td><div align="center">상품이미지</div></td>
           <td> <div align="left"> 
-		<img src ="${fashiondetail.path}"/>
+          <input type="file" name="product_image" value="${fashiondetail.path}">
+             
             </div></td>
-        </tr>
-<!--         <tr> 
-          <td><div align="center">상품이미지</div></td>
-          <td> <div align="left"> 
-              <input type="file" name="product_image">
-            </div></td>
-        </tr> -->
+        </tr> 
         <tr> 
           <td colspan="2"><div align="center"> 
-              <input type="button" value="목록보기" onclick="productList.do">&nbsp;&nbsp;&nbsp;
-              <input type="button" value="수정하기" onclick="productUpdate.do?num=${fashiondetail.num}">
+              <input type="submit" value="제품등록">&nbsp;&nbsp;&nbsp;
+              <input type="button" value="목록보기" onclick="window.open('productList.do')">&nbsp;&nbsp;&nbsp;
+              <input type="reset" value="다시쓰기">
             </div></td>
         </tr>
       </table>
-<br><br><br>
-
-
+            
 	</form>
 	</td>
   </tr>

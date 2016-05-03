@@ -1,22 +1,15 @@
 package action.fashion;
 
-import java.io.IOException;
-import java.io.InputStream;
-
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import action.CommandAction;
 import dao.FashionDao;
 import vo.fashionBoardVo;
 
-public class productDetail implements CommandAction {
+public class productUpdate implements CommandAction {
 	
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{
 
@@ -25,11 +18,10 @@ public class productDetail implements CommandAction {
 		FashionDao fashionDao= FashionDao.getInstance();
 		
 		String num = request.getParameter("num");
-	
-		request.setAttribute("fashiondetail",fashionDao.fashionSelect(num));
-	
-		return "/fashion/admin/productDetail.jsp";
-	}
 
-  
+	   
+		request.setAttribute("fashiondetail",fashionDao.fashionSelect(num));
+		
+		return "/fashion/admin/productUpdate.jsp";
+	}
 }

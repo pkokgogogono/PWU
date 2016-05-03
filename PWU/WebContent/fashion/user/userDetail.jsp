@@ -1,5 +1,7 @@
 <%@ page contentType="text/html; charset=euc-kr" import="java.sql.*" errorPage="" %>
-
+<title>
+사용자페이지
+</title>
 <%-- <%
     String cust_id = (String)session.getAttribute("cust_id");
 	if(cust_id == null){
@@ -43,9 +45,6 @@
 	<form method="post" action="mainProAction.do"	>
 	<table align="center" width="75%" border="1" cellspacing="1" cellpadding="1">
         <tr> 
-          <td colspan="2"><div align="center">상품 등록</div></td>
-        </tr>
-        <tr> 
           <td width="31%"><div align="center">제목</div></td>
           <td width="69%"> <div align="left"> 
               ${fashiondetail.title}
@@ -81,16 +80,19 @@
               <input type="file" name="product_image">
             </div></td>
         </tr> -->
-        <tr> 
-          <td colspan="2"><div align="center"> 
-              <input type="button" value="목록보기" onclick="productList.do">&nbsp;&nbsp;&nbsp;
-              <input type="button" value="수정하기" onclick="productUpdate.do?num=${fashiondetail.num}">
-            </div></td>
-        </tr>
       </table>
 <br><br><br>
+ <center>
+  <table border ="1" width="1200" height="400">
+	<tr width="1200" height="10">
+	<td>
+  <div style="float:right;"> <a href="/PWU/fashion/admin/reviewSelect.do?num=${fashiondetail.num}">글쓰기</a></div>
+  <div style="float:left;"> <a href="/PWU/fashion/admin/reviewProAction.do?num=${fashiondetail.num}">상품후기 보러가기</a></div>
+  </td>
+  </tr>
 
-
+  </table>
+  </center>
 	</form>
 	</td>
   </tr>

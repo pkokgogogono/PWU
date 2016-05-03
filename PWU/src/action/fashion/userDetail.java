@@ -16,7 +16,7 @@ import action.CommandAction;
 import dao.FashionDao;
 import vo.fashionBoardVo;
 
-public class productDetail implements CommandAction {
+public class userDetail implements CommandAction {
 	
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{
 
@@ -28,7 +28,9 @@ public class productDetail implements CommandAction {
 	
 		request.setAttribute("fashiondetail",fashionDao.fashionSelect(num));
 	
-		return "/fashion/admin/productDetail.jsp";
+		request.setAttribute("num",request.getParameter("num"));
+		
+		return "/fashion/user/userDetail.jsp";
 	}
 
   

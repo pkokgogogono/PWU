@@ -10,7 +10,7 @@ import dao.FashionDao;
 import vo.fashionBoardVo;
 import vo.BH.Customer;
 
-public class productList implements CommandAction {
+public class fashionList implements CommandAction {
 	
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{
 
@@ -25,7 +25,7 @@ public class productList implements CommandAction {
 			request.setAttribute("count", 0);
 		}
 
-		return "/fashion/admin/productList.jsp";
+		return "/fashion/user/fashionList.jsp";
 	}
 
   

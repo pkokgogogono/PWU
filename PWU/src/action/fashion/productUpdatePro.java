@@ -2,28 +2,20 @@ package action.fashion;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.Enumeration;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
-
-import action.CommandAction;
-
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
-
+import action.CommandAction;
 import dao.FashionDao;
 import vo.fashionBoardVo;
 
-public class mainProAction implements CommandAction {
+public class productUpdatePro implements CommandAction {
 	
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{
 
@@ -78,20 +70,15 @@ public class mainProAction implements CommandAction {
 		FashionDao fashionDao= FashionDao.getInstance();
 		
 		fashionBoardVo vo = new fashionBoardVo(
+				multi.getParameter("num"),
 				multi.getParameter("title"),
 				multi.getParameter("p_name"),
 				Integer.parseInt(multi.getParameter("p_price")),
 				multi.getParameter("content"),
 				"\\PWU\\fileSave\\"+filename);
+	
 		
-
-		System.out.println(multi.getParameter("title"));
-		System.out.println(multi.getParameter("p_name"));
-		System.out.println(Integer.parseInt(multi.getParameter("p_price")));
-		System.out.println(multi.getParameter("content"));
-		System.out.println(path);
-		
-		fashionDao.fashionInsert(vo);
+		fashionDao.fashionUpdate(vo);
 		
 		}
 	}catch(IOException ioe){
@@ -99,8 +86,6 @@ public class mainProAction implements CommandAction {
 	}catch(Exception ioe){
 		 System.out.println(ioe);
 	}
-		return "/fashion/admin/productwritePro.jsp";
+		return "/fashion/admin/productList.do";
 	}
-
 }
-

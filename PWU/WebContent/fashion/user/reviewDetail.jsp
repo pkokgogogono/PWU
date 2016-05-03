@@ -43,38 +43,33 @@
 	<form method="post" action="mainProAction.do"	>
 	<table align="center" width="75%" border="1" cellspacing="1" cellpadding="1">
         <tr> 
-          <td colspan="2"><div align="center">상품 등록</div></td>
+          <td colspan="2"><div align="center">상품 후기 자세히</div></td>
         </tr>
         <tr> 
-          <td width="31%"><div align="center">제목</div></td>
+          <td width="31%"><div align="center">작성자</div></td>
           <td width="69%"> <div align="left"> 
-              ${fashiondetail.title}
+              ${review.writer}
             </div></td>
         </tr>
         <tr> 
-          <td width="31%"><div align="center">상품이름</div></td>
+          <td width="31%"><div align="center">내용</div></td>
           <td width="69%"> <div align="left"> 
-              ${fashiondetail.p_name}
+              ${review.content}
             </div></td>
         </tr>
-        <tr> 
-          <td height="21"><div align="center">상품가격</div></td>
+<%--         <tr> 
+          <td height="21"><div align="center">비밀번호</div></td>
           <td> <div align="left"> 
-              ${fashiondetail.p_price}
+              ${review.passwd}
               원 </div></td>
-        </tr>
+        </tr> --%>
         <tr> 
-          <td><div align="center">상품 상세 내용</div></td>
+          <td><div align="center">이미지</div></td>
           <td> <div align="left"> 
-              ${fashiondetail.content}
+              <img src ="${review.path}"/>
             </div></td>
         </tr>
-        <tr> 
-          <td><div align="center">상품이미지</div></td>
-          <td> <div align="left"> 
-		<img src ="${fashiondetail.path}"/>
-            </div></td>
-        </tr>
+
 <!--         <tr> 
           <td><div align="center">상품이미지</div></td>
           <td> <div align="left"> 
@@ -83,8 +78,8 @@
         </tr> -->
         <tr> 
           <td colspan="2"><div align="center"> 
-              <input type="button" value="목록보기" onclick="productList.do">&nbsp;&nbsp;&nbsp;
-              <input type="button" value="수정하기" onclick="productUpdate.do?num=${fashiondetail.num}">
+              <input type="button" value="목록보기" onclick="window.open('reviewProAction.do?num=${review.num}')">&nbsp;&nbsp;&nbsp;
+             <%--  <input type="button" value="수정하기" onclick="productUpdate.do?num=${fashiondetail.num}"> --%>
             </div></td>
         </tr>
       </table>

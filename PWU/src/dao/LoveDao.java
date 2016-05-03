@@ -15,15 +15,15 @@ import vo.MemberVo;
 import vo.fashionBoardVo;
 import vo.loveVo;
 
-public class FashionDao {
+public class LoveDao {
 
-	private static FashionDao instance = new FashionDao();
+	private static LoveDao instance = new LoveDao();
 	   
-    public static FashionDao getInstance() {
+    public static LoveDao getInstance() {
         return instance;
     }
    
-    private FashionDao() {}
+    private LoveDao() {}
 
 	private static SqlSessionFactory getFactory() throws Exception{
 		String res = "config.xml";
@@ -42,11 +42,12 @@ public class FashionDao {
 	
 	}
 	
-	public void fashionInsert(fashionBoardVo vo){
+
+	public void loveInsert(loveVo vo){
 
 		try {		
 			SqlSession session = getFactory().openSession();
-			session.insert("fashion.insert", vo);
+			session.insert("love.loveInsert", vo);
 			session.commit();
 			session.close();
 		} catch (Exception e) {
@@ -54,37 +55,11 @@ public class FashionDao {
 		}
 	}
 	
-	
-	public List<fashionBoardVo> selectList(){
-		List<fashionBoardVo> selectList = null;
+	public int loveSelect(int num){
+		int vo = 0;
 		try {		
 			SqlSession session = getFactory().openSession();
-			selectList = session.selectList("fashion.selectList");
-			session.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return selectList;
-	}
-	
-	public void fashionDelete(String num){
-
-		try {		
-			SqlSession session = getFactory().openSession();
-			session.delete("fashion.delete",num);
-			session.commit();
-			session.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
-	public fashionBoardVo fashionSelect(String num){
-		fashionBoardVo vo = null;
-		try {		
-	
-			SqlSession session = getFactory().openSession();
-			vo=session.selectOne("fashion.select",num);
+			vo=session.selectOne("love.loveSelect",num);
 			session.close();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -92,17 +67,17 @@ public class FashionDao {
 		return vo;
 	}
 	
-	public void fashionUpdate(fashionBoardVo vo){
-		
+	
+	public void loveDelete(int num){
+
 		try {		
 			SqlSession session = getFactory().openSession();
-			session.update("fashion.update",vo);
+			session.delete("love.loveDelete",num);
 			session.commit();
 			session.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 	}
 }
 	

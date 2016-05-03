@@ -14,21 +14,23 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import action.CommandAction;
 import dao.FashionDao;
+import dao.ReviewDao;
 import vo.fashionBoardVo;
 
-public class productDetail implements CommandAction {
+public class reviewDetailAction implements CommandAction {
 	
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{
 
 		request.setCharacterEncoding("euc-kr");
 
-		FashionDao fashionDao= FashionDao.getInstance();
+		ReviewDao reviewDao= ReviewDao.getInstance();
 		
-		String num = request.getParameter("num");
+		int re_num = Integer.parseInt(request.getParameter("re_num"));
 	
-		request.setAttribute("fashiondetail",fashionDao.fashionSelect(num));
-	
-		return "/fashion/admin/productDetail.jsp";
+		System.out.println("re_num");
+		request.setAttribute("review",reviewDao.ReviewSelect(re_num));
+	 
+		return "/fashion/user/reviewDetail.jsp";
 	}
 
   

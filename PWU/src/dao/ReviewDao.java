@@ -12,18 +12,19 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import vo.MemberVo;
+import vo.ReviewVo;
 import vo.fashionBoardVo;
 import vo.loveVo;
 
-public class FashionDao {
+public class ReviewDao {
 
-	private static FashionDao instance = new FashionDao();
+	private static ReviewDao instance = new ReviewDao();
 	   
-    public static FashionDao getInstance() {
+    public static ReviewDao getInstance() {
         return instance;
     }
    
-    private FashionDao() {}
+    private ReviewDao() {}
 
 	private static SqlSessionFactory getFactory() throws Exception{
 		String res = "config.xml";
@@ -42,11 +43,12 @@ public class FashionDao {
 	
 	}
 	
-	public void fashionInsert(fashionBoardVo vo){
+
+	public void reviewInsert(ReviewVo vo){
 
 		try {		
 			SqlSession session = getFactory().openSession();
-			session.insert("fashion.insert", vo);
+			session.insert("review.reviewInsert", vo);
 			session.commit();
 			session.close();
 		} catch (Exception e) {
@@ -54,37 +56,11 @@ public class FashionDao {
 		}
 	}
 	
-	
-	public List<fashionBoardVo> selectList(){
-		List<fashionBoardVo> selectList = null;
-		try {		
+	public ReviewVo ReviewSelect(int re_num){
+		ReviewVo vo = null;
+		try {
 			SqlSession session = getFactory().openSession();
-			selectList = session.selectList("fashion.selectList");
-			session.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return selectList;
-	}
-	
-	public void fashionDelete(String num){
-
-		try {		
-			SqlSession session = getFactory().openSession();
-			session.delete("fashion.delete",num);
-			session.commit();
-			session.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
-	public fashionBoardVo fashionSelect(String num){
-		fashionBoardVo vo = null;
-		try {		
-	
-			SqlSession session = getFactory().openSession();
-			vo=session.selectOne("fashion.select",num);
+			vo=session.selectOne("review.reviewSelect",re_num);
 			session.close();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -92,11 +68,36 @@ public class FashionDao {
 		return vo;
 	}
 	
-	public void fashionUpdate(fashionBoardVo vo){
+	public List<ReviewVo> reviewSelectList(int num){
+		List<ReviewVo> selectList = null;
+		try {		
+			SqlSession session = getFactory().openSession();
+			selectList = session.selectList("review.reviewSelectList",num);
+			session.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return selectList;
+	} 
+	
+	
+	public void reviewDelete(int num){
+
+		try {		
+			SqlSession session = getFactory().openSession();
+			session.delete("review.reviewDelete",num);
+			session.commit();
+			session.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+public void reviewUpdate(loveVo vo){
 		
 		try {		
 			SqlSession session = getFactory().openSession();
-			session.update("fashion.update",vo);
+			session.update("review.reviewupdate",vo);
 			session.commit();
 			session.close();
 		} catch (Exception e) {
@@ -104,6 +105,19 @@ public class FashionDao {
 		}
 
 	}
+
+public static ReviewVo reviewSelect(int num){
+	ReviewVo vo = null;
+	try {		
+		SqlSession session = getFactory().openSession();
+		vo=session.selectOne("review.reviewSelect",num);
+		session.close();
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+	return vo;
+}
+
 }
 	
 	

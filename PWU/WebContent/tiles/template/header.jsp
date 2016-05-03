@@ -7,9 +7,6 @@ img, table td tr table tr td{
 </style>
 
 <script>
-	function checkIt2() {
-		return window.location='index.jsp';
-	}
 	function menuShow(menuidx) {
 		for(i=0;i<7;i++){
 			document.all('menu'+i).style.display = "none";
@@ -28,7 +25,7 @@ img, table td tr table tr td{
 <html>
 <c:if test="${memId==null}">
 	<body>
-		<img src="/PWU/tiles/template/logo.JPG" onClick="return checkIt2()">
+		<img src="/PWU/tiles/template/logo.JPG" onClick="document.location.href='/PWU/index.do'">
 		<img src="/PWU/tiles/template/mypage.JPG" align="right"
 			onClick="javascript:window.location='inputForm.do'">
 		<img src="/PWU/tiles/template/membership.JPG" align="right"
@@ -40,7 +37,7 @@ img, table td tr table tr td{
     <c:if test="${admin=='f'}">
 	<div align="right">
 		<img align="left" src="/PWU/tiles/template/logo.JPG"
-			onClick="return checkIt2()"> <img
+			onClick="document.location.href='/PWU/index.do'"> <img
 			src="/PWU/tiles/template/mypage.JPG" align="right"
 			onClick="javascript:window.location='/PWU/mypage/modifyForm.do'"> <img
 			src="/PWU/tiles/template/membership.JPG" align="right"
@@ -53,7 +50,7 @@ img, table td tr table tr td{
 	<c:if test="${admin=='t'}">
 	<div align="right">
 		<img align="left" src="/PWU/tiles/template/logo.JPG"
-			onClick="return checkIt2()"> <img
+			onClick="document.location.href='/PWU/index.do'"> <img
 			src="/PWU/tiles/template/mypage.JPG" align="right"
 			onClick="javascript:window.location='inputForm.do'"> <img
 			src="/PWU/tiles/template/membership.JPG" align="right"
@@ -74,7 +71,7 @@ img, table td tr table tr td{
 			<table cellpadding="0" cellspacing="0" width="791"  >
 			  <tr>
 				<td onmouseover="javascript:menuShow('menu0');" width="120"
-					align="center" valign="middle" onClick="sub_menuShow(1)"><img
+					align="center" valign="middle" onClick="document.location.href='/PWU/index.do'"><img
 						src="/PWU/tiles/template/logo2.JPG" width="100" height="45"
 						border="0"></td>
 				<td onmouseover="javascript:menuShow('menu0');" width="120"

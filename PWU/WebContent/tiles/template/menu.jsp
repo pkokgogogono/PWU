@@ -41,7 +41,7 @@
 <div id='sub_menu'>
 </div>
 <ul id='sub_menu1' >
- <li onClick="javascript:alert('¿ì¿Õ')">Home</li>
+ <li onClick="document.location.href='/PWU/index.do'">Home</li>
 </ul>
 
 <ul id='sub_menu2' >

@@ -4,8 +4,8 @@
 
 <mapper namespace="fashion">
 	<insert id="insert" parameterType="vo.fashionBoardVo">
-		insert into f_dramaboard(num, title, p_name, p_price, content, path,reg_date )
-		values(f_dramaboard_num.NEXTVAL,#{title},#{p_name},#{p_price},#{content},#{path}, sysdate)
+		insert into f_dramaboard(num, title, p_name, p_price, content, path,reg_date,read_count )
+		values(f_dramaboard_num.NEXTVAL,#{title},#{p_name},#{p_price},#{content},#{path}, sysdate, 0)
 	</insert>
 	
 	<select id="selectList" resultType="vo.fashionBoardVo">

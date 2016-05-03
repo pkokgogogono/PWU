@@ -37,7 +37,7 @@
   </tr>
 </table>
 
-<c:if test="${count == 0}">
+<c:if test="${count <= 0}">
 <table width="700" border="1" cellpadding="0" cellspacing="0">
   <tr>
     <td align="center">
@@ -101,29 +101,8 @@
 
     </tr>
 </table>
-
-<%-- <c:if test="${count > 0}">
-   <c:set var="pageCount" value="${count / pageSize + ( count % pageSize == 0 ? 0 : 1)}"/>
-   <c:set var="pageBlock" value="${10}"/>
-   <fmt:parseNumber var="result" value="${currentPage / 10}" integerOnly="true" />
-   <c:set var="startPage" value="${result * 10 + 1}" />
-   <c:set var="endPage" value="${startPage + pageBlock-1}"/>
-   <c:if test="${endPage > pageCount}">
-        <c:set var="endPage" value="${pageCount}"/>
-   </c:if>
-         
-<c:if test="${startPage > 5}">
-        <a href="/PWU/customer_center/notice_list.do?pageNum=${startPage - 5 }">[이전]</a>
-   </c:if>
-
-   <c:forEach var="i" begin="${startPage}" end="${endPage}">
-       <a href="/PWU/customer_center/notice_list.do?pageNum=${i}">[${i}]</a>
-   </c:forEach>
-
-   <c:if test="${endPage < pageCount}">
-        <a href="/PWU/customer_center/notice_list.do?pageNum=${startPage + 5}">[다음]</a>
-   </c:if>
-  </c:if> --%>
+</tr>
+</table>
 
 </body> 
 

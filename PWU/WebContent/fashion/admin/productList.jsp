@@ -63,7 +63,7 @@
   <c:forEach var="select" items="${selectList}" >
 <tr>
    <%--  <td align="center"  width="150">${select.num}</td>	 --%>
-    <td align="center"  width="150"><a href="productDetail.do?num=${select.title}">${select.title}</a></td>
+    <td align="center"  width="150"><a href="productDetail.do?num=${select.num}">${select.title}</a></td>
     <td align="center"  width="150">${select.p_name}</td>
     <td align="center"  width="150">${select.p_price}</td>  
     <td align="center"  width="150">${select.content}</td>

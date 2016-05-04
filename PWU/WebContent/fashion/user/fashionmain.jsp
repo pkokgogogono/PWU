@@ -7,9 +7,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Insert title here</title>
 <style type="text/css">
+body{
+	margin: 60px;
+	padding: 0px
+}
 
-
-ul.fashion {
+ul {
 	list-style: none;
 	text-align: center;
 	border-top: 1px solid gray;
@@ -31,7 +34,7 @@ background-color:pink;
 }
 </style>
 </head>
-<body class="fashion">
+<body>
 
 <div class="one">
 <br><br><br>logo<br><br><br><br><br>
@@ -51,21 +54,19 @@ background-color:pink;
 <div class = "banner">
 <b>DRAMA FASHION</b>
 <div style="float:right;"> <a href="fashionList.do">MORE+</a></div>
-<ul class="fashion">
+<ul>
 <li>
 <center>
  <table border="1">
  <tr>
- <c:forEach var="select" items="${selectList}" varStatus="loop">
- <c:choose>
- <c:when test="${loop.count%2==0}">
+ <c:forEach var="select" items="${selectList}" end="3">
+
 <td width="300" height="300">
  <a href="userDetail.do?num=${select.num}"><img src="${select.path}" width="300" height="280"/></a>
  <br>  
  ${select.title}
  </td>
- </c:when>
- </c:choose>
+
   </c:forEach>
   </tr>
   </table>
@@ -75,25 +76,51 @@ background-color:pink;
 <bR>
 
 <b>MOVIE FASHION</b>
-<div style="float:right;"> <a href="fashionList.jsp">MORE+</a></div>
+<div style="float:right;"> <a href="fashionList.do">MORE+</a></div>
 <ul>
-<li><a href="fashion1_user.jsp"><img src="http://image.wemakeprice.com/gnb_main/2016-04-20/1461078000_d0a6d74aac5c73a00ced3a2ec0e0cc8a9566f00f.jpg" load_url="/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1" load_position="List Evt" onclick="_gaq.push(['_trackEvent', 'Banner Click', 'List Evt', '/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1']);" width="233" height="178" alt="Daily basic Sleeveless&nbsp;shirt"></a>
-<a href="fashion1_user.jsp"><img src="http://image.wemakeprice.com/gnb_main/2016-04-20/1461078000_d0a6d74aac5c73a00ced3a2ec0e0cc8a9566f00f.jpg" load_url="/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1" load_position="List Evt" onclick="_gaq.push(['_trackEvent', 'Banner Click', 'List Evt', '/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1']);" width="233" height="178" alt="Daily basic Sleeveless&nbsp;shirt"></a>
-<a href="fashion1_user.jsp"><img src="http://image.wemakeprice.com/gnb_main/2016-04-20/1461078000_d0a6d74aac5c73a00ced3a2ec0e0cc8a9566f00f.jpg" load_url="/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1" load_position="List Evt" onclick="_gaq.push(['_trackEvent', 'Banner Click', 'List Evt', '/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1']);" width="233" height="178" alt="Daily basic Sleeveless&nbsp;shirt"></a>
-</li>
-</ul><BR>
-<b>AIRPORT/STREET FASHION</b>
-<div style="float:right;"> <a href="fashionList.jsp">MORE+</a></div>
-<ul>
-<li><a href="fashion1_user.jsp"><img src="http://image.wemakeprice.com/gnb_main/2016-04-20/1461078000_d0a6d74aac5c73a00ced3a2ec0e0cc8a9566f00f.jpg" load_url="/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1" load_position="List Evt" onclick="_gaq.push(['_trackEvent', 'Banner Click', 'List Evt', '/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1']);" width="233" height="178" alt="Daily basic Sleeveless&nbsp;shirt"></a>
-<a href="./user/fashion1_user.jsp"><img src="http://image.wemakeprice.com/gnb_main/2016-04-20/1461078000_d0a6d74aac5c73a00ced3a2ec0e0cc8a9566f00f.jpg" load_url="/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1" load_position="List Evt" onclick="_gaq.push(['_trackEvent', 'Banner Click', 'List Evt', '/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1']);" width="233" height="178" alt="Daily basic Sleeveless&nbsp;shirt"></a>
-<a href="./user/fashion1_user.jsp"><img src="http://image.wemakeprice.com/gnb_main/2016-04-20/1461078000_d0a6d74aac5c73a00ced3a2ec0e0cc8a9566f00f.jpg" load_url="/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1" load_position="List Evt" onclick="_gaq.push(['_trackEvent', 'Banner Click', 'List Evt', '/promotion/sleeveless/?source=100010_listevtbanner&amp;no=1']);" width="233" height="178" alt="Daily basic Sleeveless&nbsp;shirt"></a>
-</li>
-</ul>
+<li>
 <center>
-<br><hr>
-<em>COPYRIGHTï¿½ï¿½ PICKWEUP. ALL RIGHTS RESERVED. TEL:010-1234-1567</em>
-</center>
-</div>
+ <table border="1">
+ <tr>
+ <c:forEach var="select" items="${selectList}" end="3">
+<td width="300" height="300">
+ <a href="userDetail.do?num=${select.num}"> 
+ <img src="${select.path}" width="300" height="280" style = "cursor:hand" onclick="alert('Áñ°ÜÃ£±â¿¡ Ãß°¡µÇ¾ú½À´Ï´Ù^.^')"/>
+ </a>
+ <br>  
+ ${select.title}
+ </td>
+
+  </c:forEach>
+  </tr>
+  </table>
+  </center>
+</ul>
+
+<bR>
+
+<b>AIRPORT/STREET FASHION</b>
+<div style="float:right;"> <a href="fashionList.do">MORE+</a></div>
+<ul>
+<li>
+<center>
+ <table border="1">
+ <tr>
+ <c:forEach var="select" items="${selectList}" end="3">
+
+<td width="300" height="300">
+ <a href="userDetail.do?num=${select.num}"><img src="${select.path}" width="300" height="280"/></a>
+ <br>  
+ ${select.title}
+ </td>
+
+  </c:forEach>
+  </tr>
+  </table>
+  </center>
+</ul>
+
+<bR>
+
 </body>
 </html>

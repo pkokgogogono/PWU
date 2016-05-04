@@ -52,7 +52,7 @@ ArrayList origFiles = new ArrayList();
 </c:if> --%>
 <tr height="10">
 <%--     <td align="center"  width="150" height="20">${review.re_num}</td>	 --%>
-    <td align="center"  width="150"><a href="pwdInput.do?${review.re_num}">${review.writer}</td></a>
+    <td align="center"  width="150"><a href="pwdInput.do?re_num=${review.re_num}">${review.writer}</td></a>
     <td align="center"  width="150">${review.content}</td>
     <td align="center"  width="150">${review.passwd}</td>  
      <td align="center"  width="100" height="100"><img src="${review.path}" width="50" height="50"/></td>   

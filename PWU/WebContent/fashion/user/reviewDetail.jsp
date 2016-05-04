@@ -78,7 +78,8 @@
         </tr> -->
         <tr> 
           <td colspan="2"><div align="center"> 
-              <input type="button" value="목록보기" onclick="window.open('reviewProAction.do?num=${review.num}')">&nbsp;&nbsp;&nbsp;
+              <input type="button" value="목록보기" onclick="javascript:window.open('reviewProAction.do?num=${review.num}')">&nbsp;&nbsp;&nbsp;
+              <input type="button" value="삭제하기" onclick="javascript:window.open('reviewDelete.do?re_num=${review.re_num}&num=${review.num}')">&nbsp;&nbsp;&nbsp;
              <%--  <input type="button" value="수정하기" onclick="productUpdate.do?num=${fashiondetail.num}"> --%>
             </div></td>
         </tr>

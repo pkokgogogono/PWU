@@ -89,12 +89,15 @@
       </table>
 <br><br><br>
  <center>
-  <table border ="1" width="1200" height="400">
+  <table border ="1" width="1200" height="10">
 	<tr width="1200" height="10">
-	<td>
-  <div style="float:right;"> <a href="/PWU/fashion/admin/reviewSelect.do?num=${fashiondetail.num}">글쓰기</a></div>
-  <div style="float:center;"> <a href="/PWU/fashion/admin/fashionList.do?num=${fashiondetail.num}">상품목록 가기</a></div>
-  <div style="float:left;"> <a href="/PWU/fashion/admin/reviewProAction.do?num=${fashiondetail.num}">상품후기 보러가기</a></div>
+	<td width="300">
+  <a href="/PWU/fashion/admin/reviewSelect.do?num=${fashiondetail.num}"><center>글쓰기</center></a></td>
+  <td width="300">
+  <a href="/PWU/fashion/admin/fashionList.do?num=${fashiondetail.num}"><center>상품목록 가기</center></a></td>
+  <td width="300">
+   <a href="/PWU/fashion/admin/reviewProAction.do?num=${fashiondetail.num}"><center>상품후기 보러가기</center></a>
+   </td>
   </td>
   </tr>
 

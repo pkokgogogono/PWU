@@ -1,4 +1,4 @@
-package action.fashion;
+package action.s_a_fashion;
  
 import java.util.List;
 
@@ -17,6 +17,7 @@ public class UserList implements CommandAction {
 		request.setCharacterEncoding("euc-kr");
 
 		FashionDao fashiondao= FashionDao.getInstance();
+	
 
 		List<fashionBoardVo> selectList = fashiondao.selectList();
 		request.setAttribute("selectList",selectList);

@@ -83,8 +83,8 @@
         </tr> -->
         <tr> 
           <td colspan="2"><div align="center"> 
-              <input type="button" value="목록보기" onclick="productList.do">&nbsp;&nbsp;&nbsp;
-              <input type="button" value="수정하기" onclick="productUpdate.do?num=${fashiondetail.num}">
+              <input type="button" value="목록보기" onclick="window.location='productUpdate.do'">&nbsp;&nbsp;&nbsp;
+              <input type="button" value="수정하기" onclick="window.location='productUpdate.do?num=${fashiondetail.num}'">
             </div></td>
         </tr>
       </table>

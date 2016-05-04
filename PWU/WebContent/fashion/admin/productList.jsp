@@ -25,7 +25,7 @@
  
  <center>
  <b>상품목록</b>
- <%-- <b>글목록(전체 글:${count})</b> --%>
+  <b>글목록(전체 글:${pagingCount})</b>
 <table width="700">
   <tr>
     <td align="right" bgcolor="${value_c}">
@@ -37,7 +37,7 @@
   </tr>
 </table>
 
-<c:if test="${count <= 0}">
+<c:if test="${pagingCount == 0}">
 <table width="700" border="1" cellpadding="0" cellspacing="0">
   <tr>
     <td align="center">
@@ -47,10 +47,10 @@
 </table>
 </c:if>
 
-<c:if test="${count > 0}">
+<c:if test="${pagingCount > 0}">
 <table border="1" width="700" cellpadding="0" cellspacing="0" align="center">
     <tr height="30" bgcolor="${value_c}">
-   <td width="164">글번호</td>
+ <!--   <td width="164">글번호</td> -->
    <td width="73">제목</td>
    <td width="73">상품이름</td>
    <td width="379">상품가격</td>
@@ -59,11 +59,11 @@
    <td width="164"></td>
    
   </tr>
-  
+  <b><드라마></b>
   <c:forEach var="select" items="${selectList}" >
 <tr>
-    <td align="center"  width="150"><a href="productDetail.do?num=${select.num}">${select.num}</td>	
-    <td align="center"  width="150">${select.title}</td>
+   <%--  <td align="center"  width="150">${select.num}</td>	 --%>
+    <td align="center"  width="150"><a href="productDetail.do?num=${select.title}">${select.title}</a></td>
     <td align="center"  width="150">${select.p_name}</td>
     <td align="center"  width="150">${select.p_price}</td>  
     <td align="center"  width="150">${select.content}</td>
@@ -87,7 +87,7 @@
 </form>
       <tr align="right">
         <td colspan="7"> <br/>
-            <form name="serach" method ="post">
+            <form name="search" method ="post">
             <select name="keyField">
                 <option value="0"> ----선택----</option>
                 <option value="id">제목</option>
@@ -103,7 +103,31 @@
 </table>
 </tr>
 </table>
-
+<table width = "600">
+<tr>
+<td align = "center">
+<c:if test="${pagingCount > 0}">
+   <c:set var="pageCount" value="${pagingCount / pageSize + ( count % pageSize == 0 ? 0 : 1)}"/>
+   <c:set var="pageBlock" value="${5}"/> <!-- [1],[2],[3],[4],[5] -->
+   <fmt:parseNumber var="result" value="${currentPage / 10}" integerOnly="true" />
+   <c:set var="startNum" value="${result * 10 + 1}" />
+   <c:set var="endNum" value="${startNum + pageBlock-1}"/>
+   <c:if test="${endNum > pageCount}">
+        <c:set var="endNum" value="${pageCount}"/>
+   </c:if>      
+<c:if test="${startNum > 5}">
+        <a href="/PWU/fashion/admin/productList.do?pageNum=${startNum - 5 }">[이전]</a>
+   </c:if>
+   <c:forEach var="i" begin="${startNum}" end="${endNum}">
+       <a href="/PWU/fashion/admin/productList.do?pageNum=${i}">[${i}]</a>
+   </c:forEach>
+   <c:if test="${endNum < pageCount}">
+        <a href="/PWU/fashion/admin/productList.do?pageNum=${startNum + 5}">[다음]</a>
+   </c:if>
+  </c:if>
+  </td>
+  </tr>
+</table>
 </body> 
 
 </html>

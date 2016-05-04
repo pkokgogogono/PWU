@@ -1,9 +1,7 @@
 package dao;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 import javax.websocket.Session;
@@ -17,15 +15,15 @@ import vo.MemberVo;
 import vo.fashionBoardVo;
 import vo.loveVo;
 
-public class FashionDao {
+public class F_street_airDao {
 
-	private static FashionDao instance = new FashionDao();
+	private static F_street_airDao instance = new F_street_airDao();
 	   
-    public static FashionDao getInstance() {
+    public static F_street_airDao getInstance() {
         return instance;
     }
    
-    private FashionDao() {}
+    private F_street_airDao() {}
 
 	private static SqlSessionFactory getFactory() throws Exception{
 		String res = "config.xml";
@@ -48,7 +46,7 @@ public class FashionDao {
 
 		try {		
 			SqlSession session = getFactory().openSession();
-			session.insert("fashion.insert", vo);
+			session.insert("f_air_street.insert", vo);
 			session.commit();
 			session.close();
 		} catch (Exception e) {
@@ -61,31 +59,31 @@ public class FashionDao {
 		List<fashionBoardVo> selectList = null;
 		try {		
 			SqlSession session = getFactory().openSession();
-			selectList = session.selectList("fashion.selectList");
+			selectList = session.selectList("f_air_street.selectList");
 			session.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return selectList;
 	}
-	
 	
 	public List<fashionBoardVo> selectListRead(){
 		List<fashionBoardVo> selectList = null;
 		try {		
 			SqlSession session = getFactory().openSession();
-			selectList = session.selectList("fashion.selectListRead");
+			selectList = session.selectList("f_air_street.selectListRead");
 			session.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return selectList;
 	}
+	
 	public void fashionDelete(String num){
 
 		try {		
 			SqlSession session = getFactory().openSession();
-			session.delete("fashion.delete",num);
+			session.delete("f_air_street.delete",num);
 			session.commit();
 			session.close();
 		} catch (Exception e) {
@@ -98,7 +96,7 @@ public class FashionDao {
 		try {		
 	
 			SqlSession session = getFactory().openSession();
-			vo=session.selectOne("fashion.select",num);
+			vo=session.selectOne("f_air_street.select",num);
 			session.close();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -110,7 +108,7 @@ public class FashionDao {
 		
 		try {		
 			SqlSession session = getFactory().openSession();
-			session.update("fashion.update",vo);
+			session.update("f_air_street.update",vo);
 			session.commit();
 			session.close();
 		} catch (Exception e) {
@@ -123,29 +121,13 @@ public class FashionDao {
 		
 		try {		
 			SqlSession session = getFactory().openSession();
-			session.update("fashion.readUpdate",num);
+			session.update("f_air_street.readUpdate",num);
 			session.commit();
 			session.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
-	}
-	
-	public List<fashionBoardVo> getArticles(int startNum, int endNum) {
-		List<fashionBoardVo> PagingSelect = null;
-		try {		
-			SqlSession session = getFactory().openSession();
-			Map<String,Integer> map = new HashMap<String,Integer>();
-			map.put("s",startNum );
-			map.put("e",endNum );
-			
-			PagingSelect = session.selectList("fashion.addpaging1", map);
-			session.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}		
-		return PagingSelect;
 	}
 }
 	

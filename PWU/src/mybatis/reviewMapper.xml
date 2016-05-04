@@ -13,8 +13,8 @@
 		select * from f_drama_review where num=#{num} order by re_num desc
 	</select>
 	
-	<delete id="reviewDelete" parameterType="String">
-		delete from f_drama_review where re_num = #{re_num}
+	<delete id="reviewDelete" parameterType="int">
+		delete from f_drama_review where re_num = #{re_num} 
 	</delete>
 	
 	<update id="reviewUpdate" parameterType="vo.ReviewVo">
@@ -23,7 +23,22 @@
 	</update>
 	
 	<select id="reviewSelect" parameterType="int" resultType="vo.ReviewVo">
-		select * from f_drama_review where re_num=#{re_num}
+		select * from f_drama_review where re_num=#{re_num} order by re_num desc
+	</select>
+	
+		<select id="getCount" resultType="int">
+		select count(*) from f_drama_review
+
+	</select>
+
+	<select id="addpaging1" resultType="vo.ReviewVo" parameterType="HashMap">
+		select
+		num, re_num, writer, content, passwd, path, r
+		from (select
+		num, re_num, writer, content, passwd, path,rownum r
+		from (select * from f_drama_review order by num desc) 
+		order by num desc) 
+		where r &gt;= #{s} and r &lt;= #{e}
 	</select>
 </mapper>
 

@@ -7,12 +7,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Insert title here</title>
 <style type="text/css">
-body{
-	margin: 60px;
-	padding: 0px
-}
 
-ul {
+
+ul.fashion {
 	list-style: none;
 	text-align: center;
 	border-top: 1px solid gray;
@@ -34,7 +31,7 @@ background-color:pink;
 }
 </style>
 </head>
-<body>
+<body class="fashion">
 
 <div class="one">
 <br><br><br>logo<br><br><br><br><br>
@@ -54,7 +51,7 @@ background-color:pink;
 <div class = "banner">
 <b>DRAMA FASHION</b>
 <div style="float:right;"> <a href="fashionList.do">MORE+</a></div>
-<ul>
+<ul class="fashion">
 <li>
 <center>
  <table border="1">

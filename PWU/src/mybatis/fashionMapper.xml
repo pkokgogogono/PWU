@@ -9,7 +9,7 @@
 	</insert>
 	
 	<select id="selectList" resultType="vo.fashionBoardVo">
-		select * from f_dramaboard 
+		select * from f_dramaboard order by num desc
 	</select>
 	
 	<select id="selectListRead" resultType="vo.fashionBoardVo">
@@ -24,7 +24,7 @@
 		update f_dramaboard set read_count= read_count+1
 		where num = #{num}
 	</update>
-	
+
 	
 	<update id="update" parameterType="vo.fashionBoardVo">
 		update f_dramaboard set title =#{title}, p_name=#{p_name}, 
@@ -36,6 +36,19 @@
 		select * from f_dramaboard where num=#{num}
 	</select>
 
-	
+	<select id="getCount" resultType="int">
+		select count(*) from f_dramaboard
+
+	</select>
+
+	<select id="addpaging1" resultType="vo.fashionBoardVo" parameterType="HashMap">
+		select
+		num,title,p_name,p_price,content,path,reg_date ,read_count,r
+		from (select
+		num,title,p_name,p_price,content,path,reg_date, read_count,rownum r
+		from (select * from f_dramaboard order by num desc) 
+		order by num desc) 
+		where r &gt;= #{s} and r &lt;= #{e}
+	</select>	
 </mapper>
 

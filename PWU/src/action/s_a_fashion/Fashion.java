@@ -1,22 +1,22 @@
-package action.fashion;
+package action.s_a_fashion;
+
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.CommandAction;
 import vo.fashionBoardVo;
+import dao.FashionDao;
 
-import vo.fashionBoardVo; 
-
-
-public class fashionmainAction implements CommandAction {
-	
+public class Fashion implements CommandAction {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{
 
-		fashionBoardVo vo = new fashionBoardVo();
-		
-		return "/fashion/admin/write_save.jsp";
-	}
-  
+		request.setCharacterEncoding("euc-kr");
 
+		return "/fashion/user/fashion.jsp";
+	}
+
+  
 }
+

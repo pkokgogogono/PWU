@@ -13,6 +13,7 @@ public class UserList implements CommandAction {
 	
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{
 
+		System.out.println(request);
 		request.setCharacterEncoding("euc-kr");
 
 		FashionDao fashiondao= FashionDao.getInstance();

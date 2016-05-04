@@ -40,8 +40,6 @@ img, table td tr table tr td{
 			onClick="document.location.href='/PWU/login/index.do'"> <img
 			src="/PWU/tiles/template/mypage.JPG" align="right"
 			onClick="javascript:window.location='/PWU/mypage/modifyForm.do'"> <img
-			src="/PWU/tiles/template/membership.JPG" align="right"
-			onClick="javascript:window.location='inputForm.do'"> <img
 			src="/PWU/tiles/template/logout.JPG" alt="로갓" align="right"
 			onClick="javascript:window.location='logout.do'"><h1> ${memId } 를
 		환영합니다!</h1>
@@ -52,9 +50,7 @@ img, table td tr table tr td{
 		<img align="left" src="/PWU/tiles/template/logo.JPG"
 			onClick="document.location.href='/PWU/index.do'"> <img
 			src="/PWU/tiles/template/mypage.JPG" align="right"
-			onClick="javascript:window.location='inputForm.do'"> <img
-			src="/PWU/tiles/template/membership.JPG" align="right"
-			onClick="javascript:window.location='inputForm.do'"> <img
+			onClick="javascript:window.location='inputForm.do'">  <img
 			src="/PWU/tiles/template/logout.JPG" alt="로갓" align="right"
 			onClick="javascript:window.location='logout.do'"> 관리자 모드입니다.
 	</div>

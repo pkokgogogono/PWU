@@ -1,4 +1,4 @@
-package action.fashion;
+package action.customer.notice;
 
 import java.util.Collections;
 import java.util.List;
@@ -7,18 +7,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.CommandAction;
-import dao.FashionDao;
-<<<<<<< HEAD
+import dao.NoticeDao;
 import dao.PagingDao;
-=======
-import vo.fashionBoardVo;
->>>>>>> branch 'master' of https://github.com/pkokgogogono/PWU.git
+import vo.CustomerVo;
 
-public class productList implements CommandAction {
-	
-	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{
-
-		request.setCharacterEncoding("euc-kr");
+public class Notice_ListAction implements CommandAction {
+	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 
 		String pageNum = request.getParameter("pageNum");
 
@@ -40,24 +34,21 @@ public class productList implements CommandAction {
 		request.setAttribute("pagingCount", pagingCount);
 		System.out.println(pagingCount);
 
-		List selectList = null;
-		
-		FashionDao fashiondao= FashionDao.getInstance();
-		
-		//List<fashionBoardVo> selectList = fashiondao.selectList();
-		
+		List articleList = null;
+		NoticeDao noticedao = NoticeDao.getInstance();
+
 		if (pagingCount > 0) {
-			selectList = fashiondao.getArticles(startNum, endNum);
+			articleList = noticedao.getArticles(startNum, endNum);
 																	
 		} else {
-			selectList = Collections.EMPTY_LIST;
+			articleList = Collections.EMPTY_LIST;
 		}
 
 		number = pagingCount - (currentPage - 1) * pageSize;
 		
 
 		request.setAttribute("count", 1);
-		if (selectList == null) {
+		if (articleList == null) {
 			request.setAttribute("count", 0); 
 		}
 		
@@ -68,17 +59,10 @@ public class productList implements CommandAction {
 			  request.setAttribute("count", new Integer(pagingCount));
 			  request.setAttribute("pageSize", new Integer(pageSize));
 			  request.setAttribute("number", new Integer(number));
-			  request.setAttribute("selectList", selectList);
+			  request.setAttribute("articleList", articleList);
 			
+	
+		return "/customer_center/notice/notice_list.jsp";// �ش��
 
-		request.setAttribute("count", 1);
-		if(selectList.isEmpty()){
-			request.setAttribute("count", 0);
-		}
-
-		return "/fashion/admin/productList.jsp";
 	}
-
-  
 }
-

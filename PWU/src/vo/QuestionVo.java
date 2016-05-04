@@ -1,15 +1,16 @@
-package vo.BH;
+package vo;
 
 import java.sql.Timestamp;
 
-public class Customer {
+public class QuestionVo {
 
-	public Customer()
+	public QuestionVo()
 	{
 		
 	}
 	
-	public Customer(String title, String content) {
+	
+	public QuestionVo(String title, String content, String writer) {
 		
 		this.title = title;
 		this.content = content;
@@ -17,14 +18,13 @@ public class Customer {
 	}
 	
 	private int num;
-	public Customer(int num, String writer, String title, Timestamp reg_date, String content, int read_count, int lev) {
+	public QuestionVo(int num, String writer, String title, Timestamp reg_date, String content, int read_count  ) {
 		this.num = num;
 		this.writer = writer;
 		this.title = title;
 		this.reg_date = reg_date;
 		this.content = content;
 		this.read_count = read_count;
-		this.lev = lev;
 	}
 
 	private String writer;
@@ -73,11 +73,6 @@ public class Customer {
 		this.read_count = read_count;
 	}
 
-	public int getlev() {
-		return lev;
-	}
-	public void setlev(int lev) {
-		this.lev = lev;
-	}
+
 
 }

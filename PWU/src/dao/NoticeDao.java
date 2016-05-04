@@ -2,7 +2,9 @@ package dao;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 import javax.websocket.Session;
@@ -12,8 +14,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import vo.CustomerVo;
 import vo.MemberVo;
-import vo.BH.Customer;
 
 public class NoticeDao {
 
@@ -23,6 +25,7 @@ public class NoticeDao {
         return instance;
     }
    
+    
     private NoticeDao() {}
     
 	private static SqlSessionFactory getFactory() throws Exception{
@@ -41,12 +44,35 @@ public class NoticeDao {
 		return factory;
 	
 	}
+	public void NoticeInsert(CustomerVo vo){
+		try {		
+			SqlSession session = getFactory().openSession();
+			session.insert("notice.insert", vo);
+			session.commit();
+			session.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	
-	public List<Customer> selectList(){
-		List<Customer> selectList = null;
+	public void update(CustomerVo vo){
+		try {
+			SqlSession session = getFactory().openSession();
+			session.update("notice.update",vo);
+			session.commit();
+			session.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public List<CustomerVo> selectList(){
+		List<CustomerVo> selectList = null;
 		try {		
 			SqlSession session = getFactory().openSession();
 			selectList = session.selectList("notice.selectList");
+			//ï¿½ï¿½ï¿½Ý±ï¿½ï¿½ï¿½ dbï¿½ï¿½ ï¿½Û¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ dbï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½
 			session.close();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -58,9 +84,9 @@ public class NoticeDao {
 	public void noticedelete(String num){
 		try {		
 			SqlSession session = getFactory().openSession();
-			//numÀÌ´Ï±î integerÇüÀ¸·Î º¯È¯ÈÄ¿¡
+			//numï¿½Ì´Ï±ï¿½ integerï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯ï¿½Ä¿ï¿½
 			int number = Integer.parseInt(num);
-			//»èÁ¦ 
+			//ï¿½ï¿½ï¿½ï¿½ 
 			session.delete("notice.delete",number);
 			session.commit();
 			session.close();
@@ -69,23 +95,54 @@ public class NoticeDao {
 		}		
 	}
 		
-		public Customer selectOne(String num){
-			Customer vo = null;
+		public CustomerVo selectOne(String num){
+			CustomerVo vo = null;
 			try {		
+				System.out.println(num);
 				SqlSession session = getFactory().openSession();
-				//numÀÌ´Ï±î integerÇüÀ¸·Î º¯È¯ÈÄ¿¡
-				
-				int number = Integer.parseInt(num);
-				//»èÁ¦ 
-				vo=session.selectOne("notice.selectOne",number);
-				session.commit();
+		
+				//numï¿½Ì´Ï±ï¿½ integerï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯ï¿½Ä¿ï¿½
+				//ï¿½ï¿½ï¿½ï¿½ 
+				vo=session.selectOne("notice.selectOne",num);
 				session.close();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}		
 			return vo;
 	}
+		
+		public List<CustomerVo> PagingSelect(){
+			List<CustomerVo> PagingSelect = null;
+			try {		
+				SqlSession session = getFactory().openSession();
+				PagingSelect = session.selectList("notice.PagingSelect");
+				//ï¿½ï¿½ï¿½Ý±ï¿½ï¿½ï¿½ dbï¿½ï¿½ ï¿½Û¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ dbï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½
+				session.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}		
+			return PagingSelect;
+		}
+
+		public List<CustomerVo> getArticles(int startNum, int endNum) {
+			List<CustomerVo> PagingSelect = null;
+			try {		
+				SqlSession session = getFactory().openSession();
+				Map<String,Integer> map = new HashMap<String,Integer>();
+				map.put("s",startNum );
+				map.put("e",endNum );
+				
+				PagingSelect = session.selectList("notice.addpaging1", map);
+				//ï¿½ï¿½ï¿½Ý±ï¿½ï¿½ï¿½ dbï¿½ï¿½ ï¿½Û¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ dbï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½
+				session.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}		
+			return PagingSelect;
+		}
+		
 	
+		
 	
 	
 

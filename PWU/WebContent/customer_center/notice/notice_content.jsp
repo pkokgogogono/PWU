@@ -28,36 +28,32 @@ body,td,a,div,p,pre,input,textarea {font-family:굴림;font-size:9pt;}
 <table width="500" border="1" cellspacing="0" cellpadding="0" align="center"> 
   <tr height="30">
     <td align="center" width="125" bgcolor="${value_c}">글번호</td>
-    <td align="center" width="125" align="center">${select.num}</td>
+    <td align="center" width="125" align="center">${noticedao.num}</td>
     <td align="center" width="125" bgcolor="${value_c}">조회수</td>
-    <td align="center" width="125" align="center">${select.read_count}</td>
+    <td align="center" width="125" align="center">${noticedao.read_count}</td>
   </tr>
   <tr height="30">
     <td align="center" width="125" bgcolor="${value_c}">작성자</td>
-    <td align="center" width="125" align="center">${select.writer}</td>
+    <td align="center" width="125" align="center">${noticedao.writer}</td>
     <td align="center" width="125" bgcolor="${value_c}" >작성일</td>
-    <td align="center" width="125" align="center">${select.reg_date}</td>
+    <td align="center" width="125" align="center">${noticedao.reg_date}</td>
   </tr>
   <tr height="30">
     <td align="center" width="125" bgcolor="${value_c}">글제목</td>
-    <td align="center" width="375" align="center" colspan="3">${select.title}</td>
+    <td align="center" width="375" align="center" colspan="3">${noticedao.title}</td>
   </tr>
   <tr>
     <td align="center" width="125" bgcolor="${value_c}">글내용</td>
-    <td align="left" width="375" colspan="3"><pre>${select.content}</pre></td>
+    <td align="center" width="500" height="200" colspan="4"><pre>${noticedao.content}</pre></td>
   </tr>
   <tr height="30">     
     <td colspan="4" bgcolor="${value_c}" align="right" >
   <input type="button" value="글수정"
-       onclick="document.location.href='/MVC_board/updateForm.do?num=${article.num}&pageNum=${pageNum}'">
-   &nbsp;&nbsp;&nbsp;&nbsp;
+       onclick="javascript:window.location='/PWU/customer_center/notice/notice_update.do?num=${noticedao.num}'"> 
   <input type="button" value="글삭제"
-       onclick="document.location.href='/MVC_board/deleteForm.do?num=${article.num}&pageNum=${pageNum}'">
+       onclick="javascript:window.location='Notice_Delete.do?num=${select.num}'"> 
    &nbsp;&nbsp;&nbsp;&nbsp;
-      <input type="button" value="답글쓰기"
-       onclick="document.location.href='/MVC_board/writeForm.do?num=${article.num}&ref=${article.ref}&re_step=${article.re_step}&re_level=${article.re_level}'">
-   &nbsp;&nbsp;&nbsp;&nbsp;
-       <input type="button" value="글목록" OnClick="window.location='/PWU/customer_center/notice/notice_list.do'"> 
+       <input type="button" value="글목록" OnClick="javascript:window.location='/PWU/customer_center/notice/notice_list.do'"> 
     </td>
   </tr>
 </table>   

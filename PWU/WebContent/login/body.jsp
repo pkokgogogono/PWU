@@ -104,3 +104,9 @@ data-cycle-pager-event="mouseover">
 </table>
 </body>
 </html>
+
+<!-- <td colspan="2"> -->
+<!-- <script  type="text/javascript"   src="http://ko.exchange-rates.org/GetCustomContent.aspx?sid=RT000DK7D&amp;type=RatesTable&amp;stk=03SNLN99TS" charset="utf-8"> -->
+<!-- </script> -->
+<!-- <div><a id='site' href="http://ko.exchange-rates.org/">.</a></div> -->
+<!-- </td> -->

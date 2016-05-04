@@ -8,12 +8,12 @@ import javax.servlet.http.HttpServletResponse;
 import action.CommandAction;
 import dao.FashionDao;
 import vo.fashionBoardVo;
-import vo.BH.Customer;
 
 public class UserList implements CommandAction {
 	
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{
 
+		System.out.println(request);
 		request.setCharacterEncoding("euc-kr");
 
 		FashionDao fashiondao= FashionDao.getInstance();

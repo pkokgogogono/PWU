@@ -4,7 +4,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.CommandAction;
-import board.BoardDataBean;
 import dao.OrderDao;
 import vo.InquiryVo;
 

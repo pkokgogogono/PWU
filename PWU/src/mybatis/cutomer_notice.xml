@@ -4,37 +4,68 @@
 
 <mapper namespace="notice">
 
-<!-- 	<insert id="insert" parameterType="vo.BH.Customer">
-		insert into notice
-		values(notice_num.nextval,#{writer},#{title},#{reg_date},#{content},#{read_count},#{lev})
-	</insert> -->
-	
-	<insert id="insert" parameterType="vo.BH.Customer">
-		insert into notice(num,title,content,WRITER,reg_date)
-		values(notice_num.nextval,#{title},#{content},#{writer},sysdate)
+	<insert id="insert" parameterType="vo.CustomerVo">
+		insert into
+		notice(num,title,content,writer,reg_date)
+		values(notice_num.nextval,#{title},#{content},#{writer} ,sysdate)
 	</insert>
 
-	<update id="update">
-		UPDATE notice SET
-			writer=#{writer}
-			title=#{title}
-			content=#{content}
-			reg_date=#{reg_date}
-		where num=#{num} LIMIT 1
+	<update id="updatecount">
+		update notice set read_count = ifnull(read_count,0) +
+		1 where num=#{num} limit 1
 	</update>
-	
-	<delete id="delete" parameterType="Integer">
+
+	<update id="update" parameterType="vo.CustomerVo">
+		UPDATE notice SET
+		title=#{title},
+		content=#{content}
+		where num=#{num}
+	</update>
+
+	<delete id="delete" parameterType="int">
 		DELETE FROM notice where num = #{num}
 	</delete>
 
-	<select id="selectList" resultType="vo.BH.Customer" >
+	<!-- notice의 글 갯수 구하기 -->
+	<select id="selectList" resultType="vo.CustomerVo">
 		SELECT * FROM notice
 	</select>
-	
-	<select id="selectOne" parameterType="Integer" resultType="vo.BH.Customer">
-		SELECT * FROM notice where num=#{num}
+
+	<select id="selectOne" parameterType="string" resultType="vo.CustomerVo">
+		select * from notice where num=#{num}
 	</select>
 
+	<!-- 전체 글의 갯수 구하기 -->
+	<select id="getCount" resultType="int">
+		select count(*) from notice
 
+	</select>
+
+	<!-- 조회수 증가 -->
+	<update id="addHit" parameterType="int">
+		update notice
+		set hit = hit + 1
+		where num=#{num}
+
+	</update>
+
+	<select id="addpaging" resultType="vo.CustomerVo">
+		select num, writer,title
+		,reg_date ,content ,read_count
+		from notice
+		order by num desc
+
+	</select>
+
+	<select id="addpaging1" resultType="vo.CustomerVo" parameterType="HashMap">
+
+		select
+		num,writer,title,reg_date ,content ,read_count,r
+		from (select
+		num,writer,title,reg_date ,content ,read_count,rownum r
+		from (select * from notice order by num desc) 
+		order by num desc) 
+		where r &gt;= #{s} and r &lt;= #{e}
+	</select>
 </mapper>
 

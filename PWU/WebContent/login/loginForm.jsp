@@ -56,7 +56,7 @@
     <td colspan="2" align="middle" >
       <input type=submit value="로그인">
       <input type=reset value="다시입력">
-      <input type="button" value="회원가입" onclick="javascript:window.location='inputForm.do'"></td>
+      <input type="button" value="회원가입" onclick="javascript:window.location='terms.do'"></td>
    </tr>
    <tr height="30">
     <td colspan="2" align="middle" >

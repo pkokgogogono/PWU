@@ -82,7 +82,7 @@ public class mainProAction implements CommandAction {
 				multi.getParameter("p_name"),
 				Integer.parseInt(multi.getParameter("p_price")),
 				multi.getParameter("content"),
-				"\\PWU\\fileSave\\"+filename);
+				"/PWU/fileSave/"+filename);
 		
 
 		System.out.println(multi.getParameter("title"));

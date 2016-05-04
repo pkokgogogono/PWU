@@ -8,10 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import action.CommandAction;
 import dao.FashionDao;
-<<<<<<< HEAD
 import dao.PagingDao;
-=======
-import vo.fashionBoardVo;
 
 public class productList implements CommandAction {
 	

@@ -1,6 +1,6 @@
 package action.s_a_fashion;
 
-import java.util.List; 
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 import action.CommandAction;
 import dao.FashionDao;
 import vo.fashionBoardVo;
-import vo.BH.Customer;
 
 public class fashionList implements CommandAction {
 	

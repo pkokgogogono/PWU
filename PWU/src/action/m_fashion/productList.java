@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 import action.CommandAction;
 import dao.FashionDao;
 import vo.fashionBoardVo;
-import vo.BH.Customer;
 
 public class productList implements CommandAction {
 	

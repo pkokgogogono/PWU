@@ -15,7 +15,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import action.CommandAction;
 import dao.FashionDao;
 import vo.fashionBoardVo;
-
+ 
 public class userDetail implements CommandAction {
 	
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{

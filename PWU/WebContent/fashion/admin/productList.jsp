@@ -57,7 +57,7 @@
    <td width="379">상품내용</td>
    <td width="379">상품이미지</td>
    <td width="164"></td>
-   
+    
   </tr>
   <b><드라마></b>
   <c:forEach var="select" items="${selectList}" >

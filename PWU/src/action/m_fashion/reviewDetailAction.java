@@ -16,7 +16,7 @@ import action.CommandAction;
 import dao.FashionDao;
 import dao.ReviewDao;
 import vo.fashionBoardVo;
-
+ 
 public class reviewDetailAction implements CommandAction {
 	
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{

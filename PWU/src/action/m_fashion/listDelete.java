@@ -16,7 +16,7 @@ import action.CommandAction;
 import dao.FashionDao;
 import vo.fashionBoardVo; 
 public class listDelete implements CommandAction {
-	
+	 
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{
 
 		request.setCharacterEncoding("euc-kr");

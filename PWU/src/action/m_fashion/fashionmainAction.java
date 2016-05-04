@@ -7,7 +7,7 @@ import action.CommandAction;
 import vo.fashionBoardVo;
 
 import vo.fashionBoardVo; 
-
+ 
 
 public class fashionmainAction implements CommandAction {
 	

@@ -48,7 +48,7 @@ ArrayList origFiles = new ArrayList();
 <c:if test="${pagingCount > 0}"> 
 <c:forEach var="review" items="${review}" >
 <%-- <c:if test="${reviewcount>0}">
-
+ 
 </c:if> --%>
 <tr height="10">
 <%--     <td align="center"  width="150" height="20">${review.re_num}</td>	 --%>

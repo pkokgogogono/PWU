@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=euc-kr"%>
-
+ 
 <%!
 	//Request객체와 String 객체를 각각 가져온다.
 	public String getParam(HttpServletRequest request, String paramName) 

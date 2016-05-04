@@ -16,7 +16,7 @@ public class productUpdate implements CommandAction {
 		request.setCharacterEncoding("euc-kr");
 
 		FashionDao fashionDao= FashionDao.getInstance();
-		
+		 
 		int num = Integer.parseInt(request.getParameter("num"));
 
 	   

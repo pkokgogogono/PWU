@@ -15,7 +15,7 @@ public class Fashion implements CommandAction {
 		request.setCharacterEncoding("euc-kr");
 
 		return "/fashion/user/fashion.jsp";
-	}
+	} 
 
   
 }

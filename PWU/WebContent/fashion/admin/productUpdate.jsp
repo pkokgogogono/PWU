@@ -40,7 +40,7 @@
   </tr>
   <tr> 
     <td height="190" colspan="6">
-    
+     
 	<form method="post" action="productUpdatePro.do?num=${fashiondetail.num}" enctype="multipart/form-data">
 	<table align="center" width="75%" border="1" cellspacing="1" cellpadding="1">
         <tr> 

@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=euc-kr" import="java.sql.*" errorPage="" %>
 <title>
-사용자페이지
+사용자페이지 
 </title>
 <%-- <%
     String cust_id = (String)session.getAttribute("cust_id");

@@ -14,7 +14,7 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import action.CommandAction;
 import dao.FashionDao;
 import vo.fashionBoardVo;
-
+ 
 public class productUpdatePro implements CommandAction {
 	
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{

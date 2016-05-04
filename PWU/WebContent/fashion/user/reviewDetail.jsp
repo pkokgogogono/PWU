@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=euc-kr" import="java.sql.*" errorPage="" %>
-
+ 
 <%-- <%
     String cust_id = (String)session.getAttribute("cust_id");
 	if(cust_id == null){

@@ -27,7 +27,7 @@ import dao.ReviewDao;
 import vo.ReviewVo;
 import vo.fashionBoardVo;
 import vo.loveVo;
-
+ 
 public class reviewFormAction implements CommandAction {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{
 	try

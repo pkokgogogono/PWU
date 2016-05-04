@@ -15,7 +15,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import action.CommandAction;
 import dao.FashionDao;
 import dao.ReviewDao;
-
+ 
 public class reviewSelect implements CommandAction {
 	
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{

@@ -22,7 +22,7 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import dao.FashionDao;
 import vo.fashionBoardVo;
-
+ 
 public class mainProAction implements CommandAction {
 	
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{

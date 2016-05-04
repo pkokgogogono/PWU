@@ -12,7 +12,6 @@ import dao.FashionDao;
 import dao.PagingDao;
 =======
 import vo.fashionBoardVo;
->>>>>>> branch 'master' of https://github.com/pkokgogogono/PWU.git
 
 public class productList implements CommandAction {
 	
